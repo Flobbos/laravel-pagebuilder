@@ -1,0 +1,26 @@
+{
+    "name": "flobbos/laravel-crudable",
+    "description": "A Laravel package for saving time on crud operations",
+    "keywords": ["laravel", "crud", "database"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexej Krzewitzki",
+            "email": "alexej@helloo.it",
+            "homepage": "http://helloo.it"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "illuminate/support": ">=5.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flobbos\\Crudable\\": "src/Crudable/"
+        },
+        "classmap": [
+        ]
+    },
+
+    "minimum-stability": "dev"
+}
