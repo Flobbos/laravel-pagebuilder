@@ -1,0 +1,39 @@
+<?php
+
+namespace Flobbos\Pagebuilder;
+
+use Illuminate\Support\ServiceProvider;
+
+class PagebuilderServiceProvider extends ServiceProvider{
+    
+    public function boot(){
+        //Publish config and translations
+        $this->publishes([
+            //__DIR__.'/../config/pagebuilder.php' => config_path('pagebuilder.php'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/pagebuilder'),
+        ]);
+        //load routes
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        //migrations
+        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        //views
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'pagebuilder');
+    }
+
+    /**
+     * Register the service provider.
+     */
+    public function register(){
+        //register commands
+        /*$this->commands([
+            //Commands\Command::class,
+        ]);*/
+        //Merge config
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/pagebuilder.php', 'pagebuilder'
+        );
+        //Run fixed bindings
+        $this->app->bind(ElementContract::class, Element::class);
+        $this->app->bind(PagebuilderContract::class, Pagebuilder::class);
+    }
+}

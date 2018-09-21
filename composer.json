@@ -12,11 +12,12 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "illuminate/support": ">=5.1.0"
+        "illuminate/support": ">=5.1.0",
+        "flobbos/laravel-translatable-db": "^1.4"
     },
     "autoload": {
         "psr-4": {
-            "Flobbos\\Crudable\\": "src/Crudable/"
+            "Flobbos\\Pagebuilder\\": "src/Pagebuilder/"
         },
         "classmap": [
         ]
