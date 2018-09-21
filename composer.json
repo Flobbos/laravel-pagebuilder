@@ -1,7 +1,7 @@
 {
-    "name": "flobbos/laravel-crudable",
-    "description": "A Laravel package for saving time on crud operations",
-    "keywords": ["laravel", "crud", "database"],
+    "name": "flobbos/laravel-pagebuilder",
+    "description": "Build content in your database with translations.",
+    "keywords": ["laravel", "pages", "database"],
     "license": "MIT",
     "authors": [
         {
