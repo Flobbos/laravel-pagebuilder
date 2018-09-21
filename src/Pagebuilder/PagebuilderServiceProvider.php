@@ -18,6 +18,8 @@ class PagebuilderServiceProvider extends ServiceProvider{
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
         //views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'pagebuilder');
+        //language
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'pagebuilder');
     }
 
     /**
@@ -33,7 +35,8 @@ class PagebuilderServiceProvider extends ServiceProvider{
             __DIR__.'/../config/pagebuilder.php', 'pagebuilder'
         );
         //Run fixed bindings
-        $this->app->bind(ElementContract::class, Element::class);
+        $this->app->bind(ElementContract::class, Elements::class);
         $this->app->bind(PagebuilderContract::class, Pagebuilder::class);
+        $this->app->bind(LanguageContract::class, Languages::class);
     }
 }

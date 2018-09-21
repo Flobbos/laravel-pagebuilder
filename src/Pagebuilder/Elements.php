@@ -5,7 +5,7 @@ use Flobbos\Pagebuilder\ElementContract;
 use Flobbos\Pagebuilder\Models\ElementType;
 use Exception;
 
-class Element implements ElementContract{
+class Elements implements ElementContract{
     
     protected $model;
     
@@ -25,7 +25,7 @@ class Element implements ElementContract{
         return $this->model->create($element_data);
     }
     
-    public function upate($id, array $element_data) {
+    public function update($id, array $element_data) {
         $element = $this->find($id);
         if(is_null($element)){
             throw new Exception('Model not found');

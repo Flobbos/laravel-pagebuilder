@@ -1,8 +1,6 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+Route::group(['middleware'=>['web','auth'],'namespace'=>'Flobbos\Pagebuilder\Controllers','prefix'=>'pagebuilder'], function(){
+    Route::resource('languages','LanguageController');
+    Route::resource('element-types', 'ElementTypeController');
+});

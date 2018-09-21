@@ -4,15 +4,15 @@ namespace Flobbos\Pagebuilder\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Flobbos\Pagebuilder\ElementContract;
+use Flobbos\Pagebuilder\LanguageContract;
 use Exception;
 
-class ElementTypeController extends Controller{
+class LanguageController extends Controller{
     
-    protected $element_types;
+    protected $language;
 
-    public function __construct(ElementContract $element_types) {
-        $this->element_types = $element_types;
+    public function __construct(LanguageContract $language) {
+        $this->language = $language;
     }
 
     /**
@@ -21,7 +21,7 @@ class ElementTypeController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        return view('pagebuilder::element-types.index')->with(['element_types'=>$this->element_types->get()]);
+        return view('pagebuilder::languages.index')->with(['languages'=>$this->language->get()]);
     }
 
     /**
@@ -30,7 +30,7 @@ class ElementTypeController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view('pagebuilder::element-types.create');
+        return view('pagebuilder::languages.create');
     }
 
     /**
@@ -43,11 +43,21 @@ class ElementTypeController extends Controller{
         $this->validate($request, []);
         
         try{
-            $this->element_types->create($request->all());
-            return redirect()->route('element-types.index')->withMessage(trans('crud.record_created'));
+            $this->language->create($request->all());
+            return redirect()->route('languages.index')->withMessage(trans('crud.record_created'));
         } catch (Exception $ex) {
             return redirect()->back()->withErrors($ex->getMessage())->withInput();
         }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id){
+        return view('pagebuilder::languages.show')->with(['language'=>$this->language->find($id)]);
     }
 
     /**
@@ -57,7 +67,7 @@ class ElementTypeController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function edit($id){
-        return view('pagebuilder::element-types.edit')->with(['element_type'=>$this->element_types->find($id)]);
+        return view('pagebuilder::languages.edit')->with(['language'=>$this->language->find($id)]);
     }
 
     /**
@@ -71,8 +81,8 @@ class ElementTypeController extends Controller{
         $this->validate($request, []);
         
         try{
-            $this->element_types->update($id, $request->all());
-            return redirect()->route('element-types.index')->withMessage(trans('crud.record_updated'));
+            $this->language->update($id, $request->all());
+            return redirect()->route('languages.index')->withMessage(trans('crud.record_updated'));
         } catch (Exception $ex) {
             return redirect()->back()->withInput()->withErrors($ex->getMessage());
         }
@@ -86,10 +96,10 @@ class ElementTypeController extends Controller{
      */
     public function destroy($id){
         try{
-            $this->element_types->delete($id);
-            return redirect()->route('element-types.index')->withMessage(trans('crud.record_deleted'));
+            $this->language->delete($id);
+            return redirect()->route('languages.index')->withMessage(trans('crud.record_deleted'));
         } catch (Exception $ex) {
-            return redirect()->route('element-types.index')->withErrors($ex->getMessage());
+            return redirect()->route('languages.index')->withErrors($ex->getMessage());
         }
     }
 }

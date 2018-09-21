@@ -11,15 +11,15 @@
                             Sprachen
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('admin.languages.create') }}" class="btn btn-default btn-sm pull-right">
-                                <i class="glyphicon glyphicon-plus"></i> @lang('crud.create_button')
+                            <a href="{{ route('languages.create') }}" class="btn btn-default btn-sm pull-right">
+                                <i class="glyphicon glyphicon-plus"></i> @lang('pagebuilder::crud.create_button')
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel-body">
-                    @include('admin.notifications')
+                    @include('pagebuilder::notifications')
                     @if($languages->isEmpty())
                     @lang('crud.no_entries')
                     @else
@@ -37,8 +37,8 @@
                                 <td>{{ $lang->name }}</td>
                                 <td>{{ $lang->locale }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-primary pull-right" href="{{ route('admin.languages.edit',$lang->id) }}">
-                                        @lang('crud.edit')
+                                    <a class="btn btn-sm btn-primary pull-right" href="{{ route('languages.edit',$lang->id) }}">
+                                        @lang('pagebuilder::crud.edit')
                                     </a>
                                 </td>
                             </tr>

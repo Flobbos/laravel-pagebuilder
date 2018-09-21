@@ -15,7 +15,6 @@ class CreateColumnsTable extends Migration
     {
         Schema::create('columns', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('id');
             $table->integer('row_id')->unsigned()->index();
             $table->foreign('row_id')->references('id')->on('rows')->onDelete('cascade');
             $table->integer('element_type_id')->unsigned()->index();

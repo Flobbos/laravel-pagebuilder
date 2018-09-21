@@ -6,16 +6,16 @@
         <div class="col-sm-12">
             <div class="panel panel-default">
 
-                <form action="{{ route('admin.languages.update',$language->id) }}" role="form" method="POST"  enctype="multipart/form-data">
+                <form action="{{ route('languages.update',$language->id) }}" role="form" method="POST"  enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{method_field('PUT')}}
 
                     <div class="panel-heading panel-default">
-                        @lang('crud.create_headline')
+                        @lang('pagebuilder::crud.edit_headline')
                     </div>
 
                     <div class="panel-body">
-                        @include('admin.notifications')
+                        @include('pagebuilder::notifications')
 
                         <div class="form-group">
                             <div class="row">
@@ -49,11 +49,11 @@
                         <div class="row">
 
                             <div class="col-sm-6">
-                                <a href="{{ route('admin.languages.index') }}" class="btn btn-danger">{{ trans('crud.cancel') }}</a>
+                                <a href="{{ route('languages.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>
                             </div>
 
                             <div class="col-sm-6 text-right">
-                                <button type="submit" class="btn btn-success">{{ trans('crud.save') }}</button>
+                                <button type="submit" class="btn btn-success">{{ trans('pagebuilder::crud.save') }}</button>
                             </div>
 
                         </div>
