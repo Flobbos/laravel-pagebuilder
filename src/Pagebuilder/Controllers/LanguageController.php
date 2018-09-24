@@ -4,7 +4,7 @@ namespace Flobbos\Pagebuilder\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Flobbos\Pagebuilder\LanguageContract;
+use Flobbos\Pagebuilder\Contracts\LanguageContract;
 use Exception;
 
 class LanguageController extends Controller{

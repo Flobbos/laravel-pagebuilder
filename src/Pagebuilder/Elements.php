@@ -1,7 +1,7 @@
 <?php
 
 namespace Flobbos\Pagebuilder;
-use Flobbos\Pagebuilder\ElementContract;
+use Flobbos\Pagebuilder\Contracts\ElementContract;
 use Flobbos\Pagebuilder\Models\ElementType;
 use Exception;
 

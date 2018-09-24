@@ -3,7 +3,7 @@
 namespace Flobbos\Pagebuilder;
 
 use Flobbos\Pagebuilder\Models\Language;
-use Flobbos\Pagebuilder\LanguageContract;
+use Flobbos\Pagebuilder\Contracts\LanguageContract;
 
 class Languages implements LanguageContract {
     

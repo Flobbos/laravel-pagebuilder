@@ -1,6 +1,6 @@
 <?php
 
-namespace Flobbos\Pagebuilder;
+namespace Flobbos\Pagebuilder\Contracts;
 
 interface ElementContract {
     

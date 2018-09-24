@@ -1,8 +1,8 @@
 <?php
 
 namespace Flobbos\Pagebuilder;
-use Flobbos\Pagebuilder\PagebuilderContract;
-use Flobbos\Crudable\Translations;
+use Flobbos\Pagebuilder\Contracts\PagebuilderContract;
+use Flobbos\Pagebuilder\Translations;
 use Flobbos\Pagebuilder\Models\Row;
 use Flobbos\Pagebuilder\Models\Column;
 use Flobbos\Pagebuilder\Models\Translation;
@@ -21,8 +21,15 @@ class Pagebuilder implements PagebuilderContract{
         $this->columns = $columns;
     }
     
+    public function get(){
+        return $this->model->with([
+            'rows.columns.translations',
+        ])->get();
+    }
+    
     public function setClass($key){
-        $this->model = config('pagebuilder.builder_classes.'.$key);
+        $class = config('pagebuilder.builder_classes.'.$key);
+        $this->model = new $class;
     }
     
     public function create(Request $request) {
@@ -62,7 +69,6 @@ class Pagebuilder implements PagebuilderContract{
     public function delete($id) {
         ;
     }
-    
     
     
 }

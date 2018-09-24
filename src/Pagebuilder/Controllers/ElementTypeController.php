@@ -4,7 +4,7 @@ namespace Flobbos\Pagebuilder\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Flobbos\Pagebuilder\ElementContract;
+use Flobbos\Pagebuilder\Contracts\ElementContract;
 use Exception;
 
 class ElementTypeController extends Controller{

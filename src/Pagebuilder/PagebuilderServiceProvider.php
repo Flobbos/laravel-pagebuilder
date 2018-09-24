@@ -35,8 +35,8 @@ class PagebuilderServiceProvider extends ServiceProvider{
             __DIR__.'/../config/pagebuilder.php', 'pagebuilder'
         );
         //Run fixed bindings
-        $this->app->bind(ElementContract::class, Elements::class);
-        $this->app->bind(PagebuilderContract::class, Pagebuilder::class);
-        $this->app->bind(LanguageContract::class, Languages::class);
+        $this->app->bind(Contracts\ElementContract::class, Elements::class);
+        $this->app->bind(Contracts\PagebuilderContract::class, Pagebuilder::class);
+        $this->app->bind(Contracts\LanguageContract::class, Languages::class);
     }
 }
