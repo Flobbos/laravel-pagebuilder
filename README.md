@@ -93,7 +93,7 @@ Create a file called `require.d.ts`  and declare the function like this:
 declare function require(name: string): any;
 ~~~
 
-##Usage
+## Usage
 
 Now it's time to use the pagebuilder.
 Go to your admin.js or where you want to use it and load the pagebuilder.js file
