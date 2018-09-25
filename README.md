@@ -8,7 +8,7 @@
 
 ##### Install the required dependencies
 ~~~
-npm install --save typescript@2.9.2 ts-loader@3.2.0 vue-class-component vue-property-decorator vue-quill-editor vue-select vue2-dragula vuex vuex-class lodash @types/lodash vue-bootstrap-datetimepicker vue-sticky-directive vue2-dropzone
+npm install --save typescript@2.9.2 ts-loader@3.2.0 vue-class-component vue-property-decorator vue-quill-editor vue-select vue2-dragula vuex vuex-class lodash @types/lodash vue-bootstrap-datetimepicker@4.* vue-sticky-directive vue2-dropzone
 ~~~
 
 
@@ -92,5 +92,31 @@ Create a file called `require.d.ts`  and declare the function like this:
 ~~~
 declare function require(name: string): any;
 ~~~
+
+##Usage
+
+Now it's time to use the pagebuilder.
+Go to your admin.js or where you want to use it and load the pagebuilder.js file
+
+~~~
+
+require('pagebuilder');
+~~~
+
+After that register the Vuex Store in your Vue instance.
+
+~~~
+import { createStore } from "./admin_components/store/index.ts"
+const store = createStore();
+
+...
+
+const app = new Vue({
+    el: '#app',
+    store
+});
+
+~~~
+
 
 **If you want to save time on your crud operations**

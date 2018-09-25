@@ -3,8 +3,6 @@ import axios from 'axios';
 
 import Vue from 'vue';
 
-import { createStore } from "./admin_components/store/index.ts"
-const store = createStore();
 Vue.component('vue-editor', require('./admin_components/vue-editor/VueEditor'));
 
 Vue.component('vue-date-picker', require('./admin_components/vue-date-picker/VueDatePicker'));
