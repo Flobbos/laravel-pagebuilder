@@ -8,7 +8,7 @@
 
 ##### Install the required dependencies
 ~~~
-npm install --save typescript ts-loader vue-class-component vue-property-decorator vue-quill-editor vue-select vue2-dragula vuex vuex-class lodash @types/lodash vue-bootstrap-datetimepicker
+npm install --save typescript@2.9.2 ts-loader@3.2.0 vue-class-component vue-property-decorator vue-quill-editor vue-select vue2-dragula vuex vuex-class lodash @types/lodash vue-bootstrap-datetimepicker vue-sticky-directive vue2-dropzone
 ~~~
 
 
