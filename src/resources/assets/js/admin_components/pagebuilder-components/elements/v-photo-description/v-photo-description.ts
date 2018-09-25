@@ -74,7 +74,7 @@ export default class VPhotoDescription extends Vue {
 
     mounted() {
         if (this.element && this.element.content.photos && this.element.content.photos.length) {
-            console.log('bild da')
+
             this.element.content.photos.forEach((p: any) => {
                 let file = {name: p};
                 let url = '/storage/'+ this.getStoragePath + '/' + file.name;

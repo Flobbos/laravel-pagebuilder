@@ -72,7 +72,7 @@ export default {
     },
     handlePostTranslations(state: any, translations: any) {
 
-        console.log(translations);
+
     },
     setPagebuilderElement(state:any, element:string){
         state.pagebuilder_element = element;

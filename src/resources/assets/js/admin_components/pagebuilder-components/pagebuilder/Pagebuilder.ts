@@ -116,7 +116,7 @@ export default class Pagebuilder extends Vue {
     beforeMount(){
         //old element is NOT present
         if(this.oldElement === undefined){
-            console.log('kein altes beCreated')
+
             let langs: any = this.getLanguages;
             langs.forEach((lang: any) => {
                 this.translations[lang.id] = {
@@ -215,7 +215,7 @@ export default class Pagebuilder extends Vue {
 
     updatePost() {
         //@ts-ignore
-        console.log(moment(this.published_on).format('YYYY-MM-DD HH:mm:ss'));
+
         let post: object = {
             photo: this.photo,
             name: this.name,

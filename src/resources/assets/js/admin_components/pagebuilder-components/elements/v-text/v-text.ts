@@ -73,7 +73,7 @@ export default class VText extends Vue {
 
     //@ts-ignore
     onEditorChange({ quill, html, text }) {
-        console.log(html);
+
         this.form_text = html
     }
 

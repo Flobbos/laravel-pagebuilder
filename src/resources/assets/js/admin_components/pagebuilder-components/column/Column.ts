@@ -45,7 +45,7 @@ export default class Column extends Vue {
             });
         } 
         else if(this.column.id){
-            console.log(this.column.id);
+
             this.translations = this.column.translations;
             this.element_type_id = this.column.element_type_id;
             this.form_column_size = this.column.column_size;
@@ -128,7 +128,7 @@ export default class Column extends Vue {
             form_data.append('type', this.$store.getters.getPagebuilderElement);
             //@ts-ignore
             axios.post('/admin/delete-column', form_data, headers).then(response => {
-                console.log(response);
+
             })
         }
     }

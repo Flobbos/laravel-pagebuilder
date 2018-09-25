@@ -92,7 +92,7 @@ export default class Row extends Vue {
 
             //@ts-ignore
             axios.post('/admin/delete-row', form_data, headers).then(response => {
-                console.log(response);
+
             })
         }
     }
@@ -107,7 +107,7 @@ export default class Row extends Vue {
             this.columns.push(column);
             this.updateRow();
         } else {
-            console.log('Spalten limit erreicht');
+
         }
     }
 
