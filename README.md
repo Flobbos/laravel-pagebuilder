@@ -117,6 +117,3 @@ const app = new Vue({
 });
 
 ~~~
-
-
-**If you want to save time on your crud operations**
