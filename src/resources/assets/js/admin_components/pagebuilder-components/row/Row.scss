@@ -1,0 +1,27 @@
+.pagebuilder-row {
+
+  .add-column {
+    background: transparent;
+    transition: border .3s linear, background-color .3s linear;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+    h1 {
+      opacity: 0;
+      color: #fff;
+      transition: opactiy .3s linear;
+    }
+
+    &:hover {
+      transition: border .3s linear, background-color .3s linear;
+      border: 1px solid #2a88bd;
+      background-color: rgba(42, 136, 189, 0.8);
+
+      h1 {
+        opacity: 1;
+        transition: opactiy .3s linear;
+      }
+    }
+  }
+
+}
