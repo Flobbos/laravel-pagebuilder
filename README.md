@@ -96,7 +96,7 @@ declare function require(name: string): any;
 ## Usage
 
 Now it's time to use the pagebuilder.
-Go to your admin.js or where you want to use it and load the pagebuilder.js file
+Go to your admin.js or wherever you want to use it and load the pagebuilder.js file
 
 ~~~
 
