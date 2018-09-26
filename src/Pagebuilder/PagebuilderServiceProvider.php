@@ -11,6 +11,10 @@ class PagebuilderServiceProvider extends ServiceProvider{
         $this->publishes([
             //__DIR__.'/../config/pagebuilder.php' => config_path('pagebuilder.php'),
             __DIR__.'/../resources/views' => resource_path('views/vendor/pagebuilder'),
+
+            //publish pagebuilder js assets
+            __DIR__.'/../resources/assets/js/admin_components/' => resource_path('js/admin_components'),
+            __DIR__.'/../resources/assets/js/pagebuilder.js' => resource_path('js/pagebuilder.js')
         ]);
         //load routes
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
@@ -20,6 +24,7 @@ class PagebuilderServiceProvider extends ServiceProvider{
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'pagebuilder');
         //language
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'pagebuilder');
+
     }
 
     /**
