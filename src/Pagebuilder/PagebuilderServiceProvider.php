@@ -15,7 +15,7 @@ class PagebuilderServiceProvider extends ServiceProvider{
         //load routes
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         //migrations
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         //views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'pagebuilder');
         //language
