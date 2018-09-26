@@ -9,7 +9,7 @@ import Row from '../row/Row';
 import {Vue2Dragula} from 'vue2-dragula';
 import 'dragula/dist/dragula.css';
 
-import {find} from 'lodash';
+import {forOwn} from 'lodash';
 
 import {
     Getter,
@@ -153,6 +153,11 @@ export default class Pagebuilder extends Vue {
             oldTranslations.forEach((t: any) => {
                 this.translations[t.language_id] = t;
 
+                let jsonContent = JSON.parse(t.content);
+
+                forOwn(jsonContent, (value: any, key:any) =>{
+                    this.translations[t.language_id][key] = value;
+                })
             });
             this.languages.forEach((l:any)=>{
             });
