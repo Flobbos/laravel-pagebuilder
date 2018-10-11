@@ -3,17 +3,18 @@ import Vue from "vue";
 //@ts-ignore
 import {Component, Prop} from "vue-property-decorator";
 
-import Row from '../row/Row'
+import Row from '../row/Row';
 
 //@ts-ignore
-import {Vue2Dragula} from 'vue2-dragula'
+import {Vue2Dragula} from 'vue2-dragula';
+import 'dragula/dist/dragula.css';
 
-import {find} from 'lodash';
+import {forOwn} from 'lodash';
 
 import {
     Getter,
     Mutation,
-} from 'vuex-class'
+} from 'vuex-class';
 
 
 Vue.use(Vue2Dragula/*, {
@@ -152,6 +153,11 @@ export default class Pagebuilder extends Vue {
             oldTranslations.forEach((t: any) => {
                 this.translations[t.language_id] = t;
 
+                let jsonContent = JSON.parse(t.content);
+
+                forOwn(jsonContent, (value: any, key:any) =>{
+                    this.translations[t.language_id][key] = value;
+                })
             });
             this.languages.forEach((l:any)=>{
             });
