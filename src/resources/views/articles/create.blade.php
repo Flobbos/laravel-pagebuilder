@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container">
-    <form action="{{ route('articles.store') }}" role="form" method="POST"  enctype="multipart/form-data">
+    <form action="{{ route('pagebuilder::articles.store') }}" role="form" method="POST"  enctype="multipart/form-data">
     {{ csrf_field() }}
         <pagebuilder ref="pagebuilder" :element-types="{{$element_types}}" storage-path="photos" :languages="{{$languages}}">
             <div class="panel-heading panel-default" slot="header">
-                <h3 class="panel-title">Projekte</h3>
+                <h3 class="panel-title">Articles</h3>
                 @lang('pagebuilder::crud.create_headline')
 
                 @include('pagebuilder::notifications')

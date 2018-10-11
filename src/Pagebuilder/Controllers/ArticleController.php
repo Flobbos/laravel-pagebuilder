@@ -50,10 +50,10 @@ class ArticleController extends Controller{
     public function store(Request $request){
         try{
             //dd($request->all());
-            $project = $this->articles->saveProject($request);
+            $article = $this->articles->create($request);
             return response()->json([
                 'success'=>true,
-                'return_url' => route('articles.edit',$project->id)
+                'return_url' => route('articles.edit',$article->id)
             ],200);
             //return redirect()->route('admin.articles.index')->withMessage(trans('crud.record_created'));
         } catch (Exception $ex) {
@@ -73,7 +73,7 @@ class ArticleController extends Controller{
         //$project = $this->articles->with('rows.columns.translations','translations')->find($id);
         //dd($project);
         return view('pagebuilder::articles.edit')->with([
-            'article'=>$this->articles->with('rows.columns.translations','translations')->find($id),
+            'article'=>$this->articles->find($id),
             'languages'=>$lang->get(),
             'element_types' => $element_types->get()
         ]);
@@ -118,11 +118,11 @@ class ArticleController extends Controller{
         }
     }
     
-    public function deleteProjectRow(Request  $request){
-        return $this->articles->deleteProjectRow($request->get('row_id'));
+    public function deleteRow(Request  $request){
+        return $this->articles->deleteRow($request->get('row_id'));
     }
     
-    public function deleteProjectColumn(Request $request){
+    public function deleteColumn(Request $request){
         return $this->articles->deleteProjectColumn($request->get('column_id'));
     }
 }

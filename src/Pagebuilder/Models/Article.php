@@ -18,11 +18,25 @@ class Article extends Model{
     ];
     
     public function rows(){
-        return $this->morphMany(Row::class);
+        return $this->morphMany(Row::class,'rowable');
     }
     
     public function translations(){
-        return $this->morphMany(Translation::class);
+        return $this->morphMany(Translation::class,'translatable');
+    }
+    
+    public function media(){
+        return $this->morphMany(Media::class,'model');
+    }
+    
+    //Overrides for polymorphic delete
+    public function delete(){
+        $deleted = parent::delete();
+        if($deleted){
+            $this->media()->delete();
+            $this->translations()->delete();
+            $this->rows()->delete();
+        }
     }
     
 }

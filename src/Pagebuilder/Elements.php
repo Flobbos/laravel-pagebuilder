@@ -36,7 +36,7 @@ class Elements implements ElementContract{
         return false;
     }
     
-    public function destroy($id) {
+    public function delete($id) {
         $element = $this->find($id);
         return $element->delete();
     }

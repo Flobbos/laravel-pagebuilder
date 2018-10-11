@@ -12,6 +12,6 @@ interface ElementContract {
     
     public function update($id, array $element_data);
     
-    public function destroy($id);
+    public function delete($id);
     
 }
