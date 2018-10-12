@@ -93,9 +93,10 @@ class ArticleController extends Controller{
             //dd(json_decode($request->get('rows')));
             $this->articles->update($id, $request);
             //return redirect()->route('admin.articles.index')->withMessage(trans('crud.record_updated'));
+            //throw new Exception('Bix!');
             return response()->json([
                 'success'=>true,
-                'return_url'=>route('admin.articles.edit',$id)
+                'return_url'=>route('pagebuilder::articles.edit',$id)
             ],200);
         } catch (Exception $ex) {
             //return redirect()->back()->withInput()->withErrors($ex->getMessage());

@@ -109,15 +109,12 @@ trait Translatable{
      */
     public function updateTranslations(
             array $translations, 
-            \Illuminate\Database\Eloquent\Model $model, 
-            $translation_id, 
-            $translation_class){
-        
+            \Illuminate\Database\Eloquent\Model $model){
         //Update existing translations
         $remaining = [];
         foreach($translations as $trans){
-            if(isset($trans[$translation_id]) && !is_null($trans[$translation_id])){
-                $translation = $model->{$this->translation_name}()->where('id',$trans[$translation_id])->first();
+            if(isset($trans['id']) && !is_null($trans['id'])){
+                $translation = $model->translations()->where('id',$trans['id'])->first();
                 //Check if parent model is available
                 if(isset($this->model)){
                     //Add keys that exist with deleted values
@@ -135,16 +132,29 @@ trait Translatable{
         }
         
         //Create new translations
-        $new_translations = $this->processTranslations($remaining,$translation_id);
+        $new_translations = $this->processTranslations($remaining,true);
+        //dd($new_translations);
+        //die();
         if(!empty($new_translations)){
-            $new_trans = [];
-            foreach($new_translations as $n_t){
-                $new_trans[] = new $translation_class($n_t);
-            }
-            $model->{$this->translation_name}()->saveMany($new_trans);
+            $trans_models = $this->encodeContent($new_translations);
+            $model->translations()->saveMany($trans_models);
         }
         
         return $model;
+    }
+    
+    public function encodeContent($translation_data){
+        $trans_models = [];
+        foreach($translation_data as $trans_item){
+            $language_id = $trans_item['language_id'];
+            unset($trans_item['language_id']);
+            $translated_element = [
+                'language_id' => $language_id,
+                'content' => json_encode($trans_item)
+            ];
+            $trans_models[] = new \Flobbos\Pagebuilder\Models\Translation($translated_element);
+        }
+        return $trans_models;
     }
     
 }

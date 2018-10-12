@@ -44,24 +44,17 @@ class Pagebuilder implements PagebuilderContract{
         //Grab project data
         $data = $request->except('rows','translations');
         //Create project entry with basic translations
-        $project = $this->model->create($data);
+        $article = $this->model->create($data);
         //Process translations
         $translation_data = $this->processTranslations(json_decode($request->get('translations'),true));
-        //dd($translation_data);
-        foreach($translation_data as $trans_item){
-            $language_id = $trans_item['language_id'];
-            unset($trans_item['language_id']);
-            $translated_element = [
-                'language_id' => $language_id,
-                'content' => json_encode($trans_item)
-            ];
-            $trans_models[] = new Translation($translated_element);
-        }
-        $project->translations()->saveMany($trans_models);
+        //Encode content
+        $trans_models = $this->encodeContent($translation_data);
+        //Save results
+        $article->translations()->saveMany($trans_models);
         //Create rows and columns
         foreach(json_decode($request->get('rows'),true) as $row_key=>$row){
             //Create row entry
-            $current_row = $project->rows()->create($row);
+            $current_row = $article->rows()->create($row);
             //Create columns
             foreach($row['columns'] as $column_key=>$column){
                 //Check for file upload
@@ -74,11 +67,73 @@ class Pagebuilder implements PagebuilderContract{
                 }
             }
         }
-        return $project;
+        return $article;
     }
     
     public function update($id, Request $request) {
-        ;
+        //dd(json_decode($request->get('translations')));
+        //Grab basic project
+        $article = $this->model->with('rows.columns.translations')->find($id);
+        //Grab request data
+        $article_data = $request->except('rows','translations');
+        //Update basic translations
+        $this->updateTranslations(
+                    json_decode($request->get('translations'),true),
+                    $article);
+        //Update basic project
+        $article->update($article_data);
+        //Update rows and columns
+        foreach(json_decode($request->get('rows'),true) as $row_key=>$row){
+            //Update existing row
+            if(isset($row['id']) && $current_row = $article->rows->find($row['id'])){
+                $current_row->update($row);
+                //Run through columns
+                //dd($row['columns'])
+                foreach($row['columns'] as $column){
+                    if(isset($column['id']) && $current_column = $current_row->columns->where('id',$column['id'])->first()){
+                        //Update basic column data
+                        $current_column->update($column);
+                        
+                        //Update column translations
+                        foreach($column['translations'] as $trans_key=>$trans){
+                            //Translation exists: Update
+                            if(isset($trans['id']) && $current_trans = $current_column->translations->find($trans['id'])){
+                                $current_trans->update($this->processContent($trans_key, $trans));
+                            }
+                            //No translation yet: Create
+                            else{
+                                //Pass empty translations
+                                if($content = $this->processContent($trans_key,$trans)){
+                                    $current_column->translations()->create($content);
+                                }
+                            }
+                        }
+                    }
+                    else{
+                        $current_column = $current_row->columns()->create($column);
+                        foreach($column['translations'] as $trans_key=>$trans){
+                            if($content = $this->processContent($trans_key,$trans)){
+                                $current_column->translations()->create($content);
+                            }
+                        }
+                    }
+                }
+            }
+            //Create new row
+            else{
+                $current_row = $article->rows()->create($row);
+                //Look for columns
+                foreach($row['columns'] as $column){
+                    $current_column = $current_row->columns()->create($column);
+                    foreach($column['translations'] as $trans_key=>$trans){
+                        if($content = $this->processContent($trans_key,$trans)){
+                            $current_column->translations()->create($content);
+                        }
+                    }
+                }
+            }
+        }
+        return $article;
     }
     
     public function delete($id) {
