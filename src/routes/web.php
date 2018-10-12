@@ -4,7 +4,7 @@ Route::group(['middleware'=>['web','auth'],'namespace'=>'Flobbos\Pagebuilder\Con
     Route::get('/','PagebuilderController@index')->name('home');
     Route::resource('languages','LanguageController');
     Route::resource('element-types', 'ElementTypeController');
-    Route::post('upload','UploadController@store')->name('upload');
+    Route::post('upload-photo','UploadController@store')->name('upload');
     Route::delete('delete-photo','UploadController@destroy')->name('delete-photo');
     Route::resource('articles','ArticleController');
 });

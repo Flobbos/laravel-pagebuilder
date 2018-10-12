@@ -21,7 +21,7 @@ class UploadController extends Controller{
         try{
             if($request->hasFile('photo')){
                 return response()->json([
-                    'filename'=> $this->handleUpload($request, 'photo', '/',$request->get('storage')),
+                    'filename'=> $this->handleUpload($request, 'photo'),
                     'column_id'=> $request->get('column_id'),
                     'lang_id'=> $request->get('lang_id')
                 ],200);
