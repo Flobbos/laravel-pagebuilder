@@ -4,3 +4,4 @@ coverage/
 /nbproject/private/
 /nbproject
 .idea
+/node_modules/
