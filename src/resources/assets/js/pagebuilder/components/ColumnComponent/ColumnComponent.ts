@@ -1,0 +1,70 @@
+import Vue from "vue";
+
+//@ts-ignore
+import {Component, Prop, Watch} from "vue-property-decorator";
+import {Getter, Mutation} from "vuex-class";
+import axios from "axios";
+import {Column} from "../../models/Column";
+import {forEach} from 'lodash';
+
+//@ts-ignore
+import pbConfig from '../../config/config.json';
+
+@Component
+export default class ColumnComponent extends Vue {
+
+    @Prop()
+    oldColumn: Column;
+    @Getter('getElementTypeById') getElementTypeById: any;
+    @Getter('getLanguages') getLanguages: any;
+    @Getter('getElementTypes') getElementTypes: any;
+
+    column: Column = new Column();
+    component: string = '';
+    columnSize: string = '';
+    toolTipActive: boolean = false;
+
+    beforeMount() {
+        this.column = this.oldColumn;
+    }
+
+    mounted() {
+        this.addElement();
+        this.createColumnLayout();
+    }
+
+    addElement(id: number = this.column.element_type_id) {
+        this.column.element_type_id = id;
+
+        if (this.column.element_type_id !== 0) {
+            let element = this.getElementTypeById(this.column.element_type_id);
+
+            this.component = element.component;
+            Vue.component(
+                this.component,
+                //@ts-ignore
+                require("../../elements/" + this.component + '/' + this.component)
+            );
+
+            this.toolTipActive = false;
+        }
+    }
+
+    updateElementTypeId(id: number) {
+        this.column.element_type_id = id;
+        this.addElement();
+    }
+
+    createColumnLayout() {
+        let classes = pbConfig[pbConfig.framework.current];
+
+        if (this.column.column_size) {
+            forEach(classes, (c: any) => {
+                this.column.column_size = this.column.column_size.replace(c.pb, c.fw);
+            });
+        }else{
+            this.column.column_size = 'pb-large-12';
+            this.createColumnLayout();
+        }
+    }
+};

@@ -1,0 +1,69 @@
+@import '../PagebuilderComponent/PagebuilderComponent';
+
+.pagebuilder-column {
+  min-height: 300px;
+  padding-left: 1.9rem;
+  padding-right: 1.9rem;
+
+  .no-element-wrapper {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s ease-out;
+    background-color: #f8f9fa;
+    cursor: pointer;
+
+    h1 {
+      background: $pb-button-background-gradient;
+      background-size: 200%;
+      padding-bottom: 6px;
+      border-radius: 50%;
+      font-size: 40px;
+      color: white;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  //Input Filed Settings
+
+  .pb-input {
+    padding: 20px;
+
+    input {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  //Dropzone Single File Styling
+
+  .dropzone {
+    border: none;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    .dz-preview {
+      margin: 0;
+
+      .dz-image {
+
+        img {
+          max-width: 100%;
+        }
+
+      }
+
+    }
+
+  }
+}
