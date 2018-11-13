@@ -7,6 +7,7 @@
                 </span>
             </div>
             <plus></plus>
+            click me
         </div>
         <div v-else>
             <component :is="component" :old-translations="column.translations"></component>
