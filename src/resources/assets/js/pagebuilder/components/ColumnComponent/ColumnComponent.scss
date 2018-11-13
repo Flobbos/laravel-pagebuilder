@@ -16,19 +16,10 @@
     background-color: #f8f9fa;
     cursor: pointer;
 
-    h1 {
-      background: $pb-button-background-gradient;
-      background-size: 200%;
-      padding-bottom: 6px;
-      border-radius: 50%;
-      font-size: 40px;
-      color: white;
-      width: 60px;
+    svg {
       height: 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      width: 60px;
+
     }
   }
 

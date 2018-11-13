@@ -6,11 +6,17 @@ import {Getter, Mutation} from "vuex-class";
 import axios from "axios";
 import {Column} from "../../models/Column";
 import {forEach} from 'lodash';
+//@ts-ignore
+import Plus from '../../svgs/Plus.vue'
 
 //@ts-ignore
 import pbConfig from '../../config/config.json';
 
-@Component
+@Component({
+    components:{
+        Plus
+    }
+})
 export default class ColumnComponent extends Vue {
 
     @Prop()

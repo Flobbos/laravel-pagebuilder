@@ -6,9 +6,7 @@
                     {{element.name}} |
                 </span>
             </div>
-            <h1>
-                +
-            </h1>
+            <plus></plus>
         </div>
         <div v-else>
             <component :is="component" :old-translations="column.translations"></component>
