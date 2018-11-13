@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="397051b1-5177-4b1f-8ff4-39e003f4ae4d" name="Playground Pagebuilder Package" url="http://vm3.ultrabold.de">
+        <fileTransfer host="vm3.ultrabold.de" port="2022" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/home/playground/laravel/vendor/flobbos/laravel-pagebuilder" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2022" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="f16df2cd-0fd3-40cd-89eb-2b4a7f55f6fb" name="Playground Dashboard" url="http://vm3.ultrabold.de">
+        <fileTransfer host="vm3.ultrabold.de" port="2022" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/home/playground/laravel" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2022" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
