@@ -3,8 +3,13 @@
 <template>
     <div class="content-view">
         <row-spacer-component v-if="!article.rows || article.rows.length === 0"></row-spacer-component>
-            <div  v-dragula="article.rows" drake="rows" class="row-component-wrapper" v-for="(row, index) in article.rows">
-                <row-component :sorting="index" :old-row="row"></row-component>
+
+
+        <div class="row-component-wrapper">
+            <draggable v-model="rows" :option="{draggable: '.row-component'}" @end="sortRows">
+                    <row-component v-for="(row, index) in rows" :old-row="row"
+                                   :key="'row' + index"></row-component>
+            </draggable>
         </div>
     </div>
 </template>

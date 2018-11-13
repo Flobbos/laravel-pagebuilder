@@ -6,13 +6,13 @@
                 <div class="panel-body">
                     <ul>
                         <li>
-                            <p  @click="setDesktop">Desktop</p>
+                            <p @click="setDesktop">Desktop</p>
                         </li>
                         <li>
                             <p @click="setTablet">Tablet</p>
                         </li>
                         <li>
-                            <p  @click="setMobile">Mobile</p>
+                            <p @click="setMobile">Mobile</p>
                         </li>
                     </ul>
                 </div>
@@ -33,7 +33,9 @@
                     <ul>
                         <li>
                             <p>
-                                Sprachen <span class="lang-arrow"> <arrow></arrow> </span>
+                                Sprachen <span class="lang-arrow">
+                                <arrow></arrow>
+                            </span>
                             </p>
                             <ul class="is-dropright">
                                 <li v-for="lang in languages">
@@ -49,14 +51,17 @@
                 <div class="panel-body">
                     <ul>
                         <li v-for="element in elementTypes">
-                            <p><span class="glyphicon glyphicon-text-width element-icons"></span> {{element.name}}</p>
+                            <p><span class="element-icons"></span>
+                                <component :is="element.icon"></component>
+                                {{element.name}}
+                            </p>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-8 col-sm-offset-3">
+        <div class="col-sm-8 col-sm-offset-3 workspace">
 
             <div class="row pb-navigation-buttons">
                 <div class="col-sm-12">
@@ -77,8 +82,26 @@
                     <settings-view v-if="currentView === 'Settings'"></settings-view>
                 </div>
             </div>
-
-                <slot name="footer"></slot>
+            <br>
+            <div class="row" v-if="article.id && article.id !== 0">
+                <div class="col-sm-6">
+                    <a href="#" class="btn  pb-button">Cancel</a>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button type="submit" class="btn  pb-button" @click.prevent="$store.dispatch('updateElement')">
+                        Save
+                    </button>
+                </div>
+            </div>
+            <div class="row" v-else>
+                <div class="col-sm-6">
+                    <a href="#" class="btn  pb-button">Cancel</a>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button type="submit" class="btn pb-button" @click.prevent="$store.dispatch('createElement')">Save
+                    </button>
+                </div>
+            </div>
 
         </div>
     </div>

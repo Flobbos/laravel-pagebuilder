@@ -7,6 +7,7 @@ import ColumnComponent from '../ColumnComponent/ColumnComponent';
 import {Row} from "../../models/Row";
 import {Article} from "../../models/Article";
 import RowSpacerComponent from "../RowSpacerComponent/RowSpacerComponent";
+import {indexOf} from 'lodash';
 
 @Component({
     components: {
@@ -18,8 +19,6 @@ export default class RowComponent extends Vue {
 
     @Prop()
     oldRow: Row;
-    @Prop()
-    sorting: number;
 
     @Getter('getArticle') getArticle: Article;
     @Getter('getLanguages') getLanguages: any;
@@ -29,10 +28,13 @@ export default class RowComponent extends Vue {
 
     beforeMount(){
         this.row = this.oldRow;
+        this.row.sorting = this.sorting
     }
 
-    @Watch('sorting', {immediate: true, deep: false})
-    onSortingChanged(){
-        this.row.sorting = this.sorting;
+    get sorting(){
+        let rows = this.getArticle.rows;
+        let index = indexOf(rows,this.row );
+
+        return index;
     }
 };

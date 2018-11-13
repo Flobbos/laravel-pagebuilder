@@ -5,23 +5,22 @@ import {Component, Prop, Watch} from "vue-property-decorator";
 
 import {forEach, indexOf} from 'lodash';
 
-//@ts-ignore
-import {Vue2Dragula} from 'vue2-dragula';
-import 'dragula/dist/dragula.css';
-
 import {Getter, Mutation} from 'vuex-class';
 
 import {forOwn} from 'lodash';
 
-Vue.use(Vue2Dragula/*, {
-    logging: {
-        service: true // to only log methods in service (DragulaService)
-    }
-}*/);
 
 
 import {mapKeys} from 'lodash';
 
+//@ts-ignore
+import ImageElementIcon from '../../svgs/ElementIcons/ImageElementIcon.vue'
+//@ts-ignore
+import TextElementIcon from '../../svgs/ElementIcons/TextElementIcon.vue'
+//@ts-ignore
+import HeadlineTextElementIcon from '../../svgs/ElementIcons/HeadlineTextElementIcon.vue'
+//@ts-ignore
+import Arrow from '../../svgs/ArrowIcon.vue'
 
 //@ts-ignore
 import Sticky from 'vue-sticky-directive';
@@ -29,8 +28,6 @@ import Sticky from 'vue-sticky-directive';
 Vue.use(Sticky);
 
 import moment from 'moment';
-//@ts-ignore
-import Arrow from '../../svgs/Arrow.vue'
 
 // Import date picker css
 import {Article} from "../../models/Article";
@@ -44,7 +41,10 @@ import SettingsView from "../../views/SettingsView/SettingsView";
     components: {
         ContentView,
         SettingsView,
-        Arrow
+        Arrow,
+        ImageElementIcon,
+        TextElementIcon,
+        HeadlineTextElementIcon
 
     },
 })

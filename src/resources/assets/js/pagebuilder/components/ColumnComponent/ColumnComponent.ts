@@ -7,14 +7,24 @@ import axios from "axios";
 import {Column} from "../../models/Column";
 import {forEach} from 'lodash';
 //@ts-ignore
-import Plus from '../../svgs/Plus.vue'
+import Plus from '../../svgs/PlusIcon.vue'
+//@ts-ignore
+import ImageElementIcon from '../../svgs/ElementIcons/ImageElementIcon.vue'
+//@ts-ignore
+import TextElementIcon from '../../svgs/ElementIcons/TextElementIcon.vue'
+//@ts-ignore
+import HeadlineTextElementIcon from '../../svgs/ElementIcons/HeadlineTextElementIcon.vue'
 
 //@ts-ignore
 import pbConfig from '../../config/config.json';
 
+
 @Component({
     components:{
-        Plus
+        Plus,
+        ImageElementIcon,
+        TextElementIcon,
+        HeadlineTextElementIcon
     }
 })
 export default class ColumnComponent extends Vue {
