@@ -29,6 +29,8 @@ import Sticky from 'vue-sticky-directive';
 Vue.use(Sticky);
 
 import moment from 'moment';
+//@ts-ignore
+import Arrow from '../../svgs/Arrow.vue'
 
 // Import date picker css
 import {Article} from "../../models/Article";
@@ -42,6 +44,7 @@ import SettingsView from "../../views/SettingsView/SettingsView";
     components: {
         ContentView,
         SettingsView,
+        Arrow
 
     },
 })

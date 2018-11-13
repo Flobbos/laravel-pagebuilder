@@ -33,7 +33,7 @@
                     <ul>
                         <li>
                             <p>
-                                Sprachen <span class="badge languages-badge"> > </span>
+                                Sprachen <span class="lang-arrow"> <arrow></arrow> </span>
                             </p>
                             <ul class="is-dropright">
                                 <li v-for="lang in languages">
