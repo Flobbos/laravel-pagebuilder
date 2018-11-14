@@ -37,4 +37,8 @@ export default class RowComponent extends Vue {
 
         return index;
     }
+
+    sortRows(){
+
+    }
 };

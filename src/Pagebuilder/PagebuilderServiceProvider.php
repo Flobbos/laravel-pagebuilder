@@ -42,6 +42,7 @@ class PagebuilderServiceProvider extends ServiceProvider{
         //Run fixed bindings
         $this->app->bind(Contracts\ElementContract::class, Elements::class);
         $this->app->bind(Contracts\PagebuilderContract::class, Pagebuilder::class);
+        $this->app->bind(Contracts\RowColumnContract::class, RowColumn::class);
         $this->app->bind(Contracts\LanguageContract::class, Languages::class);
     }
 }

@@ -15,7 +15,7 @@
                         <input class="form-control" type="text" name="name" id="name" v-model="article.name"/>
                         <br>
                         <label for="name">Veröffentlicht am</label>
-                        <date-picker v-model="article.published_on"></date-picker>
+                        <date-picker :config="config" v-model="article.published_on"></date-picker>
                     </div>
                 </div>
                 <div class="row">

@@ -49,11 +49,11 @@ class ArticleController extends Controller{
      */
     public function store(Request $request){
         try{
-            //dd($request->all());
-            $project = $this->articles->saveProject($request);
+            // dd($request->all());
+            $article = $this->articles->create($request);
             return response()->json([
                 'success'=>true,
-                'return_url' => route('articles.edit',$project->id)
+                'return_url' => route('pagebuilder::articles.edit',$article->id)
             ],200);
             //return redirect()->route('admin.articles.index')->withMessage(trans('crud.record_created'));
         } catch (Exception $ex) {
@@ -73,7 +73,7 @@ class ArticleController extends Controller{
         //$project = $this->articles->with('rows.columns.translations','translations')->find($id);
         //dd($project);
         return view('pagebuilder::articles.edit')->with([
-            'article'=>$this->articles->with('rows.columns.translations','translations')->find($id),
+            'article'=>$this->articles->find($id),
             'languages'=>$lang->get(),
             'element_types' => $element_types->get()
         ]);
@@ -88,14 +88,14 @@ class ArticleController extends Controller{
      */
     public function update(Request $request, $id){
         try{
-            //dd($request->all());
             //dd(json_decode($request->get('translations')));
             //dd(json_decode($request->get('rows')));
             $this->articles->update($id, $request);
             //return redirect()->route('admin.articles.index')->withMessage(trans('crud.record_updated'));
+            //throw new Exception('Bix!');
             return response()->json([
                 'success'=>true,
-                'return_url'=>route('admin.articles.edit',$id)
+                'return_url'=>route('pagebuilder::articles.edit',$id)
             ],200);
         } catch (Exception $ex) {
             //return redirect()->back()->withInput()->withErrors($ex->getMessage());
@@ -118,12 +118,4 @@ class ArticleController extends Controller{
         }
     }
     
-    public function deleteProjectRow(Request  $request){
-        return $this->articles->deleteProjectRow($request->get('row_id'));
     }
-    
-    public function deleteProjectColumn(Request $request){
-        return $this->articles->deleteProjectColumn($request->get('column_id'));
-    }
-}
-

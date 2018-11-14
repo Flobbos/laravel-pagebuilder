@@ -6,6 +6,10 @@ interface PagebuilderContract {
     
     public function setClass($key);
     
+    public function get();
+    
+    public function find($id);
+    
     public function create(\Illuminate\Http\Request $request);
     
     public function update($id, \Illuminate\Http\Request $request);

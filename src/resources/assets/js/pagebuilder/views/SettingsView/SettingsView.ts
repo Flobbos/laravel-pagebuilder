@@ -37,7 +37,7 @@ export default class SettingsView extends Vue {
 
     config: object = {
         locale: 'de',
-        format: 'YYYY-MM-DD HH:mm:ss',
+        format: 'YYYY-MM-DDTHH:mm:ss',
         sideBySide: false
     };
 

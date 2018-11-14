@@ -26,6 +26,8 @@ export abstract class ArticleService {
             article.name = oldArticle.name;
             article.id = oldArticle.id;
             article.photo = oldArticle.photo;
+            article.published_on = oldArticle.published_on;
+            article.is_published = oldArticle.is_published;
 
             if (oldArticle.translations && oldArticle.translations.length) {
                 languages.forEach((lang: any) => {

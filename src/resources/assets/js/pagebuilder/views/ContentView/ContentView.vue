@@ -6,7 +6,7 @@
 
 
         <div class="row-component-wrapper">
-            <draggable v-model="rows" :option="{draggable: '.row-component'}" @end="sortRows">
+            <draggable v-model="rows" :option="{draggable: '.row-component'}">
                     <row-component v-for="(row, index) in rows" :old-row="row"
                                    :key="'row' + index"></row-component>
             </draggable>

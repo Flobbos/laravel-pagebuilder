@@ -16796,6 +16796,8 @@ function updateLink (link, options, obj) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Article; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BaseModel__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -16807,6 +16809,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+
 var Article = /** @class */ (function (_super) {
     __extends(Article, _super);
     function Article() {
@@ -16814,7 +16817,8 @@ var Article = /** @class */ (function (_super) {
         _this.photo = '';
         _this.translations = [];
         _this.name = '';
-        _this.published_on = new Date();
+        //@ts-ignore
+        _this.published_on = __WEBPACK_IMPORTED_MODULE_1_moment___default()().format('YYYY-MM-DDTHH:mm:ss');
         _this.is_published = false;
         _this.rows = [];
         return _this;
@@ -83908,6 +83912,8 @@ var ArticleService = /** @class */ (function () {
             article.name = oldArticle.name;
             article.id = oldArticle.id;
             article.photo = oldArticle.photo;
+            article.published_on = oldArticle.published_on;
+            article.is_published = oldArticle.is_published;
             if (oldArticle.translations && oldArticle.translations.length) {
                 languages.forEach(function (lang) {
                     article.translations[lang.id] = new __WEBPACK_IMPORTED_MODULE_2__models_Translation__["a" /* Translation */](lang.id);
@@ -84446,6 +84452,8 @@ var RowComponent = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
+    RowComponent.prototype.sortRows = function () {
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__models_Row__["a" /* Row */])
@@ -89051,7 +89059,6 @@ var render = function() {
             "draggable",
             {
               attrs: { option: { draggable: ".row-component" } },
-              on: { end: _vm.sortRows },
               model: {
                 value: _vm.rows,
                 callback: function($$v) {
@@ -89243,7 +89250,7 @@ var SettingsView = /** @class */ (function (_super) {
         };
         _this.config = {
             locale: 'de',
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DDTHH:mm:ss',
             sideBySide: false
         };
         return _this;
@@ -89368,6 +89375,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("date-picker", {
+                  attrs: { config: _vm.config },
                   model: {
                     value: _vm.article.published_on,
                     callback: function($$v) {
