@@ -2,6 +2,6 @@
 
 return [
     'builder_classes' => [
-        'article' => Flobbos\Pagebuilder\Models\Article::class
+        'article' => Flobbos\Pagebuilder\Models\Article::class,
     ]
 ];

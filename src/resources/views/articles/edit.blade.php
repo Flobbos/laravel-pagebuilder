@@ -5,6 +5,7 @@
     <form action="{{ route('articles.update',$project->id) }}" role="form" method="POST"  enctype="multipart/form-data">
     {{ csrf_field() }}
     {{method_field('PUT')}}
+    npp
         <pagebuilder ref="pagebuilder" :element-types="{{$element_types}}" :old-element="{{ $project->toJson() }}" storage-path="{{$storage_path}}"  :languages="{{$languages}}">
             <div class="panel-heading panel-default" slot="header">
                 <h3 class="panel-title">Projekte</h3>

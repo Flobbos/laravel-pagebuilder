@@ -16,4 +16,8 @@ interface PagebuilderContract {
     
     public function delete($id);
     
+    public function deleteRow($row_id);
+    
+    public function deleteColumn($column_id);
+    
 }

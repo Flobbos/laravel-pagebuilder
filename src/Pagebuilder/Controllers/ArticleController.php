@@ -49,11 +49,11 @@ class ArticleController extends Controller{
      */
     public function store(Request $request){
         try{
-            // dd($request->all());
+            //dd($request->all());
             $article = $this->articles->create($request);
             return response()->json([
                 'success'=>true,
-                'return_url' => route('pagebuilder::articles.edit',$article->id)
+                'return_url' => route('articles.edit',$article->id)
             ],200);
             //return redirect()->route('admin.articles.index')->withMessage(trans('crud.record_created'));
         } catch (Exception $ex) {
@@ -88,6 +88,7 @@ class ArticleController extends Controller{
      */
     public function update(Request $request, $id){
         try{
+            //dd($request->all());
             //dd(json_decode($request->get('translations')));
             //dd(json_decode($request->get('rows')));
             $this->articles->update($id, $request);
@@ -112,10 +113,18 @@ class ArticleController extends Controller{
     public function destroy($id){
         try{
             $this->articles->delete($id);
-            return redirect()->route('pagebuilder::articles.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
+            return redirect()->route('articles.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
         } catch (Exception $ex) {
-            return redirect()->route('pagebuilder::articles.index')->withErrors($ex->getMessage());
+            return redirect()->route('articles.index')->withErrors($ex->getMessage());
         }
     }
     
+    public function deleteRow(Request  $request){
+        return $this->articles->deleteRow($request->get('row_id'));
     }
+    
+    public function deleteColumn(Request $request){
+        return $this->articles->deleteProjectColumn($request->get('column_id'));
+    }
+}
+
