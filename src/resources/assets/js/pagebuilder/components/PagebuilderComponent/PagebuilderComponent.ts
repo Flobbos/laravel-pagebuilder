@@ -76,16 +76,14 @@ export default class PagebuilderComponent extends Vue {
     mounted() {
 
         this.setTheme();
-
         this.setLanguages(this.languages);
+        this.setCurrentLang(this.getLanguages[0]);
         this.setElementTypes(this.elementTypes);
 
         if (this.oldElement) {
-            console.log('alt da');
             this.article = ArticleService.createFromExisting(this.oldElement);
             this.$store.commit('setArticle', this.article);
         } else {
-            console.log('alt nicht da');
             this.article = ArticleService.createNew();
         }
     }
@@ -141,7 +139,6 @@ export default class PagebuilderComponent extends Vue {
     @Watch('article', {immediate: true, deep: true})
     onArticleChanged(val: Article, oldVal: Article) {
         this.setArticle(this.article);
-        console.log(this.$children)
     }
 
 };

@@ -5,7 +5,7 @@
                 <div class="tab-content">
                     <div v-for="(l, index) in $store.getters.getLanguages" role="tabpanel"
                          :id="l.locale"
-                         :class="[l.locale === $store.getters.getCurrentLang ? 'tab-pane active' : 'tab-pane']">
+                         :class="[l.locale === $store.getters.getCurrentLang.locale ? 'tab-pane active' : 'tab-pane']">
                         <input type="hidden" :value="l.id"/>
                         <div class="row">
                             <div class="col-md-12">

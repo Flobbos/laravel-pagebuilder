@@ -107,7 +107,7 @@ After that register the Vuex Store in your Vue instance.
 
 ~~~
 import { createStore } from "./admin_components/store/index.ts"
-const store = createStore();
+import store from "./pagebuilder/store/index.ts"
 
 ...
 

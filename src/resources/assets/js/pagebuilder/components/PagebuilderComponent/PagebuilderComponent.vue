@@ -39,8 +39,8 @@
                             </p>
                             <ul class="is-dropright">
                                 <li v-for="lang in languages">
-                                    <p :class="{active: getCurrentLanguage === lang.locale}"
-                                       @click.prevent="setCurrentLang(lang.locale)">{{lang.name}}</p>
+                                    <p :class="{active: getCurrentLanguage.locale === lang.locale}"
+                                       @click.prevent="setCurrentLang(lang)">{{lang.name}}</p>
                                 </li>
                             </ul>
                         </li>

@@ -81,4 +81,8 @@ export default class ColumnComponent extends Vue {
             this.createColumnLayout();
         }
     }
+
+    test(){
+        console.log('hiho');
+    }
 };

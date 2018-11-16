@@ -9,7 +9,7 @@
             <plus></plus>
         </div>
         <div v-else>
-            <component :is="component" :old-translations="column.translations"></component>
+            <component :is="component" :old-translations="column.translations" @onSuccess="test"></component>
         </div>
     </div>
 </template>

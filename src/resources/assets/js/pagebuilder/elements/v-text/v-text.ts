@@ -23,7 +23,7 @@ export default class VText extends Vue {
     translations: Array<Translation> = [];
     options: object = {
         theme: 'bubble',
-        placeholder: 'Text (' + this.$store.getters.getCurrentLang + ')',
+        placeholder: 'Text (' + this.$store.getters.getCurrentLang.locale + ')',
         modules: {
             toolbar: [
                 ["bold", "italic", "underline"],

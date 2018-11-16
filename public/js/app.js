@@ -15632,9 +15632,9 @@ function toComment(sourceMap) {
 /* unused harmony export Inject */
 /* unused harmony export Provide */
 /* unused harmony export Model */
-/* harmony export (immutable) */ __webpack_exports__["b"] = Prop;
-/* harmony export (immutable) */ __webpack_exports__["c"] = Watch;
-/* unused harmony export Emit */
+/* harmony export (immutable) */ __webpack_exports__["c"] = Prop;
+/* harmony export (immutable) */ __webpack_exports__["d"] = Watch;
+/* harmony export (immutable) */ __webpack_exports__["b"] = Emit;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_class_component__ = __webpack_require__(155);
@@ -34052,7 +34052,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vuex
         article: __WEBPACK_IMPORTED_MODULE_5__models_Article__["a" /* Article */],
         element_types: [],
         languages: [],
-        currentLang: 'de',
+        currentLang: {},
     },
     getters: __WEBPACK_IMPORTED_MODULE_2__getters__["a" /* default */],
     mutations: __WEBPACK_IMPORTED_MODULE_3__mutations__["a" /* default */],
@@ -65575,11 +65575,11 @@ var VueEditor = /** @class */ (function (_super) {
         this.text = html;
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_5_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_5_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", String)
     ], VueEditor.prototype, "content", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_5_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_5_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", String)
     ], VueEditor.prototype, "name", void 0);
     VueEditor = __decorate([
@@ -79578,11 +79578,11 @@ var VueDatePicker = /** @class */ (function (_super) {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", String)
     ], VueDatePicker.prototype, "oldDate", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", String)
     ], VueDatePicker.prototype, "name", void 0);
     VueDatePicker = __decorate([
@@ -82732,14 +82732,13 @@ var PagebuilderComponent = /** @class */ (function (_super) {
     PagebuilderComponent.prototype.mounted = function () {
         this.setTheme();
         this.setLanguages(this.languages);
+        this.setCurrentLang(this.getLanguages[0]);
         this.setElementTypes(this.elementTypes);
         if (this.oldElement) {
-            console.log('alt da');
             this.article = __WEBPACK_IMPORTED_MODULE_10__services_ArticleService__["a" /* ArticleService */].createFromExisting(this.oldElement);
             this.$store.commit('setArticle', this.article);
         }
         else {
-            console.log('alt nicht da');
             this.article = __WEBPACK_IMPORTED_MODULE_10__services_ArticleService__["a" /* ArticleService */].createNew();
         }
     };
@@ -82785,22 +82784,21 @@ var PagebuilderComponent = /** @class */ (function (_super) {
     };
     PagebuilderComponent.prototype.onArticleChanged = function (val, oldVal) {
         this.setArticle(this.article);
-        console.log(this.$children);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Object)
     ], PagebuilderComponent.prototype, "oldElement", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Array)
     ], PagebuilderComponent.prototype, "elementTypes", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Array)
     ], PagebuilderComponent.prototype, "languages", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", String)
     ], PagebuilderComponent.prototype, "storagePath", void 0);
     __decorate([
@@ -82832,7 +82830,7 @@ var PagebuilderComponent = /** @class */ (function (_super) {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_9__models_Article__["a" /* Article */])
     ], PagebuilderComponent.prototype, "getArticle", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Watch */])('article', { immediate: true, deep: true }),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["d" /* Watch */])('article', { immediate: true, deep: true }),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9__models_Article__["a" /* Article */], __WEBPACK_IMPORTED_MODULE_9__models_Article__["a" /* Article */]]),
         __metadata("design:returntype", void 0)
@@ -84472,7 +84470,7 @@ var RowComponent = /** @class */ (function (_super) {
         configurable: true
     });
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__models_Row__["a" /* Row */])
     ], RowComponent.prototype, "row", void 0);
     __decorate([
@@ -84690,8 +84688,11 @@ var ColumnComponent = /** @class */ (function (_super) {
             this.createColumnLayout();
         }
     };
+    ColumnComponent.prototype.test = function () {
+        console.log('hiho');
+    };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__models_Column__["a" /* Column */])
     ], ColumnComponent.prototype, "column", void 0);
     __decorate([
@@ -84997,7 +84998,7 @@ var VHeadlineText = /** @class */ (function (_super) {
         _this.translations = [];
         _this.options = {
             theme: 'bubble',
-            placeholder: 'Text (' + _this.$store.getters.getCurrentLang + ')',
+            placeholder: 'Text (' + _this.$store.getters.getCurrentLang.locale + ')',
             modules: {
                 toolbar: [
                     ["bold", "italic", "underline"],
@@ -85012,7 +85013,7 @@ var VHeadlineText = /** @class */ (function (_super) {
         this.translations = this.oldTranslations;
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Array)
     ], VHeadlineText.prototype, "oldTranslations", void 0);
     __decorate([
@@ -85047,7 +85048,7 @@ var render = function() {
               "div",
               {
                 class: [
-                  l.locale === _vm.$store.getters.getCurrentLang
+                  l.locale === _vm.$store.getters.getCurrentLang.locale
                     ? "tab-pane active"
                     : "tab-pane"
                 ],
@@ -85232,7 +85233,7 @@ var VHeadlineText = /** @class */ (function (_super) {
         _this.translations = [];
         _this.options = {
             theme: 'bubble',
-            placeholder: 'Text (' + _this.$store.getters.getCurrentLang + ')',
+            placeholder: 'Text (' + _this.$store.getters.getCurrentLang.locale + ')',
             modules: {
                 toolbar: [
                     ["bold", "italic", "underline"],
@@ -85247,7 +85248,7 @@ var VHeadlineText = /** @class */ (function (_super) {
         this.translations = this.oldTranslations;
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Array)
     ], VHeadlineText.prototype, "oldTranslations", void 0);
     __decorate([
@@ -85370,7 +85371,7 @@ var VPhotoDescription = /** @class */ (function (_super) {
         };
         _this.quillOptions = {
             theme: 'bubble',
-            placeholder: 'Text (' + _this.$store.getters.getCurrentLang + ')',
+            placeholder: 'Text (' + _this.$store.getters.getCurrentLang.locale + ')',
             modules: {
                 toolbar: [
                     ["bold", "italic", "underline"],
@@ -85384,14 +85385,41 @@ var VPhotoDescription = /** @class */ (function (_super) {
     VPhotoDescription.prototype.beforeMount = function () {
         this.translations = this.oldTranslations;
     };
+    VPhotoDescription.prototype.onSuccess = function (file, response) {
+        //@ts-ignore
+        this.translations[this.currentLang.id].content.photo = response.filename;
+        this.$forceUpdate();
+    };
+    ;
+    VPhotoDescription.prototype.onFileRemove = function (file, error, xhr) {
+        //@ts-ignore
+        this.translations[this.currentLang.id].content.photo = '';
+    };
+    Object.defineProperty(VPhotoDescription.prototype, "currentLang", {
+        get: function () {
+            return this.getCurrentLang;
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Array)
     ], VPhotoDescription.prototype, "oldTranslations", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2_vuex_class__["a" /* Getter */])('getLanguages'),
         __metadata("design:type", Object)
     ], VPhotoDescription.prototype, "getLanguages", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2_vuex_class__["a" /* Getter */])('getCurrentLang'),
+        __metadata("design:type", Object)
+    ], VPhotoDescription.prototype, "getCurrentLang", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onSuccess'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object, Object]),
+        __metadata("design:returntype", void 0)
+    ], VPhotoDescription.prototype, "onSuccess", null);
     VPhotoDescription = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["a" /* Component */])({
             components: {
@@ -85438,7 +85466,7 @@ var render = function() {
               "div",
               {
                 class: [
-                  l.locale === _vm.$store.getters.getCurrentLang
+                  l.locale === _vm.$store.getters.getCurrentLang.locale
                     ? "tab-pane active"
                     : "tab-pane"
                 ],
@@ -85456,14 +85484,50 @@ var render = function() {
                       "div",
                       { staticClass: "form-group" },
                       [
-                        _c("vue-dropzone", {
-                          ref: "photoDescription",
-                          refInFor: true,
-                          attrs: {
-                            id: "dropzone",
-                            options: _vm.dropzoneOptions
-                          }
-                        })
+                        _c(
+                          "vue-dropzone",
+                          {
+                            ref: "photoDescription",
+                            refInFor: true,
+                            attrs: {
+                              id: "dropzone",
+                              options: _vm.dropzoneOptions,
+                              destroyDropzone: false
+                            },
+                            on: {
+                              "vdropzone-success": _vm.onSuccess,
+                              "vdropzone-removed-file": _vm.onFileRemove
+                            }
+                          },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.translations[l.id].content.photo,
+                                  expression: "translations[l.id].content.photo"
+                                }
+                              ],
+                              attrs: { type: "hidden" },
+                              domProps: {
+                                value: _vm.translations[l.id].content.photo
+                              },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.translations[l.id].content,
+                                    "photo",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
                       ],
                       1
                     )
@@ -85666,7 +85730,7 @@ var VPhotoDescription = /** @class */ (function (_super) {
         };
         _this.quillOptions = {
             theme: 'bubble',
-            placeholder: 'Text (' + _this.$store.getters.getCurrentLang + ')',
+            placeholder: 'Text (' + _this.$store.getters.getCurrentLang.locale + ')',
             modules: {
                 toolbar: [
                     ["bold", "italic", "underline"],
@@ -85680,14 +85744,41 @@ var VPhotoDescription = /** @class */ (function (_super) {
     VPhotoDescription.prototype.beforeMount = function () {
         this.translations = this.oldTranslations;
     };
+    VPhotoDescription.prototype.onSuccess = function (file, response) {
+        //@ts-ignore
+        this.translations[this.currentLang.id].content.photo = response.filename;
+        this.$forceUpdate();
+    };
+    ;
+    VPhotoDescription.prototype.onFileRemove = function (file, error, xhr) {
+        //@ts-ignore
+        this.translations[this.currentLang.id].content.photo = '';
+    };
+    Object.defineProperty(VPhotoDescription.prototype, "currentLang", {
+        get: function () {
+            return this.getCurrentLang;
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Array)
     ], VPhotoDescription.prototype, "oldTranslations", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2_vuex_class__["a" /* Getter */])('getLanguages'),
         __metadata("design:type", Object)
     ], VPhotoDescription.prototype, "getLanguages", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2_vuex_class__["a" /* Getter */])('getCurrentLang'),
+        __metadata("design:type", Object)
+    ], VPhotoDescription.prototype, "getCurrentLang", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onSuccess'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object, Object]),
+        __metadata("design:returntype", void 0)
+    ], VPhotoDescription.prototype, "onSuccess", null);
     VPhotoDescription = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["a" /* Component */])({
             components: {
@@ -85786,7 +85877,7 @@ var VText = /** @class */ (function (_super) {
         _this.translations = [];
         _this.options = {
             theme: 'bubble',
-            placeholder: 'Text (' + _this.$store.getters.getCurrentLang + ')',
+            placeholder: 'Text (' + _this.$store.getters.getCurrentLang.locale + ')',
             modules: {
                 toolbar: [
                     ["bold", "italic", "underline"],
@@ -85801,7 +85892,7 @@ var VText = /** @class */ (function (_super) {
         this.translations = this.oldTranslations;
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Array)
     ], VText.prototype, "oldTranslations", void 0);
     __decorate([
@@ -85836,7 +85927,7 @@ var render = function() {
               "div",
               {
                 class: [
-                  l.locale === _vm.$store.getters.getCurrentLang
+                  l.locale === _vm.$store.getters.getCurrentLang.locale
                     ? "tab-pane active"
                     : "tab-pane"
                 ],
@@ -85976,7 +86067,7 @@ var VText = /** @class */ (function (_super) {
         _this.translations = [];
         _this.options = {
             theme: 'bubble',
-            placeholder: 'Text (' + _this.$store.getters.getCurrentLang + ')',
+            placeholder: 'Text (' + _this.$store.getters.getCurrentLang.locale + ')',
             modules: {
                 toolbar: [
                     ["bold", "italic", "underline"],
@@ -85991,7 +86082,7 @@ var VText = /** @class */ (function (_super) {
         this.translations = this.oldTranslations;
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", Array)
     ], VText.prototype, "oldTranslations", void 0);
     __decorate([
@@ -86074,7 +86165,8 @@ var render = function() {
             [
               _c(_vm.component, {
                 tag: "component",
-                attrs: { "old-translations": _vm.column.translations }
+                attrs: { "old-translations": _vm.column.translations },
+                on: { onSuccess: _vm.test }
               })
             ],
             1
@@ -86218,7 +86310,7 @@ var RowSpacerComponent = /** @class */ (function (_super) {
         configurable: true
     });
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0_vue_property_decorator__["b" /* Prop */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__models_Row__["a" /* Row */])
     ], RowSpacerComponent.prototype, "row", void 0);
     __decorate([
@@ -89700,7 +89792,7 @@ var render = function() {
                       "div",
                       {
                         class: [
-                          l.locale === _vm.$store.getters.getCurrentLang
+                          l.locale === _vm.$store.getters.getCurrentLang.locale
                             ? "tab-pane active"
                             : "tab-pane"
                         ],
@@ -89898,12 +89990,12 @@ var render = function() {
                       "p",
                       {
                         class: {
-                          active: _vm.getCurrentLanguage === lang.locale
+                          active: _vm.getCurrentLanguage.locale === lang.locale
                         },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
-                            _vm.setCurrentLang(lang.locale)
+                            _vm.setCurrentLang(lang)
                           }
                         }
                       },

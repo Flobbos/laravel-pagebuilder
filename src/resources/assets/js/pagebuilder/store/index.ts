@@ -12,7 +12,7 @@ export default new Vuex.Store({
             article: Article,
             element_types: [],
             languages: [],
-            currentLang: 'de',
+            currentLang: {},
         },
         getters,
         mutations,
