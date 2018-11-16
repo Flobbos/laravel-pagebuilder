@@ -14,6 +14,7 @@ class PagebuilderServiceProvider extends ServiceProvider{
 
             //publish pagebuilder js assets
             __DIR__.'/../resources/assets/js/admin_components/' => resource_path('js/admin_components'),
+            __DIR__.'/../resources/assets/js/pagebuilder/' => resource_path('js/pagebuilder'),
             __DIR__.'/../resources/assets/js/pagebuilder.js' => resource_path('js/pagebuilder.js')
         ]);
         //load routes
