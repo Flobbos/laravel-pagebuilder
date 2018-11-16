@@ -112,9 +112,9 @@ class ArticleController extends Controller{
     public function destroy($id){
         try{
             $this->articles->delete($id);
-            return redirect()->route('articles.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
+            return redirect()->route('pagebuilder::articles.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
         } catch (Exception $ex) {
-            return redirect()->route('articles.index')->withErrors($ex->getMessage());
+            return redirect()->route('pagebuilder::articles.index')->withErrors($ex->getMessage());
         }
     }
     

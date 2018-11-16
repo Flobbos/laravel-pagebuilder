@@ -8,6 +8,8 @@ import {RowService} from "../../services/RowService";
 //@ts-ignore
 import Plus from '../../svgs/PlusIcon.vue';
 //@ts-ignore
+import SettingsIcon from '../../svgs/SettingsIcon.vue';
+//@ts-ignore
 import Grid6 from '../../svgs/Grid66Icon.vue';
 //@ts-ignore
 import Grid12 from '../../svgs/Grid12Icon.vue';
@@ -20,6 +22,7 @@ import Grid48 from '../../svgs/Grid48Icon.vue';
 @Component({
     components:{
         Plus,
+        SettingsIcon,
         Grid6,
         Grid12,
         Grid48,
@@ -29,15 +32,20 @@ import Grid48 from '../../svgs/Grid48Icon.vue';
 export default class RowSpacerComponent extends Vue {
 
     @Prop()
-    sorting: number;
+    row: Row;
     @Getter('getArticle') getArticle: Article;
 
-    active: boolean = false;
+    isSelectGridOpen: boolean = false;
+    isSettingsOpen: boolean = false;
 
     createRow(columnLayout: string[]){
         let row = RowService.createNew(columnLayout);
         this.article.rows.push(row);
-        this.active = false;
+        this.isSelectGridOpen = false;
+    }
+
+    deleteRow(){
+        RowService.delete(this.row);
     }
 
     get article():Article{

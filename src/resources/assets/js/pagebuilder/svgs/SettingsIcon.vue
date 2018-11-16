@@ -1,15 +1,6 @@
 <template>
     <svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 150 150">
         <defs>
-            <style>
-                .cls-1 {
-                    fill: url(#Unbenannter_Verlauf_19);
-                }
-
-                .cls-2 {
-                    fill: url(#Unbenannter_Verlauf_19-2);
-                }
-            </style>
             <linearGradient id="Unbenannter_Verlauf_19" data-name="Unbenannter Verlauf 19" x1="60.9" y1="78.04" x2="89.1" y2="78.04" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stop-color="#ff416c"/>
                 <stop offset="1" stop-color="#fc6767"/>
@@ -41,6 +32,10 @@
 
         .cls-1 {
             fill: url(#Unbenannter_Verlauf_19);
+        }
+
+        .cls-2 {
+            fill: url(#Unbenannter_Verlauf_19-2);
         }
     }
 </style>

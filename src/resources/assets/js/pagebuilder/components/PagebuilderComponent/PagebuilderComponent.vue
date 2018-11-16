@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row pagebuilder-component">
 
         <div class="pb-side-nav-wrapper">
             <div class="panel pb-side-nav">
@@ -72,13 +72,15 @@
                         <button class="btn pb-button" :class="{active: currentView === 'Settings'}"
                                 @click.prevent="currentView = 'Settings'">Settings
                         </button>
+
+                        <button class="btn pb-button" @click.prevent="changeTheme()">{{theme}}</button>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-12">
-                    <content-view v-if="currentView === 'Content'"></content-view>
+                    <content-view :article="article" v-if="currentView === 'Content'"></content-view>
                     <settings-view v-if="currentView === 'Settings'"></settings-view>
                 </div>
             </div>

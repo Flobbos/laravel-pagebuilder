@@ -71,19 +71,41 @@ export default class PagebuilderComponent extends Vue {
 
     article: Article = new Article();
     currentView: string = 'Content';
+    theme: string = 'dark-theme';
 
     mounted() {
-        console.log('pagebuilder component');
+
+        this.setTheme();
+
         this.setLanguages(this.languages);
         this.setElementTypes(this.elementTypes);
 
         if (this.oldElement) {
             console.log('alt da');
-            this.article = ArticleService.createFromExisting(this.oldElement, this.getLanguages);
+            this.article = ArticleService.createFromExisting(this.oldElement);
             this.$store.commit('setArticle', this.article);
         } else {
             console.log('alt nicht da');
-            this.article = ArticleService.createNew(this.getLanguages);
+            this.article = ArticleService.createNew();
+        }
+    }
+
+    setTheme(){
+        let body = document.querySelector('body') as HTMLElement;
+        body.classList.add('dark-theme');
+    }
+
+    changeTheme(){
+        if(this.theme === 'dark-theme'){
+            let body = document.querySelector('body') as HTMLElement;
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+            this.theme = 'light-theme';
+        }else{
+            let body = document.querySelector('body') as HTMLElement;
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+            this.theme = 'dark-theme';
         }
     }
 
@@ -119,6 +141,7 @@ export default class PagebuilderComponent extends Vue {
     @Watch('article', {immediate: true, deep: true})
     onArticleChanged(val: Article, oldVal: Article) {
         this.setArticle(this.article);
+        console.log(this.$children)
     }
 
 };

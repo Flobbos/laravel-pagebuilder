@@ -2,23 +2,25 @@ import {Row} from "../models/Row";
 import {ColumnService} from "./ColumnService";
 import {Column} from "../models/Column";
 
-import store from '../store/index';
+import {findIndex} from 'lodash';
+
+import store from '../store';
+import Vue from 'vue';
 
 export abstract class RowService {
 
     public static createNew(columnLayout: string[]): Row {
-        const languages = store.getters.getLanguages;
         const row = new Row();
 
         columnLayout.forEach((c: string) =>{
             row.columns.push(
-                ColumnService.createNew(languages, c)
+                ColumnService.createNew(c)
             )
         });
         return row;
     }
 
-    public static createFromExisting(oldRow: any, languages: any) {
+    public static createFromExisting(oldRow: any) {
         let row = new Row();
 
         try {
@@ -30,7 +32,7 @@ export abstract class RowService {
             if (oldRow.columns && oldRow.columns.length) {
 
                 oldRow.columns.forEach((c: any) => {
-                    let column = ColumnService.createFromExisting(c, languages);
+                    let column = ColumnService.createFromExisting(c);
                     row.columns.push(column);
                 })
             }
@@ -38,6 +40,19 @@ export abstract class RowService {
         } catch (e) {
             console.error(e);
             return row;
+        }
+    }
+
+    public static delete(row: Row){
+        if (row.id && row.id !== 0){
+            console.log('delete me from db');
+        } else{
+           let rowIndex = findIndex(store.state.article.rows, (r:Row)=>{
+               return r.uuid == row.uuid;
+           });
+
+           console.log(rowIndex);
+            store.state.article.rows.splice(rowIndex, 1);
         }
     }
 }

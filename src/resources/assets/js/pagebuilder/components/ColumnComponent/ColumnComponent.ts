@@ -30,18 +30,16 @@ import pbConfig from '../../config/config.json';
 export default class ColumnComponent extends Vue {
 
     @Prop()
-    oldColumn: Column;
+    column: Column;
     @Getter('getElementTypeById') getElementTypeById: any;
     @Getter('getLanguages') getLanguages: any;
     @Getter('getElementTypes') getElementTypes: any;
 
-    column: Column = new Column();
     component: string = '';
     columnSize: string = '';
     toolTipActive: boolean = false;
 
     beforeMount() {
-        this.column = this.oldColumn;
     }
 
     mounted() {

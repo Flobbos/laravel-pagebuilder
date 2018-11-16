@@ -18,16 +18,14 @@ import {indexOf} from 'lodash';
 export default class RowComponent extends Vue {
 
     @Prop()
-    oldRow: Row;
+    row: Row;
 
     @Getter('getArticle') getArticle: Article;
     @Getter('getLanguages') getLanguages: any;
 
-    row: Row = new Row();
     columnLimit: number = 1;
 
     beforeMount(){
-        this.row = this.oldRow;
         this.row.sorting = this.sorting
     }
 
@@ -36,9 +34,5 @@ export default class RowComponent extends Vue {
         let index = indexOf(rows,this.row );
 
         return index;
-    }
-
-    sortRows(){
-
     }
 };

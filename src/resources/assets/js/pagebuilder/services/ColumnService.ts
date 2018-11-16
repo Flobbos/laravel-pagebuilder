@@ -3,12 +3,14 @@ import {TranslationService} from "./TranslationService";
 import {Translation} from "../models/Translation";
 
 import Vue from 'vue';
+import store from "../store";
 
 
 export abstract class ColumnService {
 
 
-    public static createNew(languages: any, columnSize: string): Column {
+    public static createNew(columnSize: string): Column {
+        const languages = store.getters.getLanguages;
         let column = new Column();
 
         column.column_size = columnSize;
@@ -20,7 +22,8 @@ export abstract class ColumnService {
         return column;
     }
 
-    public static createFromExisting(oldColumn: any, languages: any): Column {
+    public static createFromExisting(oldColumn: any): Column {
+        const languages = store.getters.getLanguages;
         let column = new Column();
         try {
 

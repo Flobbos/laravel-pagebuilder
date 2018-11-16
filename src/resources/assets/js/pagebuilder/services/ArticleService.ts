@@ -9,7 +9,8 @@ const languages = store.getters.getLanguages;
 
 export abstract class ArticleService {
 
-    public static createNew(languages: any): Article {
+    public static createNew(): Article {
+        const languages = store.getters.getLanguages;
         let article = new Article();
 
         languages.forEach((lang: any) => {
@@ -19,7 +20,8 @@ export abstract class ArticleService {
         return article
     }
 
-    public static createFromExisting(oldArticle: any, languages: any): Article {
+    public static createFromExisting(oldArticle: any): Article {
+        const languages = store.getters.getLanguages;
         let article = new Article();
         try {
 
@@ -44,7 +46,7 @@ export abstract class ArticleService {
 
             if (oldArticle.rows && oldArticle.rows.length) {
                 oldArticle.rows.forEach((r: any) => {
-                    let row = RowService.createFromExisting(r, languages);
+                    let row = RowService.createFromExisting(r);
                     article.rows.push(row);
                 })
             }

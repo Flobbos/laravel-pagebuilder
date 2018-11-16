@@ -1,24 +1,53 @@
 //Colors
-$pb-bg-color: #202529;
-$pb-side-nav-color: #222b32;
 $pb-button-background-gradient: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);
-
+$pb-bg-dark-theme-color: #202529;
+$pb-bg-light-theme-color: #ecf0f1;
+$pb-side-nav-color: #222b32;
 $pb-active-color: #ff416c;
 $pb-gray: #bdc3c7;
 $pb-icon-color: #fd5c68;
 $pb-element-icon-color: #5e7e9e;
 
 body {
-  background-color: $pb-bg-color;
+
+  transition: background-color .3s linear;
+
+  &.dark-theme {
+    background-color: $pb-bg-dark-theme-color;
+
+    .pb-side-nav {
+      background-color: $pb-side-nav-color;
+
+      .panel-body{
+
+        p{
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &.light-theme {
+    background-color: $pb-bg-light-theme-color;
+
+    .pb-side-nav {
+      background-color: $pb-bg-light-theme-color;
+
+      .panel-body{
+
+        p{
+          color: $pb-bg-dark-theme-color;
+        }
+      }
+    }
+  }
 }
 
 * {
   font-family: futura-pt, sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
-button{
+button {
 
   &:focus {
     outline: none;
@@ -95,12 +124,12 @@ button{
     color: white;
     font-size: 25px;
     padding: 9px 47px;
-    box-shadow: none;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     background-size: 200% auto;
     transition: background-position .3s linear;
     position: relative;
+    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);
 
     &:hover, &.active {
       background-position: right center;
@@ -125,8 +154,9 @@ button{
 
     .pb-side-nav {
       position: relative;
-      background-color: $pb-side-nav-color;
+      box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);
       z-index: 1;
+      transition: background-color .3s linear;
 
       ul {
         list-style: none;
@@ -137,7 +167,7 @@ button{
         li {
 
           p {
-            color: white;
+            transition: color .3s linear;
             font-size: 20px;
 
             .element-icons {
@@ -147,79 +177,101 @@ button{
         }
       }
 
-      .lang-arrow{
+      .lang-arrow {
         float: right;
       }
     }
   }
 
-  .button-tooltip-wrapper{
+  .button-tooltip-wrapper {
     position: absolute;
-    left: -40px;
     bottom: 0;
     width: 100%;
     transform: translateY(50%);
 
-    span{
+    &.left{
+    left: -40px;
+
+      .pb-tooltip{
+        left: -35px;
+
+        &:after{
+          left: 35px;
+        }
+      }
+    }
+
+    &.right{
+      right: -40px;
+      text-align: right;
+
+      .pb-tooltip{
+        right: -35px;
+
+        &:after{
+          right: 35px;
+        }
+      }
+    }
+
+    span {
       cursor: pointer;
     }
-  }
 
-  .pb-tooltip {
-    position: absolute;
-    left: -35px;
-    bottom: 0;
-    transform: translateY(135%);
-    padding: 1rem;
-    background-color: $pb-element-icon-color;
-    color: #fff;
-    border-radius: 3px;
-    text-align: left;
-
-    .text{
-      display: inline-block;
-      line-height: 1;
-      font-size: 14px;
-      margin-right: 0.25rem;
-      cursor: unset;
-    }
-
-    span{
-      cursor: pointer;
-      margin-left: 1rem;
-    }
-
-    &:after {
-      content: '';
+    .pb-tooltip {
       position: absolute;
-      top: 1px;
-      left: 35px;
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 15px solid #5e7e9e;
-      transform: translateY(-97%);
+      bottom: 0;
+      transform: translateY(135%);
+      padding: 1rem;
+      background-color: $pb-element-icon-color;
+      color: #fff;
+      border-radius: 3px;
+      text-align: left;
+
+      .text {
+        display: inline-block;
+        line-height: 1;
+        font-size: 14px;
+        margin-right: 0.25rem;
+        cursor: unset;
+      }
+
+      span {
+        cursor: pointer;
+        margin-left: 1rem;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid #5e7e9e;
+        transform: translateY(-97%);
+      }
     }
   }
 
   //Quill Tooltip
 
-  .ql-tooltip{
+  .ql-tooltip {
     background-color: #5e7e9e !important;
     color: #fff !important;
     border-radius: 3px !important;
 
-    .ql-tooltip-arrow{
+    .ql-tooltip-arrow {
       border-bottom: 6px solid #5e7e9e !important;
     }
   }
 
   //Quill Placeholder
 
-  .ql-editor{
+  .ql-editor {
 
-    &.ql-blank{
+    &.ql-blank {
 
       &::before {
 
@@ -230,6 +282,10 @@ button{
   }
 }
 
-.workspace{
+.workspace {
   max-width: 1200px;
+}
+
+.sortable-ghost{
+  overflow: hidden;
 }
