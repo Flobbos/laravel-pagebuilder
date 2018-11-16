@@ -286,6 +286,6 @@ button {
   max-width: 1200px;
 }
 
-.sortable-ghost{
-  overflow: hidden;
+.sortable-ghost, .sortable-chosen{
+  overflow: hidden !important;
 }

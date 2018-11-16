@@ -1,7 +1,7 @@
 import Vue from "vue";
 
 //@ts-ignore
-import {Component, Prop, Watch} from "vue-property-decorator";
+import {Component, Prop, Watch, Emit} from "vue-property-decorator";
 import {Getter, Mutation} from "vuex-class";
 import axios from "axios";
 import {Column} from "../../models/Column";
@@ -82,7 +82,7 @@ export default class ColumnComponent extends Vue {
         }
     }
 
-    test(){
-        console.log('hiho');
+    @Emit('onImageUpload')
+    onImageUpload(){
     }
 };

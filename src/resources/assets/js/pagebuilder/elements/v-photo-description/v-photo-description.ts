@@ -56,11 +56,25 @@ export default class VPhotoDescription extends Vue {
         }
     };
 
+    mounted() {
+
+        this.languages.forEach((l:any)=>{
+            //@ts-ignore
+            if (this.translations[l.id] && this.translations[l.id].content.photo && this.translations[l.id].content.photo.length !== 0) {
+                //@ts-ignore
+                let file = {size: 123, name: this.translations[l.id].content.photo, type: '/image.*/'};
+                let url = '/storage/images/' + file.name;
+                //@ts-ignore
+                this.$refs['photoDescription' + l.id][0].manuallyAddFile(file, url)
+            }
+        })
+    }
+
     beforeMount() {
         this.translations = this.oldTranslations;
     }
 
-    @Emit('onSuccess')
+    @Emit('onImageUpload')
     onSuccess(file: any, response: any) {
         //@ts-ignore
         this.translations[this.currentLang.id].content.photo = response.filename;
@@ -71,6 +85,10 @@ export default class VPhotoDescription extends Vue {
     onFileRemove(file: any, error: any, xhr: any) {
         //@ts-ignore
         this.translations[this.currentLang.id].content.photo = '';
+    }
+
+    get languages(){
+        return this.getLanguages;
     }
 
     get currentLang() {

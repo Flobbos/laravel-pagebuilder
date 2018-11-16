@@ -1,6 +1,6 @@
 <template>
     <div class="row-component row">
-            <column-component  :column="column" v-for="column in row.columns" :key="column.uuid"></column-component>
+            <column-component  :column="column" v-for="column in row.columns" :key="column.uuid" @onImageUpload="onImageUpload"></column-component>
         <row-spacer-component :row="row"></row-spacer-component>
     </div>
 </template>

@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import {Component, Watch} from "vue-property-decorator";
+import {Component, Watch, Emit} from "vue-property-decorator";
 import RowComponent from "../../components/RowComponent/RowComponent";
-import {Getter} from "vuex-class";
+import {Getter, Mutation} from "vuex-class";
 import {Article} from "../../models/Article";
 import {Row} from "../../models/Row";
 import RowSpacerComponent from "../../components/RowSpacerComponent/RowSpacerComponent";
@@ -20,8 +20,14 @@ import {indexOf} from 'lodash';
 export default class ContentView extends Vue{
 
     @Getter('getArticle') getArticle: Article;
+    @Mutation('setArticle') setArticle: any;
 
     get article(): Article{
         return this.getArticle;
+    }
+
+    @Emit('onImageUpload')
+    onImageUpload(){
+        this.setArticle(this.article);
     }
 }

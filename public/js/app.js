@@ -82647,7 +82647,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\nbody {\n  transition: background-color .3s linear;\n}\nbody.dark-theme {\n    background-color: #202529;\n}\nbody.dark-theme .pb-side-nav {\n      background-color: #222b32;\n}\nbody.dark-theme .pb-side-nav .panel-body p {\n        color: #fff;\n}\nbody.light-theme {\n    background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav {\n      background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav .panel-body p {\n        color: #202529;\n}\n* {\n  font-family: futura-pt, sans-serif;\n}\nbutton:focus {\n  outline: none;\n  border: none;\n}\n.pagebuilder-component .pb-button-group .pb-button {\n  margin-right: 30px;\n}\n.pagebuilder-component .has-dropright li p {\n  margin-bottom: 0;\n}\n.pagebuilder-component .has-dropright li p span.badge {\n    width: 30px;\n    height: 30px;\n    float: right;\n    background: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n    background-size: 200%;\n    border-radius: 50%;\n    font-size: 26px;\n    color: #222b32;\n    font-family: \"futura-pt-bold\", sans-serif;\n}\n.pagebuilder-component .has-dropright .is-dropright {\n  background-color: #5e7e9e;\n  position: absolute;\n  transform: translateX(100%);\n  top: 0;\n  right: 0;\n  width: 0;\n  overflow: hidden;\n  border-radius: 4px;\n  transition: width .3s ease-in;\n}\n.pagebuilder-component .has-dropright .is-dropright li {\n    padding: 0.5rem 2rem;\n    cursor: pointer;\n}\n.pagebuilder-component .has-dropright .is-dropright li p.active {\n      color: #ff416c;\n}\n.pagebuilder-component .has-dropright:hover .is-dropright {\n  opacity: 1;\n  width: 200px;\n}\n.pagebuilder-component .pb-button {\n  background-image: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n  color: white;\n  font-size: 25px;\n  padding: 9px 47px;\n  border: none;\n  border-radius: 4px;\n  background-size: 200% auto;\n  transition: background-position .3s linear;\n  position: relative;\n  box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n}\n.pagebuilder-component .pb-button:hover, .pagebuilder-component .pb-button.active {\n    background-position: right center;\n}\n.pagebuilder-component .pb-button:focus {\n    outline: none;\n    border: none;\n}\n.pagebuilder-component .pb-navigation-buttons {\n  margin-bottom: 30px;\n}\n.pagebuilder-component .pb-side-nav-wrapper {\n  position: fixed;\n  width: 295px !important;\n  margin-top: 90px;\n  left: 2%;\n  z-index: 110;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav {\n    position: relative;\n    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n    z-index: 1;\n    transition: background-color .3s linear;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul {\n      list-style: none;\n      margin-left: 0;\n      padding-left: 0;\n      margin-bottom: 0;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p {\n        transition: color .3s linear;\n        font-size: 20px;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p .element-icons {\n          color: #5e7e9e;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav .lang-arrow {\n      float: right;\n}\n.pagebuilder-component .button-tooltip-wrapper {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  transform: translateY(50%);\n}\n.pagebuilder-component .button-tooltip-wrapper.left {\n    left: -40px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip {\n      left: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip:after {\n        left: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right {\n    right: -40px;\n    text-align: right;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip {\n      right: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip:after {\n        right: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper span {\n    cursor: pointer;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip {\n    position: absolute;\n    bottom: 0;\n    transform: translateY(135%);\n    padding: 1rem;\n    background-color: #5e7e9e;\n    color: #fff;\n    border-radius: 3px;\n    text-align: left;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip .text {\n      display: inline-block;\n      line-height: 1;\n      font-size: 14px;\n      margin-right: 0.25rem;\n      cursor: unset;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip span {\n      cursor: pointer;\n      margin-left: 1rem;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip:after {\n      content: '';\n      position: absolute;\n      top: 1px;\n      width: 0;\n      height: 0;\n      border-left: 15px solid transparent;\n      border-right: 15px solid transparent;\n      border-bottom: 15px solid #5e7e9e;\n      transform: translateY(-97%);\n}\n.pagebuilder-component .ql-tooltip {\n  background-color: #5e7e9e !important;\n  color: #fff !important;\n  border-radius: 3px !important;\n}\n.pagebuilder-component .ql-tooltip .ql-tooltip-arrow {\n    border-bottom: 6px solid #5e7e9e !important;\n}\n.pagebuilder-component .ql-editor.ql-blank::before {\n  color: #999999;\n  font-style: normal;\n}\n.workspace {\n  max-width: 1200px;\n}\n.sortable-ghost {\n  overflow: hidden;\n}\n", ""]);
+exports.push([module.i, "\nbody {\n  transition: background-color .3s linear;\n}\nbody.dark-theme {\n    background-color: #202529;\n}\nbody.dark-theme .pb-side-nav {\n      background-color: #222b32;\n}\nbody.dark-theme .pb-side-nav .panel-body p {\n        color: #fff;\n}\nbody.light-theme {\n    background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav {\n      background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav .panel-body p {\n        color: #202529;\n}\n* {\n  font-family: futura-pt, sans-serif;\n}\nbutton:focus {\n  outline: none;\n  border: none;\n}\n.pagebuilder-component .pb-button-group .pb-button {\n  margin-right: 30px;\n}\n.pagebuilder-component .has-dropright li p {\n  margin-bottom: 0;\n}\n.pagebuilder-component .has-dropright li p span.badge {\n    width: 30px;\n    height: 30px;\n    float: right;\n    background: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n    background-size: 200%;\n    border-radius: 50%;\n    font-size: 26px;\n    color: #222b32;\n    font-family: \"futura-pt-bold\", sans-serif;\n}\n.pagebuilder-component .has-dropright .is-dropright {\n  background-color: #5e7e9e;\n  position: absolute;\n  transform: translateX(100%);\n  top: 0;\n  right: 0;\n  width: 0;\n  overflow: hidden;\n  border-radius: 4px;\n  transition: width .3s ease-in;\n}\n.pagebuilder-component .has-dropright .is-dropright li {\n    padding: 0.5rem 2rem;\n    cursor: pointer;\n}\n.pagebuilder-component .has-dropright .is-dropright li p.active {\n      color: #ff416c;\n}\n.pagebuilder-component .has-dropright:hover .is-dropright {\n  opacity: 1;\n  width: 200px;\n}\n.pagebuilder-component .pb-button {\n  background-image: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n  color: white;\n  font-size: 25px;\n  padding: 9px 47px;\n  border: none;\n  border-radius: 4px;\n  background-size: 200% auto;\n  transition: background-position .3s linear;\n  position: relative;\n  box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n}\n.pagebuilder-component .pb-button:hover, .pagebuilder-component .pb-button.active {\n    background-position: right center;\n}\n.pagebuilder-component .pb-button:focus {\n    outline: none;\n    border: none;\n}\n.pagebuilder-component .pb-navigation-buttons {\n  margin-bottom: 30px;\n}\n.pagebuilder-component .pb-side-nav-wrapper {\n  position: fixed;\n  width: 295px !important;\n  margin-top: 90px;\n  left: 2%;\n  z-index: 110;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav {\n    position: relative;\n    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n    z-index: 1;\n    transition: background-color .3s linear;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul {\n      list-style: none;\n      margin-left: 0;\n      padding-left: 0;\n      margin-bottom: 0;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p {\n        transition: color .3s linear;\n        font-size: 20px;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p .element-icons {\n          color: #5e7e9e;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav .lang-arrow {\n      float: right;\n}\n.pagebuilder-component .button-tooltip-wrapper {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  transform: translateY(50%);\n}\n.pagebuilder-component .button-tooltip-wrapper.left {\n    left: -40px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip {\n      left: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip:after {\n        left: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right {\n    right: -40px;\n    text-align: right;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip {\n      right: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip:after {\n        right: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper span {\n    cursor: pointer;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip {\n    position: absolute;\n    bottom: 0;\n    transform: translateY(135%);\n    padding: 1rem;\n    background-color: #5e7e9e;\n    color: #fff;\n    border-radius: 3px;\n    text-align: left;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip .text {\n      display: inline-block;\n      line-height: 1;\n      font-size: 14px;\n      margin-right: 0.25rem;\n      cursor: unset;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip span {\n      cursor: pointer;\n      margin-left: 1rem;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip:after {\n      content: '';\n      position: absolute;\n      top: 1px;\n      width: 0;\n      height: 0;\n      border-left: 15px solid transparent;\n      border-right: 15px solid transparent;\n      border-bottom: 15px solid #5e7e9e;\n      transform: translateY(-97%);\n}\n.pagebuilder-component .ql-tooltip {\n  background-color: #5e7e9e !important;\n  color: #fff !important;\n  border-radius: 3px !important;\n}\n.pagebuilder-component .ql-tooltip .ql-tooltip-arrow {\n    border-bottom: 6px solid #5e7e9e !important;\n}\n.pagebuilder-component .ql-editor.ql-blank::before {\n  color: #999999;\n  font-style: normal;\n}\n.workspace {\n  max-width: 1200px;\n}\n.sortable-ghost, .sortable-chosen {\n  overflow: hidden !important;\n}\n", ""]);
 
 // exports
 
@@ -84235,7 +84235,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\nbody[data-v-337546bc] {\n  transition: background-color .3s linear;\n}\nbody.dark-theme[data-v-337546bc] {\n    background-color: #202529;\n}\nbody.dark-theme .pb-side-nav[data-v-337546bc] {\n      background-color: #222b32;\n}\nbody.dark-theme .pb-side-nav .panel-body p[data-v-337546bc] {\n        color: #fff;\n}\nbody.light-theme[data-v-337546bc] {\n    background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav[data-v-337546bc] {\n      background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav .panel-body p[data-v-337546bc] {\n        color: #202529;\n}\n*[data-v-337546bc] {\n  font-family: futura-pt, sans-serif;\n}\nbutton[data-v-337546bc]:focus {\n  outline: none;\n  border: none;\n}\n.pagebuilder-component .pb-button-group .pb-button[data-v-337546bc] {\n  margin-right: 30px;\n}\n.pagebuilder-component .has-dropright li p[data-v-337546bc] {\n  margin-bottom: 0;\n}\n.pagebuilder-component .has-dropright li p span.badge[data-v-337546bc] {\n    width: 30px;\n    height: 30px;\n    float: right;\n    background: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n    background-size: 200%;\n    border-radius: 50%;\n    font-size: 26px;\n    color: #222b32;\n    font-family: \"futura-pt-bold\", sans-serif;\n}\n.pagebuilder-component .has-dropright .is-dropright[data-v-337546bc] {\n  background-color: #5e7e9e;\n  position: absolute;\n  transform: translateX(100%);\n  top: 0;\n  right: 0;\n  width: 0;\n  overflow: hidden;\n  border-radius: 4px;\n  transition: width .3s ease-in;\n}\n.pagebuilder-component .has-dropright .is-dropright li[data-v-337546bc] {\n    padding: 0.5rem 2rem;\n    cursor: pointer;\n}\n.pagebuilder-component .has-dropright .is-dropright li p.active[data-v-337546bc] {\n      color: #ff416c;\n}\n.pagebuilder-component .has-dropright:hover .is-dropright[data-v-337546bc] {\n  opacity: 1;\n  width: 200px;\n}\n.pagebuilder-component .pb-button[data-v-337546bc] {\n  background-image: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n  color: white;\n  font-size: 25px;\n  padding: 9px 47px;\n  border: none;\n  border-radius: 4px;\n  background-size: 200% auto;\n  transition: background-position .3s linear;\n  position: relative;\n  box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n}\n.pagebuilder-component .pb-button[data-v-337546bc]:hover, .pagebuilder-component .pb-button.active[data-v-337546bc] {\n    background-position: right center;\n}\n.pagebuilder-component .pb-button[data-v-337546bc]:focus {\n    outline: none;\n    border: none;\n}\n.pagebuilder-component .pb-navigation-buttons[data-v-337546bc] {\n  margin-bottom: 30px;\n}\n.pagebuilder-component .pb-side-nav-wrapper[data-v-337546bc] {\n  position: fixed;\n  width: 295px !important;\n  margin-top: 90px;\n  left: 2%;\n  z-index: 110;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav[data-v-337546bc] {\n    position: relative;\n    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n    z-index: 1;\n    transition: background-color .3s linear;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul[data-v-337546bc] {\n      list-style: none;\n      margin-left: 0;\n      padding-left: 0;\n      margin-bottom: 0;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p[data-v-337546bc] {\n        transition: color .3s linear;\n        font-size: 20px;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p .element-icons[data-v-337546bc] {\n          color: #5e7e9e;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav .lang-arrow[data-v-337546bc] {\n      float: right;\n}\n.pagebuilder-component .button-tooltip-wrapper[data-v-337546bc] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  transform: translateY(50%);\n}\n.pagebuilder-component .button-tooltip-wrapper.left[data-v-337546bc] {\n    left: -40px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip[data-v-337546bc] {\n      left: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip[data-v-337546bc]:after {\n        left: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right[data-v-337546bc] {\n    right: -40px;\n    text-align: right;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip[data-v-337546bc] {\n      right: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip[data-v-337546bc]:after {\n        right: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper span[data-v-337546bc] {\n    cursor: pointer;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip[data-v-337546bc] {\n    position: absolute;\n    bottom: 0;\n    transform: translateY(135%);\n    padding: 1rem;\n    background-color: #5e7e9e;\n    color: #fff;\n    border-radius: 3px;\n    text-align: left;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip .text[data-v-337546bc] {\n      display: inline-block;\n      line-height: 1;\n      font-size: 14px;\n      margin-right: 0.25rem;\n      cursor: unset;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip span[data-v-337546bc] {\n      cursor: pointer;\n      margin-left: 1rem;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip[data-v-337546bc]:after {\n      content: '';\n      position: absolute;\n      top: 1px;\n      width: 0;\n      height: 0;\n      border-left: 15px solid transparent;\n      border-right: 15px solid transparent;\n      border-bottom: 15px solid #5e7e9e;\n      transform: translateY(-97%);\n}\n.pagebuilder-component .ql-tooltip[data-v-337546bc] {\n  background-color: #5e7e9e !important;\n  color: #fff !important;\n  border-radius: 3px !important;\n}\n.pagebuilder-component .ql-tooltip .ql-tooltip-arrow[data-v-337546bc] {\n    border-bottom: 6px solid #5e7e9e !important;\n}\n.pagebuilder-component .ql-editor.ql-blank[data-v-337546bc]::before {\n  color: #999999;\n  font-style: normal;\n}\n.workspace[data-v-337546bc] {\n  max-width: 1200px;\n}\n.sortable-ghost[data-v-337546bc] {\n  overflow: hidden;\n}\n.content-view[data-v-337546bc] {\n  position: relative;\n  min-height: 500px;\n  border-radius: 2px;\n  background-color: white;\n  padding: 25px 0;\n  transition: all .75s ease-out;\n  max-width: 1200px;\n}\n", ""]);
+exports.push([module.i, "\nbody[data-v-337546bc] {\n  transition: background-color .3s linear;\n}\nbody.dark-theme[data-v-337546bc] {\n    background-color: #202529;\n}\nbody.dark-theme .pb-side-nav[data-v-337546bc] {\n      background-color: #222b32;\n}\nbody.dark-theme .pb-side-nav .panel-body p[data-v-337546bc] {\n        color: #fff;\n}\nbody.light-theme[data-v-337546bc] {\n    background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav[data-v-337546bc] {\n      background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav .panel-body p[data-v-337546bc] {\n        color: #202529;\n}\n*[data-v-337546bc] {\n  font-family: futura-pt, sans-serif;\n}\nbutton[data-v-337546bc]:focus {\n  outline: none;\n  border: none;\n}\n.pagebuilder-component .pb-button-group .pb-button[data-v-337546bc] {\n  margin-right: 30px;\n}\n.pagebuilder-component .has-dropright li p[data-v-337546bc] {\n  margin-bottom: 0;\n}\n.pagebuilder-component .has-dropright li p span.badge[data-v-337546bc] {\n    width: 30px;\n    height: 30px;\n    float: right;\n    background: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n    background-size: 200%;\n    border-radius: 50%;\n    font-size: 26px;\n    color: #222b32;\n    font-family: \"futura-pt-bold\", sans-serif;\n}\n.pagebuilder-component .has-dropright .is-dropright[data-v-337546bc] {\n  background-color: #5e7e9e;\n  position: absolute;\n  transform: translateX(100%);\n  top: 0;\n  right: 0;\n  width: 0;\n  overflow: hidden;\n  border-radius: 4px;\n  transition: width .3s ease-in;\n}\n.pagebuilder-component .has-dropright .is-dropright li[data-v-337546bc] {\n    padding: 0.5rem 2rem;\n    cursor: pointer;\n}\n.pagebuilder-component .has-dropright .is-dropright li p.active[data-v-337546bc] {\n      color: #ff416c;\n}\n.pagebuilder-component .has-dropright:hover .is-dropright[data-v-337546bc] {\n  opacity: 1;\n  width: 200px;\n}\n.pagebuilder-component .pb-button[data-v-337546bc] {\n  background-image: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n  color: white;\n  font-size: 25px;\n  padding: 9px 47px;\n  border: none;\n  border-radius: 4px;\n  background-size: 200% auto;\n  transition: background-position .3s linear;\n  position: relative;\n  box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n}\n.pagebuilder-component .pb-button[data-v-337546bc]:hover, .pagebuilder-component .pb-button.active[data-v-337546bc] {\n    background-position: right center;\n}\n.pagebuilder-component .pb-button[data-v-337546bc]:focus {\n    outline: none;\n    border: none;\n}\n.pagebuilder-component .pb-navigation-buttons[data-v-337546bc] {\n  margin-bottom: 30px;\n}\n.pagebuilder-component .pb-side-nav-wrapper[data-v-337546bc] {\n  position: fixed;\n  width: 295px !important;\n  margin-top: 90px;\n  left: 2%;\n  z-index: 110;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav[data-v-337546bc] {\n    position: relative;\n    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n    z-index: 1;\n    transition: background-color .3s linear;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul[data-v-337546bc] {\n      list-style: none;\n      margin-left: 0;\n      padding-left: 0;\n      margin-bottom: 0;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p[data-v-337546bc] {\n        transition: color .3s linear;\n        font-size: 20px;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p .element-icons[data-v-337546bc] {\n          color: #5e7e9e;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav .lang-arrow[data-v-337546bc] {\n      float: right;\n}\n.pagebuilder-component .button-tooltip-wrapper[data-v-337546bc] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  transform: translateY(50%);\n}\n.pagebuilder-component .button-tooltip-wrapper.left[data-v-337546bc] {\n    left: -40px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip[data-v-337546bc] {\n      left: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip[data-v-337546bc]:after {\n        left: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right[data-v-337546bc] {\n    right: -40px;\n    text-align: right;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip[data-v-337546bc] {\n      right: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip[data-v-337546bc]:after {\n        right: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper span[data-v-337546bc] {\n    cursor: pointer;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip[data-v-337546bc] {\n    position: absolute;\n    bottom: 0;\n    transform: translateY(135%);\n    padding: 1rem;\n    background-color: #5e7e9e;\n    color: #fff;\n    border-radius: 3px;\n    text-align: left;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip .text[data-v-337546bc] {\n      display: inline-block;\n      line-height: 1;\n      font-size: 14px;\n      margin-right: 0.25rem;\n      cursor: unset;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip span[data-v-337546bc] {\n      cursor: pointer;\n      margin-left: 1rem;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip[data-v-337546bc]:after {\n      content: '';\n      position: absolute;\n      top: 1px;\n      width: 0;\n      height: 0;\n      border-left: 15px solid transparent;\n      border-right: 15px solid transparent;\n      border-bottom: 15px solid #5e7e9e;\n      transform: translateY(-97%);\n}\n.pagebuilder-component .ql-tooltip[data-v-337546bc] {\n  background-color: #5e7e9e !important;\n  color: #fff !important;\n  border-radius: 3px !important;\n}\n.pagebuilder-component .ql-tooltip .ql-tooltip-arrow[data-v-337546bc] {\n    border-bottom: 6px solid #5e7e9e !important;\n}\n.pagebuilder-component .ql-editor.ql-blank[data-v-337546bc]::before {\n  color: #999999;\n  font-style: normal;\n}\n.workspace[data-v-337546bc] {\n  max-width: 1200px;\n}\n.sortable-ghost[data-v-337546bc], .sortable-chosen[data-v-337546bc] {\n  overflow: hidden !important;\n}\n.content-view[data-v-337546bc] {\n  position: relative;\n  min-height: 500px;\n  border-radius: 2px;\n  background-color: white;\n  padding: 25px 0;\n  transition: all .75s ease-out;\n  max-width: 1200px;\n}\n", ""]);
 
 // exports
 
@@ -84296,10 +84296,23 @@ var ContentView = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
+    ContentView.prototype.onImageUpload = function () {
+        this.setArticle(this.article);
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3_vuex_class__["a" /* Getter */])('getArticle'),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__models_Article__["a" /* Article */])
     ], ContentView.prototype, "getArticle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3_vuex_class__["b" /* Mutation */])('setArticle'),
+        __metadata("design:type", Object)
+    ], ContentView.prototype, "setArticle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onImageUpload'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], ContentView.prototype, "onImageUpload", null);
     ContentView = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["a" /* Component */])({
             components: {
@@ -84469,6 +84482,8 @@ var RowComponent = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
+    RowComponent.prototype.onImageUpload = function () {
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__models_Row__["a" /* Row */])
@@ -84481,6 +84496,12 @@ var RowComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_2_vuex_class__["a" /* Getter */])('getLanguages'),
         __metadata("design:type", Object)
     ], RowComponent.prototype, "getLanguages", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onImageUpload'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], RowComponent.prototype, "onImageUpload", null);
     RowComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["a" /* Component */])({
             components: {
@@ -84581,7 +84602,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\nbody {\n  transition: background-color .3s linear;\n}\nbody.dark-theme {\n    background-color: #202529;\n}\nbody.dark-theme .pb-side-nav {\n      background-color: #222b32;\n}\nbody.dark-theme .pb-side-nav .panel-body p {\n        color: #fff;\n}\nbody.light-theme {\n    background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav {\n      background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav .panel-body p {\n        color: #202529;\n}\n* {\n  font-family: futura-pt, sans-serif;\n}\nbutton:focus {\n  outline: none;\n  border: none;\n}\n.pagebuilder-component .pb-button-group .pb-button {\n  margin-right: 30px;\n}\n.pagebuilder-component .has-dropright li p {\n  margin-bottom: 0;\n}\n.pagebuilder-component .has-dropright li p span.badge {\n    width: 30px;\n    height: 30px;\n    float: right;\n    background: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n    background-size: 200%;\n    border-radius: 50%;\n    font-size: 26px;\n    color: #222b32;\n    font-family: \"futura-pt-bold\", sans-serif;\n}\n.pagebuilder-component .has-dropright .is-dropright {\n  background-color: #5e7e9e;\n  position: absolute;\n  transform: translateX(100%);\n  top: 0;\n  right: 0;\n  width: 0;\n  overflow: hidden;\n  border-radius: 4px;\n  transition: width .3s ease-in;\n}\n.pagebuilder-component .has-dropright .is-dropright li {\n    padding: 0.5rem 2rem;\n    cursor: pointer;\n}\n.pagebuilder-component .has-dropright .is-dropright li p.active {\n      color: #ff416c;\n}\n.pagebuilder-component .has-dropright:hover .is-dropright {\n  opacity: 1;\n  width: 200px;\n}\n.pagebuilder-component .pb-button {\n  background-image: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n  color: white;\n  font-size: 25px;\n  padding: 9px 47px;\n  border: none;\n  border-radius: 4px;\n  background-size: 200% auto;\n  transition: background-position .3s linear;\n  position: relative;\n  box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n}\n.pagebuilder-component .pb-button:hover, .pagebuilder-component .pb-button.active {\n    background-position: right center;\n}\n.pagebuilder-component .pb-button:focus {\n    outline: none;\n    border: none;\n}\n.pagebuilder-component .pb-navigation-buttons {\n  margin-bottom: 30px;\n}\n.pagebuilder-component .pb-side-nav-wrapper {\n  position: fixed;\n  width: 295px !important;\n  margin-top: 90px;\n  left: 2%;\n  z-index: 110;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav {\n    position: relative;\n    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n    z-index: 1;\n    transition: background-color .3s linear;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul {\n      list-style: none;\n      margin-left: 0;\n      padding-left: 0;\n      margin-bottom: 0;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p {\n        transition: color .3s linear;\n        font-size: 20px;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p .element-icons {\n          color: #5e7e9e;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav .lang-arrow {\n      float: right;\n}\n.pagebuilder-component .button-tooltip-wrapper {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  transform: translateY(50%);\n}\n.pagebuilder-component .button-tooltip-wrapper.left {\n    left: -40px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip {\n      left: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip:after {\n        left: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right {\n    right: -40px;\n    text-align: right;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip {\n      right: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip:after {\n        right: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper span {\n    cursor: pointer;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip {\n    position: absolute;\n    bottom: 0;\n    transform: translateY(135%);\n    padding: 1rem;\n    background-color: #5e7e9e;\n    color: #fff;\n    border-radius: 3px;\n    text-align: left;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip .text {\n      display: inline-block;\n      line-height: 1;\n      font-size: 14px;\n      margin-right: 0.25rem;\n      cursor: unset;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip span {\n      cursor: pointer;\n      margin-left: 1rem;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip:after {\n      content: '';\n      position: absolute;\n      top: 1px;\n      width: 0;\n      height: 0;\n      border-left: 15px solid transparent;\n      border-right: 15px solid transparent;\n      border-bottom: 15px solid #5e7e9e;\n      transform: translateY(-97%);\n}\n.pagebuilder-component .ql-tooltip {\n  background-color: #5e7e9e !important;\n  color: #fff !important;\n  border-radius: 3px !important;\n}\n.pagebuilder-component .ql-tooltip .ql-tooltip-arrow {\n    border-bottom: 6px solid #5e7e9e !important;\n}\n.pagebuilder-component .ql-editor.ql-blank::before {\n  color: #999999;\n  font-style: normal;\n}\n.workspace {\n  max-width: 1200px;\n}\n.sortable-ghost {\n  overflow: hidden;\n}\n.pagebuilder-column {\n  min-height: 300px;\n  padding-left: 1.9rem;\n  padding-right: 1.9rem;\n}\n.pagebuilder-column .no-element-wrapper {\n    width: 100%;\n    min-height: 300px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    transition: background-color .3s ease-out;\n    background-color: #f8f9fa;\n    cursor: pointer;\n}\n.pagebuilder-column .no-element-wrapper svg {\n      height: 60px;\n      width: 60px;\n}\n.pagebuilder-column .pb-input {\n    padding: 20px;\n}\n.pagebuilder-column .pb-input input {\n      border: none;\n      box-shadow: none;\n}\n.pagebuilder-column .dropzone {\n    border: none;\n}\n.pagebuilder-column .dropzone:hover {\n      background-color: transparent;\n}\n.pagebuilder-column .dropzone .dz-preview {\n      margin: 0;\n}\n.pagebuilder-column .dropzone .dz-preview .dz-image img {\n        max-width: 100%;\n}\n", ""]);
+exports.push([module.i, "\nbody {\n  transition: background-color .3s linear;\n}\nbody.dark-theme {\n    background-color: #202529;\n}\nbody.dark-theme .pb-side-nav {\n      background-color: #222b32;\n}\nbody.dark-theme .pb-side-nav .panel-body p {\n        color: #fff;\n}\nbody.light-theme {\n    background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav {\n      background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav .panel-body p {\n        color: #202529;\n}\n* {\n  font-family: futura-pt, sans-serif;\n}\nbutton:focus {\n  outline: none;\n  border: none;\n}\n.pagebuilder-component .pb-button-group .pb-button {\n  margin-right: 30px;\n}\n.pagebuilder-component .has-dropright li p {\n  margin-bottom: 0;\n}\n.pagebuilder-component .has-dropright li p span.badge {\n    width: 30px;\n    height: 30px;\n    float: right;\n    background: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n    background-size: 200%;\n    border-radius: 50%;\n    font-size: 26px;\n    color: #222b32;\n    font-family: \"futura-pt-bold\", sans-serif;\n}\n.pagebuilder-component .has-dropright .is-dropright {\n  background-color: #5e7e9e;\n  position: absolute;\n  transform: translateX(100%);\n  top: 0;\n  right: 0;\n  width: 0;\n  overflow: hidden;\n  border-radius: 4px;\n  transition: width .3s ease-in;\n}\n.pagebuilder-component .has-dropright .is-dropright li {\n    padding: 0.5rem 2rem;\n    cursor: pointer;\n}\n.pagebuilder-component .has-dropright .is-dropright li p.active {\n      color: #ff416c;\n}\n.pagebuilder-component .has-dropright:hover .is-dropright {\n  opacity: 1;\n  width: 200px;\n}\n.pagebuilder-component .pb-button {\n  background-image: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n  color: white;\n  font-size: 25px;\n  padding: 9px 47px;\n  border: none;\n  border-radius: 4px;\n  background-size: 200% auto;\n  transition: background-position .3s linear;\n  position: relative;\n  box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n}\n.pagebuilder-component .pb-button:hover, .pagebuilder-component .pb-button.active {\n    background-position: right center;\n}\n.pagebuilder-component .pb-button:focus {\n    outline: none;\n    border: none;\n}\n.pagebuilder-component .pb-navigation-buttons {\n  margin-bottom: 30px;\n}\n.pagebuilder-component .pb-side-nav-wrapper {\n  position: fixed;\n  width: 295px !important;\n  margin-top: 90px;\n  left: 2%;\n  z-index: 110;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav {\n    position: relative;\n    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n    z-index: 1;\n    transition: background-color .3s linear;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul {\n      list-style: none;\n      margin-left: 0;\n      padding-left: 0;\n      margin-bottom: 0;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p {\n        transition: color .3s linear;\n        font-size: 20px;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p .element-icons {\n          color: #5e7e9e;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav .lang-arrow {\n      float: right;\n}\n.pagebuilder-component .button-tooltip-wrapper {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  transform: translateY(50%);\n}\n.pagebuilder-component .button-tooltip-wrapper.left {\n    left: -40px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip {\n      left: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip:after {\n        left: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right {\n    right: -40px;\n    text-align: right;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip {\n      right: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip:after {\n        right: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper span {\n    cursor: pointer;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip {\n    position: absolute;\n    bottom: 0;\n    transform: translateY(135%);\n    padding: 1rem;\n    background-color: #5e7e9e;\n    color: #fff;\n    border-radius: 3px;\n    text-align: left;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip .text {\n      display: inline-block;\n      line-height: 1;\n      font-size: 14px;\n      margin-right: 0.25rem;\n      cursor: unset;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip span {\n      cursor: pointer;\n      margin-left: 1rem;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip:after {\n      content: '';\n      position: absolute;\n      top: 1px;\n      width: 0;\n      height: 0;\n      border-left: 15px solid transparent;\n      border-right: 15px solid transparent;\n      border-bottom: 15px solid #5e7e9e;\n      transform: translateY(-97%);\n}\n.pagebuilder-component .ql-tooltip {\n  background-color: #5e7e9e !important;\n  color: #fff !important;\n  border-radius: 3px !important;\n}\n.pagebuilder-component .ql-tooltip .ql-tooltip-arrow {\n    border-bottom: 6px solid #5e7e9e !important;\n}\n.pagebuilder-component .ql-editor.ql-blank::before {\n  color: #999999;\n  font-style: normal;\n}\n.workspace {\n  max-width: 1200px;\n}\n.sortable-ghost, .sortable-chosen {\n  overflow: hidden !important;\n}\n.pagebuilder-column {\n  min-height: 300px;\n  padding-left: 1.9rem;\n  padding-right: 1.9rem;\n}\n.pagebuilder-column .no-element-wrapper {\n    width: 100%;\n    min-height: 300px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    transition: background-color .3s ease-out;\n    background-color: #f8f9fa;\n    cursor: pointer;\n}\n.pagebuilder-column .no-element-wrapper svg {\n      height: 60px;\n      width: 60px;\n}\n.pagebuilder-column .pb-input {\n    padding: 20px;\n}\n.pagebuilder-column .pb-input input {\n      border: none;\n      box-shadow: none;\n}\n.pagebuilder-column .dropzone {\n    border: none;\n}\n.pagebuilder-column .dropzone:hover {\n      background-color: transparent;\n}\n.pagebuilder-column .dropzone .dz-preview {\n      margin: 0;\n}\n.pagebuilder-column .dropzone .dz-preview .dz-image img {\n        max-width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -84688,8 +84709,7 @@ var ColumnComponent = /** @class */ (function (_super) {
             this.createColumnLayout();
         }
     };
-    ColumnComponent.prototype.test = function () {
-        console.log('hiho');
+    ColumnComponent.prototype.onImageUpload = function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["c" /* Prop */])(),
@@ -84707,6 +84727,12 @@ var ColumnComponent = /** @class */ (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_2_vuex_class__["a" /* Getter */])('getElementTypes'),
         __metadata("design:type", Object)
     ], ColumnComponent.prototype, "getElementTypes", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onImageUpload'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], ColumnComponent.prototype, "onImageUpload", null);
     ColumnComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["a" /* Component */])({
             components: {
@@ -85382,6 +85408,19 @@ var VPhotoDescription = /** @class */ (function (_super) {
         };
         return _this;
     }
+    VPhotoDescription.prototype.mounted = function () {
+        var _this = this;
+        this.languages.forEach(function (l) {
+            //@ts-ignore
+            if (_this.translations[l.id] && _this.translations[l.id].content.photo && _this.translations[l.id].content.photo.length !== 0) {
+                //@ts-ignore
+                var file = { size: 123, name: _this.translations[l.id].content.photo, type: '/image.*/' };
+                var url = '/storage/images/' + file.name;
+                //@ts-ignore
+                _this.$refs['photoDescription' + l.id][0].manuallyAddFile(file, url);
+            }
+        });
+    };
     VPhotoDescription.prototype.beforeMount = function () {
         this.translations = this.oldTranslations;
     };
@@ -85395,6 +85434,13 @@ var VPhotoDescription = /** @class */ (function (_super) {
         //@ts-ignore
         this.translations[this.currentLang.id].content.photo = '';
     };
+    Object.defineProperty(VPhotoDescription.prototype, "languages", {
+        get: function () {
+            return this.getLanguages;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(VPhotoDescription.prototype, "currentLang", {
         get: function () {
             return this.getCurrentLang;
@@ -85415,7 +85461,7 @@ var VPhotoDescription = /** @class */ (function (_super) {
         __metadata("design:type", Object)
     ], VPhotoDescription.prototype, "getCurrentLang", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onSuccess'),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onImageUpload'),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object, Object]),
         __metadata("design:returntype", void 0)
@@ -85484,50 +85530,19 @@ var render = function() {
                       "div",
                       { staticClass: "form-group" },
                       [
-                        _c(
-                          "vue-dropzone",
-                          {
-                            ref: "photoDescription",
-                            refInFor: true,
-                            attrs: {
-                              id: "dropzone",
-                              options: _vm.dropzoneOptions,
-                              destroyDropzone: false
-                            },
-                            on: {
-                              "vdropzone-success": _vm.onSuccess,
-                              "vdropzone-removed-file": _vm.onFileRemove
-                            }
+                        _c("vue-dropzone", {
+                          ref: "photoDescription" + l.id,
+                          refInFor: true,
+                          attrs: {
+                            id: "dropzone",
+                            options: _vm.dropzoneOptions,
+                            destroyDropzone: false
                           },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.translations[l.id].content.photo,
-                                  expression: "translations[l.id].content.photo"
-                                }
-                              ],
-                              attrs: { type: "hidden" },
-                              domProps: {
-                                value: _vm.translations[l.id].content.photo
-                              },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.translations[l.id].content,
-                                    "photo",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]
-                        )
+                          on: {
+                            "vdropzone-success": _vm.onSuccess,
+                            "vdropzone-removed-file": _vm.onFileRemove
+                          }
+                        })
                       ],
                       1
                     )
@@ -85741,6 +85756,19 @@ var VPhotoDescription = /** @class */ (function (_super) {
         };
         return _this;
     }
+    VPhotoDescription.prototype.mounted = function () {
+        var _this = this;
+        this.languages.forEach(function (l) {
+            //@ts-ignore
+            if (_this.translations[l.id] && _this.translations[l.id].content.photo && _this.translations[l.id].content.photo.length !== 0) {
+                //@ts-ignore
+                var file = { size: 123, name: _this.translations[l.id].content.photo, type: '/image.*/' };
+                var url = '/storage/images/' + file.name;
+                //@ts-ignore
+                _this.$refs['photoDescription' + l.id][0].manuallyAddFile(file, url);
+            }
+        });
+    };
     VPhotoDescription.prototype.beforeMount = function () {
         this.translations = this.oldTranslations;
     };
@@ -85754,6 +85782,13 @@ var VPhotoDescription = /** @class */ (function (_super) {
         //@ts-ignore
         this.translations[this.currentLang.id].content.photo = '';
     };
+    Object.defineProperty(VPhotoDescription.prototype, "languages", {
+        get: function () {
+            return this.getLanguages;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(VPhotoDescription.prototype, "currentLang", {
         get: function () {
             return this.getCurrentLang;
@@ -85774,7 +85809,7 @@ var VPhotoDescription = /** @class */ (function (_super) {
         __metadata("design:type", Object)
     ], VPhotoDescription.prototype, "getCurrentLang", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onSuccess'),
+        Object(__WEBPACK_IMPORTED_MODULE_1_vue_property_decorator__["b" /* Emit */])('onImageUpload'),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object, Object]),
         __metadata("design:returntype", void 0)
@@ -86166,7 +86201,7 @@ var render = function() {
               _c(_vm.component, {
                 tag: "component",
                 attrs: { "old-translations": _vm.column.translations },
-                on: { onSuccess: _vm.test }
+                on: { onImageUpload: _vm.onImageUpload }
               })
             ],
             1
@@ -86219,7 +86254,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\nbody {\n  transition: background-color .3s linear;\n}\nbody.dark-theme {\n    background-color: #202529;\n}\nbody.dark-theme .pb-side-nav {\n      background-color: #222b32;\n}\nbody.dark-theme .pb-side-nav .panel-body p {\n        color: #fff;\n}\nbody.light-theme {\n    background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav {\n      background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav .panel-body p {\n        color: #202529;\n}\n* {\n  font-family: futura-pt, sans-serif;\n}\nbutton:focus {\n  outline: none;\n  border: none;\n}\n.pagebuilder-component .pb-button-group .pb-button {\n  margin-right: 30px;\n}\n.pagebuilder-component .has-dropright li p {\n  margin-bottom: 0;\n}\n.pagebuilder-component .has-dropright li p span.badge {\n    width: 30px;\n    height: 30px;\n    float: right;\n    background: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n    background-size: 200%;\n    border-radius: 50%;\n    font-size: 26px;\n    color: #222b32;\n    font-family: \"futura-pt-bold\", sans-serif;\n}\n.pagebuilder-component .has-dropright .is-dropright {\n  background-color: #5e7e9e;\n  position: absolute;\n  transform: translateX(100%);\n  top: 0;\n  right: 0;\n  width: 0;\n  overflow: hidden;\n  border-radius: 4px;\n  transition: width .3s ease-in;\n}\n.pagebuilder-component .has-dropright .is-dropright li {\n    padding: 0.5rem 2rem;\n    cursor: pointer;\n}\n.pagebuilder-component .has-dropright .is-dropright li p.active {\n      color: #ff416c;\n}\n.pagebuilder-component .has-dropright:hover .is-dropright {\n  opacity: 1;\n  width: 200px;\n}\n.pagebuilder-component .pb-button {\n  background-image: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n  color: white;\n  font-size: 25px;\n  padding: 9px 47px;\n  border: none;\n  border-radius: 4px;\n  background-size: 200% auto;\n  transition: background-position .3s linear;\n  position: relative;\n  box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n}\n.pagebuilder-component .pb-button:hover, .pagebuilder-component .pb-button.active {\n    background-position: right center;\n}\n.pagebuilder-component .pb-button:focus {\n    outline: none;\n    border: none;\n}\n.pagebuilder-component .pb-navigation-buttons {\n  margin-bottom: 30px;\n}\n.pagebuilder-component .pb-side-nav-wrapper {\n  position: fixed;\n  width: 295px !important;\n  margin-top: 90px;\n  left: 2%;\n  z-index: 110;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav {\n    position: relative;\n    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n    z-index: 1;\n    transition: background-color .3s linear;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul {\n      list-style: none;\n      margin-left: 0;\n      padding-left: 0;\n      margin-bottom: 0;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p {\n        transition: color .3s linear;\n        font-size: 20px;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p .element-icons {\n          color: #5e7e9e;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav .lang-arrow {\n      float: right;\n}\n.pagebuilder-component .button-tooltip-wrapper {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  transform: translateY(50%);\n}\n.pagebuilder-component .button-tooltip-wrapper.left {\n    left: -40px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip {\n      left: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip:after {\n        left: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right {\n    right: -40px;\n    text-align: right;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip {\n      right: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip:after {\n        right: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper span {\n    cursor: pointer;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip {\n    position: absolute;\n    bottom: 0;\n    transform: translateY(135%);\n    padding: 1rem;\n    background-color: #5e7e9e;\n    color: #fff;\n    border-radius: 3px;\n    text-align: left;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip .text {\n      display: inline-block;\n      line-height: 1;\n      font-size: 14px;\n      margin-right: 0.25rem;\n      cursor: unset;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip span {\n      cursor: pointer;\n      margin-left: 1rem;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip:after {\n      content: '';\n      position: absolute;\n      top: 1px;\n      width: 0;\n      height: 0;\n      border-left: 15px solid transparent;\n      border-right: 15px solid transparent;\n      border-bottom: 15px solid #5e7e9e;\n      transform: translateY(-97%);\n}\n.pagebuilder-component .ql-tooltip {\n  background-color: #5e7e9e !important;\n  color: #fff !important;\n  border-radius: 3px !important;\n}\n.pagebuilder-component .ql-tooltip .ql-tooltip-arrow {\n    border-bottom: 6px solid #5e7e9e !important;\n}\n.pagebuilder-component .ql-editor.ql-blank::before {\n  color: #999999;\n  font-style: normal;\n}\n.workspace {\n  max-width: 1200px;\n}\n.sortable-ghost {\n  overflow: hidden;\n}\n.row-spacer-component {\n  position: absolute;\n  bottom: 0;\n  z-index: 100;\n  width: 100%;\n  padding-left: 1.9rem;\n  padding-right: 1.9rem;\n}\n.row-spacer-component hr {\n    border-top: dashed 2px #bdc3c7;\n    width: 100%;\n    margin: 0;\n}\n.row-spacer-component .add-row-button {\n    height: 30px;\n    width: 30px;\n    background-color: #fd5c68;\n    color: #222b32;\n    font-weight: bold;\n    font-size: 25px;\n    border-radius: 50%;\n    border-color: transparent;\n    padding: 0px 7px 3px 6px;\n}\n", ""]);
+exports.push([module.i, "\nbody {\n  transition: background-color .3s linear;\n}\nbody.dark-theme {\n    background-color: #202529;\n}\nbody.dark-theme .pb-side-nav {\n      background-color: #222b32;\n}\nbody.dark-theme .pb-side-nav .panel-body p {\n        color: #fff;\n}\nbody.light-theme {\n    background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav {\n      background-color: #ecf0f1;\n}\nbody.light-theme .pb-side-nav .panel-body p {\n        color: #202529;\n}\n* {\n  font-family: futura-pt, sans-serif;\n}\nbutton:focus {\n  outline: none;\n  border: none;\n}\n.pagebuilder-component .pb-button-group .pb-button {\n  margin-right: 30px;\n}\n.pagebuilder-component .has-dropright li p {\n  margin-bottom: 0;\n}\n.pagebuilder-component .has-dropright li p span.badge {\n    width: 30px;\n    height: 30px;\n    float: right;\n    background: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n    background-size: 200%;\n    border-radius: 50%;\n    font-size: 26px;\n    color: #222b32;\n    font-family: \"futura-pt-bold\", sans-serif;\n}\n.pagebuilder-component .has-dropright .is-dropright {\n  background-color: #5e7e9e;\n  position: absolute;\n  transform: translateX(100%);\n  top: 0;\n  right: 0;\n  width: 0;\n  overflow: hidden;\n  border-radius: 4px;\n  transition: width .3s ease-in;\n}\n.pagebuilder-component .has-dropright .is-dropright li {\n    padding: 0.5rem 2rem;\n    cursor: pointer;\n}\n.pagebuilder-component .has-dropright .is-dropright li p.active {\n      color: #ff416c;\n}\n.pagebuilder-component .has-dropright:hover .is-dropright {\n  opacity: 1;\n  width: 200px;\n}\n.pagebuilder-component .pb-button {\n  background-image: linear-gradient(to right, #ff436c 0%, #fc6667 50%, #ff436c 100%);\n  color: white;\n  font-size: 25px;\n  padding: 9px 47px;\n  border: none;\n  border-radius: 4px;\n  background-size: 200% auto;\n  transition: background-position .3s linear;\n  position: relative;\n  box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n}\n.pagebuilder-component .pb-button:hover, .pagebuilder-component .pb-button.active {\n    background-position: right center;\n}\n.pagebuilder-component .pb-button:focus {\n    outline: none;\n    border: none;\n}\n.pagebuilder-component .pb-navigation-buttons {\n  margin-bottom: 30px;\n}\n.pagebuilder-component .pb-side-nav-wrapper {\n  position: fixed;\n  width: 295px !important;\n  margin-top: 90px;\n  left: 2%;\n  z-index: 110;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav {\n    position: relative;\n    box-shadow: 0 0 53px -6px rgba(25, 25, 25, 0.75);\n    z-index: 1;\n    transition: background-color .3s linear;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul {\n      list-style: none;\n      margin-left: 0;\n      padding-left: 0;\n      margin-bottom: 0;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p {\n        transition: color .3s linear;\n        font-size: 20px;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav ul li p .element-icons {\n          color: #5e7e9e;\n}\n.pagebuilder-component .pb-side-nav-wrapper .pb-side-nav .lang-arrow {\n      float: right;\n}\n.pagebuilder-component .button-tooltip-wrapper {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  transform: translateY(50%);\n}\n.pagebuilder-component .button-tooltip-wrapper.left {\n    left: -40px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip {\n      left: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.left .pb-tooltip:after {\n        left: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right {\n    right: -40px;\n    text-align: right;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip {\n      right: -35px;\n}\n.pagebuilder-component .button-tooltip-wrapper.right .pb-tooltip:after {\n        right: 35px;\n}\n.pagebuilder-component .button-tooltip-wrapper span {\n    cursor: pointer;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip {\n    position: absolute;\n    bottom: 0;\n    transform: translateY(135%);\n    padding: 1rem;\n    background-color: #5e7e9e;\n    color: #fff;\n    border-radius: 3px;\n    text-align: left;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip .text {\n      display: inline-block;\n      line-height: 1;\n      font-size: 14px;\n      margin-right: 0.25rem;\n      cursor: unset;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip span {\n      cursor: pointer;\n      margin-left: 1rem;\n}\n.pagebuilder-component .button-tooltip-wrapper .pb-tooltip:after {\n      content: '';\n      position: absolute;\n      top: 1px;\n      width: 0;\n      height: 0;\n      border-left: 15px solid transparent;\n      border-right: 15px solid transparent;\n      border-bottom: 15px solid #5e7e9e;\n      transform: translateY(-97%);\n}\n.pagebuilder-component .ql-tooltip {\n  background-color: #5e7e9e !important;\n  color: #fff !important;\n  border-radius: 3px !important;\n}\n.pagebuilder-component .ql-tooltip .ql-tooltip-arrow {\n    border-bottom: 6px solid #5e7e9e !important;\n}\n.pagebuilder-component .ql-editor.ql-blank::before {\n  color: #999999;\n  font-style: normal;\n}\n.workspace {\n  max-width: 1200px;\n}\n.sortable-ghost, .sortable-chosen {\n  overflow: hidden !important;\n}\n.row-spacer-component {\n  position: absolute;\n  bottom: 0;\n  z-index: 100;\n  width: 100%;\n  padding-left: 1.9rem;\n  padding-right: 1.9rem;\n}\n.row-spacer-component hr {\n    border-top: dashed 2px #bdc3c7;\n    width: 100%;\n    margin: 0;\n}\n.row-spacer-component .add-row-button {\n    height: 30px;\n    width: 30px;\n    background-color: #fd5c68;\n    color: #222b32;\n    font-weight: bold;\n    font-size: 25px;\n    border-radius: 50%;\n    border-color: transparent;\n    padding: 0px 7px 3px 6px;\n}\n", ""]);
 
 // exports
 
@@ -87446,7 +87481,8 @@ var render = function() {
       _vm._l(_vm.row.columns, function(column) {
         return _c("column-component", {
           key: column.uuid,
-          attrs: { column: column }
+          attrs: { column: column },
+          on: { onImageUpload: _vm.onImageUpload }
         })
       }),
       _vm._v(" "),
@@ -89451,6 +89487,7 @@ var render = function() {
           _c(
             "draggable",
             {
+              attrs: { option: { draggable: ".row-component" } },
               model: {
                 value: _vm.article.rows,
                 callback: function($$v) {
@@ -89462,7 +89499,8 @@ var render = function() {
             _vm._l(_vm.article.rows, function(row, index) {
               return _c("row-component", {
                 key: "row" + index,
-                attrs: { row: row }
+                attrs: { row: row },
+                on: { onImageUpload: _vm.onImageUpload }
               })
             })
           )
@@ -89655,7 +89693,7 @@ var SettingsView = /** @class */ (function (_super) {
         configurable: true
     });
     SettingsView.prototype.mounted = function () {
-        console.log('settings view');
+        console.log(this.$refs);
         if (this.article && this.article.photo && this.article.photo.length !== 0) {
             var file = { size: 123, name: this.article.photo, type: '/image.*/' };
             var url = '/storage/images/' + file.name;

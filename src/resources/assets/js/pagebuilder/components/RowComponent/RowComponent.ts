@@ -1,7 +1,7 @@
 import Vue from "vue";
 
 
-import {Component, Prop, Watch} from "vue-property-decorator";
+import {Component, Prop, Watch, Emit} from "vue-property-decorator";
 import {Getter} from "vuex-class";
 import ColumnComponent from '../ColumnComponent/ColumnComponent';
 import {Row} from "../../models/Row";
@@ -34,5 +34,9 @@ export default class RowComponent extends Vue {
         let index = indexOf(rows,this.row );
 
         return index;
+    }
+
+    @Emit('onImageUpload')
+    onImageUpload(){
     }
 };

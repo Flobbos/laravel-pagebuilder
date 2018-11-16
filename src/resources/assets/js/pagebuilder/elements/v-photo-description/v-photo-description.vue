@@ -10,13 +10,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <vue-dropzone ref="photoDescription" id="dropzone"
+                                    <vue-dropzone :ref="'photoDescription' + l.id" id="dropzone"
                                                   :options="dropzoneOptions"
                                                   :destroyDropzone="false"
                                                   @vdropzone-success="onSuccess"
                                                   @vdropzone-removed-file="onFileRemove"
                                     >
-                                        <input type="hidden" v-model="translations[l.id].content.photo">
                                     </vue-dropzone>
                                 </div>
                             </div>

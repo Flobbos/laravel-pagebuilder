@@ -46,7 +46,7 @@ export default class SettingsView extends Vue {
     }
 
     mounted(){
-        console.log('settings view');
+        console.log(this.$refs);
         if(this.article && this.article.photo && this.article.photo.length !== 0){
             let file = {size: 123, name: this.article.photo,  type: '/image.*/'};
             let url = '/storage/images/' + file.name;
