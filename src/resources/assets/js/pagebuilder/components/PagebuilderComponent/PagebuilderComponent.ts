@@ -136,6 +136,10 @@ export default class PagebuilderComponent extends Vue {
         })
     }
 
+    get currentLanguage(){
+        return this.getCurrentLanguage;
+    }
+
     @Watch('article', {immediate: true, deep: true})
     onArticleChanged(val: Article, oldVal: Article) {
         this.setArticle(this.article);

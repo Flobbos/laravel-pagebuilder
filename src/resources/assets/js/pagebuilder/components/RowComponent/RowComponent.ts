@@ -19,6 +19,8 @@ export default class RowComponent extends Vue {
 
     @Prop()
     row: Row;
+    @Prop()
+    sorting: number;
 
     @Getter('getArticle') getArticle: Article;
     @Getter('getLanguages') getLanguages: any;
@@ -29,14 +31,12 @@ export default class RowComponent extends Vue {
         this.row.sorting = this.sorting
     }
 
-    get sorting(){
-        let rows = this.getArticle.rows;
-        let index = indexOf(rows,this.row );
-
-        return index;
-    }
-
     @Emit('onImageUpload')
     onImageUpload(){
+    }
+
+    @Watch('sorting')
+    onSortingChange(){
+        this.$set(this.row, 'sorting', this.sorting);
     }
 };

@@ -239,6 +239,7 @@ asynckit@^0.4.0:
 atoa@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/atoa/-/atoa-1.0.0.tgz#0cc0e91a480e738f923ebc103676471779b34a49"
+  integrity sha1-DMDpGkgOc4+SPrwQNnZHF3mzSkk=
 
 atob@^2.1.1:
   version "2.1.2"
@@ -1345,6 +1346,7 @@ content-type@~1.0.4:
 contra@1.9.4:
   version "1.9.4"
   resolved "https://registry.yarnpkg.com/contra/-/contra-1.9.4.tgz#f53bde42d7e5b5985cae4d99a8d610526de8f28d"
+  integrity sha1-9TveQtfltZhcrk2ZqNYQUm3o8o0=
   dependencies:
     atoa "1.0.0"
     ticky "1.0.1"
@@ -1474,6 +1476,7 @@ cross-spawn@^6.0.5:
 crossvent@1.5.4:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/crossvent/-/crossvent-1.5.4.tgz#da2c4f8f40c94782517bf2beec1044148194ab92"
+  integrity sha1-2ixPj0DJR4JRe/K+7BBEFIGUq5I=
   dependencies:
     custom-event "1.0.0"
 
@@ -1594,6 +1597,7 @@ currently-unhandled@^0.4.1:
 custom-event@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/custom-event/-/custom-event-1.0.0.tgz#2e4628be19dc4b214b5c02630c5971e811618062"
+  integrity sha1-LkYovhncSyFLXAJjDFlx6BFhgGI=
 
 cyclist@~0.2.2:
   version "0.2.2"
@@ -1770,6 +1774,7 @@ dotenv@^4.0.0:
 dragula@3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/dragula/-/dragula-3.7.2.tgz#4a35c9d3981ffac1a949c29ca7285058e87393ce"
+  integrity sha1-SjXJ05gf+sGpScKcpyhQWOhzk84=
   dependencies:
     contra "1.9.4"
     crossvent "1.5.4"
@@ -5459,6 +5464,7 @@ thunky@^1.0.2:
 ticky@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ticky/-/ticky-1.0.1.tgz#b7cfa71e768f1c9000c497b9151b30947c50e46d"
+  integrity sha1-t8+nHnaPHJAAxJe5FRswlHxQ5G0=
 
 time-stamp@^2.0.0:
   version "2.2.0"
@@ -5815,6 +5821,7 @@ vue-template-es2015-compiler@^1.6.0:
 vue2-dragula@^2.5.4:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/vue2-dragula/-/vue2-dragula-2.5.4.tgz#2aa7d605c1284ab655ea0bd30b7f15b9dcbfbe88"
+  integrity sha512-RkVBBeb0xFFfksv0oloxPJLdBphrIJlMsWtYLt5QWpO37MslaV4pnuWMlySDpTjvVONAiDcSsXaw1sS9WfYsig==
   dependencies:
     dragula "3.7.2"
 

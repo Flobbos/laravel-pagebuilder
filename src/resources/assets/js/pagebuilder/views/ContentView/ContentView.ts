@@ -10,6 +10,15 @@ import RowSpacerComponent from "../../components/RowSpacerComponent/RowSpacerCom
 import Draggable from 'vuedraggable';
 import {indexOf} from 'lodash';
 
+//@ts-ignore
+import { Vue2Dragula } from 'vue2-dragula'
+
+Vue.use(Vue2Dragula, {
+    logging: {
+        service: true // to only log methods in service (DragulaService)
+    }
+});
+import 'dragula/dist/dragula.css'
 @Component({
     components:{
         RowComponent,

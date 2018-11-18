@@ -33,7 +33,7 @@
                     <ul>
                         <li>
                             <p>
-                                Sprachen <span class="lang-arrow">
+                                Sprachen ({{getCurrentLanguage.locale}}) <span class="lang-arrow">
                                 <arrow></arrow>
                             </span>
                             </p>
