@@ -71,7 +71,6 @@ class Pagebuilder implements PagebuilderContract{
     }
     
     public function update($id, Request $request) {
-        //dd(json_decode($request->get('translations')));
         //Grab basic project
         $article = $this->model->with('rows.columns.translations')->find($id);
         //Grab request data
@@ -138,16 +137,6 @@ class Pagebuilder implements PagebuilderContract{
     
     public function delete($id) {
         return $this->model->find($id)->delete();
-    }
-    
-    public function deleteRow($row_id) {
-        $row = $this->rows->find($row_id);
-        return $row->delete();
-    }
-    
-    public function deleteColumn($column_id) {
-        $column = $this->columns->find($column_id);
-        return $column->delete();
     }
     
     //Utilities

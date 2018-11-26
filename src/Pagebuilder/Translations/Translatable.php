@@ -124,6 +124,7 @@ trait Translatable{
                         }
                     }
                 }
+                //Update translation
                 $translation->update($trans);
             }
             else{
@@ -139,7 +140,6 @@ trait Translatable{
             $trans_models = $this->encodeContent($new_translations);
             $model->translations()->saveMany($trans_models);
         }
-        
         return $model;
     }
     

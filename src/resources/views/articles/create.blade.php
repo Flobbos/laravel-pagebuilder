@@ -17,7 +17,7 @@
             <div class="panel-footer" slot="footer">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="{{ route('articles.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>
+                        <a href="{{ route('pagebuilder::articles.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>
                     </div>
                     <div class="col-sm-6 text-right">
                         <button type="submit" class="btn btn-success" @click.prevent="$store.dispatch('createElement')">{{ trans('pagebuilder::crud.save') }}</button>

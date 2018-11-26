@@ -6,5 +6,7 @@ Route::group(['middleware'=>['web','auth'],'namespace'=>'Flobbos\Pagebuilder\Con
     Route::resource('element-types', 'ElementTypeController');
     Route::post('upload-photo','UploadController@store')->name('upload');
     Route::delete('delete-photo','UploadController@destroy')->name('delete-photo');
+    Route::delete('delete-row','PagebuilderController@deleteRow')->name('delete-row');
+    Route::delete('delete-column','PagebuilderController@deleteColumn')->name('delete-column');
     Route::resource('articles','ArticleController');
 });

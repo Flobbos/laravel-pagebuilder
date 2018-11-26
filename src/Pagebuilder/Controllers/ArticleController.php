@@ -53,7 +53,7 @@ class ArticleController extends Controller{
             $article = $this->articles->create($request);
             return response()->json([
                 'success'=>true,
-                'return_url' => route('articles.edit',$article->id)
+                'return_url' => route('pagebuilder::articles.edit',$article->id)
             ],200);
             //return redirect()->route('admin.articles.index')->withMessage(trans('crud.record_created'));
         } catch (Exception $ex) {
@@ -88,7 +88,6 @@ class ArticleController extends Controller{
      */
     public function update(Request $request, $id){
         try{
-            //dd($request->all());
             //dd(json_decode($request->get('translations')));
             //dd(json_decode($request->get('rows')));
             $this->articles->update($id, $request);
@@ -119,12 +118,5 @@ class ArticleController extends Controller{
         }
     }
     
-    public function deleteRow(Request  $request){
-        return $this->articles->deleteRow($request->get('row_id'));
     }
     
-    public function deleteColumn(Request $request){
-        return $this->articles->deleteProjectColumn($request->get('column_id'));
-    }
-}
-

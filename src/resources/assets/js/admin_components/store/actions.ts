@@ -62,7 +62,9 @@ export default {
         //@ts-ignore
         axios.post(url, form_update_data, headers).then(response=>{
             window.location.href = response.data.return_url;
-        })
+        }).catch(error=>{
+            console.log(error);
+        });
 
     },
 }

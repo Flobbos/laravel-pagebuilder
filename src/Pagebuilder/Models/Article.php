@@ -14,6 +14,7 @@ class Article extends Model{
     
     protected $fillable = [
         'name',
+        'photo',
         'published_on',
     ];
     
@@ -25,15 +26,10 @@ class Article extends Model{
         return $this->morphMany(Translation::class,'translatable');
     }
     
-    public function media(){
-        return $this->morphMany(Media::class,'model');
-    }
-    
     //Overrides for polymorphic delete
     public function delete(){
         $deleted = parent::delete();
         if($deleted){
-            $this->media()->delete();
             $this->translations()->delete();
             $this->rows()->delete();
         }
