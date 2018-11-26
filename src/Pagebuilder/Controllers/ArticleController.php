@@ -87,6 +87,7 @@ class ArticleController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id){
+        //dd($request->all());
         try{
             //dd(json_decode($request->get('translations')));
             //dd(json_decode($request->get('rows')));
@@ -112,11 +113,9 @@ class ArticleController extends Controller{
     public function destroy($id){
         try{
             $this->articles->delete($id);
-            return redirect()->route('articles.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
+            return redirect()->route('pagebuilder::articles.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
         } catch (Exception $ex) {
-            return redirect()->route('articles.index')->withErrors($ex->getMessage());
+            return redirect()->route('pagebuilder::articles.index')->withErrors($ex->getMessage());
         }
     }
-    
-    }
-    
+}

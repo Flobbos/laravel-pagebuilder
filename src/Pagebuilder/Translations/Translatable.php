@@ -146,11 +146,9 @@ trait Translatable{
     public function encodeContent($translation_data){
         $trans_models = [];
         foreach($translation_data as $trans_item){
-            $language_id = $trans_item['language_id'];
-            unset($trans_item['language_id']);
             $translated_element = [
-                'language_id' => $language_id,
-                'content' => json_encode($trans_item)
+                'language_id' => $trans_item['language_id'],
+                'content' => $trans_item['content']
             ];
             $trans_models[] = new \Flobbos\Pagebuilder\Models\Translation($translated_element);
         }
