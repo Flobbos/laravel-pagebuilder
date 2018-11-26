@@ -46,13 +46,13 @@ class Pagebuilder implements PagebuilderContract{
         //Create project entry with basic translations
         $article = $this->model->create($data);
         //Process translations
-        $translation_data = $this->processTranslations(json_decode($request->get('translations'),true));
+        $translation_data = $this->processTranslations($request->get('translations'));
         //Encode content
         $trans_models = $this->encodeContent($translation_data);
         //Save results
         $article->translations()->saveMany($trans_models);
         //Create rows and columns
-        foreach(json_decode($request->get('rows'),true) as $row_key=>$row){
+        foreach($request->get('rows') as $row_key=>$row){
             //Create row entry
             $current_row = $article->rows()->create($row);
             //Create columns
@@ -71,20 +71,23 @@ class Pagebuilder implements PagebuilderContract{
     }
     
     public function update($id, Request $request) {
+
         //Grab basic project
         $article = $this->model->with('rows.columns.translations')->find($id);
         //Grab request data
         $article_data = $request->except('rows','translations');
         //Update basic translations
         $this->updateTranslations(
-                    json_decode($request->get('translations'),true),
+                    $request->get('translations'),
                     $article);
         //Update basic project
         $article->update($article_data);
+
         //Update rows and columns
-        foreach(json_decode($request->get('rows'),true) as $row_key=>$row){
+        foreach($request->get('rows') as $row_key=>$row){
             //Update existing row
             if(isset($row['id']) && $current_row = $article->rows->find($row['id'])){
+    
                 $current_row->update($row);
                 //Run through columns
                 //dd($row['columns'])
@@ -141,7 +144,7 @@ class Pagebuilder implements PagebuilderContract{
     
     //Utilities
     private function processContent($trans_key,$trans){
-        if(!empty($this->processTranslations($trans))){
+        if(!is_null($trans) && !empty($this->processTranslations($trans))){
             return $trans;
         }
         return null;

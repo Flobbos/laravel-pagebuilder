@@ -3,11 +3,12 @@ import axios from 'axios';
 
 import Vue from 'vue';
 
+
 Vue.component('vue-editor', require('./admin_components/vue-editor/VueEditor'));
 
 Vue.component('vue-date-picker', require('./admin_components/vue-date-picker/VueDatePicker'));
 
-Vue.component('pagebuilder', require('./admin_components/pagebuilder-components/pagebuilder/Pagebuilder'));
+Vue.component('pagebuilderComponent', require('./pagebuilder/components/PagebuilderComponent/PagebuilderComponent'));
 
 Vue.prototype.$generateUid = () => {
     function s4() {
