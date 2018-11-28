@@ -20,23 +20,24 @@ export default class RowComponent extends Vue {
     @Prop()
     row: Row;
     @Prop()
-    sorting: number;
+    arrayIndex: number;
 
     @Getter('getArticle') getArticle: Article;
     @Getter('getLanguages') getLanguages: any;
 
     columnLimit: number = 1;
 
-    beforeMount(){
-        this.row.sorting = this.sorting
-    }
-
     @Emit('onImageUpload')
     onImageUpload(){
     }
 
-    @Watch('sorting')
-    onSortingChange(){
-        this.$set(this.row, 'sorting', this.sorting);
+
+    get sorting(){
+        return this.arrayIndex;
+    }
+
+    @Watch('arrayIndex', {deep: true, immediate: true})
+    onSortingChange(val:number, oldVal:number){
+        this.row.sorting = val;
     }
 };

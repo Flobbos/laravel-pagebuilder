@@ -14,7 +14,6 @@ export default {
         state.currentLang = lang;
     },
     setArticle(state:any, article:Article){
-        console.log('yoyo')
         state.article = article;
     }
 }

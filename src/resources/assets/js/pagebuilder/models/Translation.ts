@@ -9,7 +9,7 @@ export class Translation extends BaseModel{
 
     content: object = {};
     language_id: number = 0;
-    translatable_id: number = 0;
+    translatable_id: number;
     translatable_type: string = '';
 
 }
