@@ -2,21 +2,21 @@
     <div class="row pagebuilder-component">
 
         <div class="pb-side-nav-wrapper">
-            <div class="panel pb-side-nav">
-                <div class="panel-body">
-                    <ul>
-                        <li>
-                            <p @click="setDesktop">Desktop</p>
-                        </li>
-                        <li>
-                            <p @click="setTablet">Tablet</p>
-                        </li>
-                        <li>
-                            <p @click="setMobile">Mobile</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <!--<div class="panel pb-side-nav">-->
+                <!--<div class="panel-body">-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<p @click="setDesktop">Desktop</p>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p @click="setTablet">Tablet</p>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p @click="setMobile">Mobile</p>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
 
             <div class="panel pb-side-nav">
                 <div class="panel-body">
