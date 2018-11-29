@@ -2,50 +2,45 @@ import Vue from 'vue';
 
 
 import axios from 'axios';
+import {Row} from "../models/Row";
+
+const routePrefix: string = '/pagebuilder/';
+
+const token: any = document.querySelector('meta[name="csrf-token"]');
+
+const headers = {
+    headers: {"Content-Type": "multipart/json"},
+    'X-CSRF-TOKEN': token.getAttribute('content')
+};
 
 export default {
+
+
     createElement(store: any) {
-        //@ts-ignore
-        let headers = {
-            headers: {"Content-Type": "multipart/json"},
-            //@ts-ignore
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        };
         let article = store.getters.getArticle;
 
-        //@ts-ignore
-        axios.post('/pagebuilder/articles', article, headers).then(response => {
-            console.log(response.data);
+        axios.post(routePrefix + 'articles', article, headers).then(response => {
         })
 
     },
 
     updateElement(store: any) {
-
-        //@ts-ignore
-        let headers = {
-            headers: {"Content-Type": "multipart/json"},
-            //@ts-ignore
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        };
         let article = store.getters.getArticle;
-        let url = '/pagebuilder/articles/' + article.id;
 
-        //@ts-ignore
-        axios.put(url, article, headers).then(response => {
+        axios.put(routePrefix + 'articles/' + article.id, article, headers).then(response => {
             //window.location.href = response.data.return_url;
-            console.log(response);
         }).catch(error => {
-            console.log(error);
         });
 
     },
 
-    modelTest(store: any) {
-        let article = store.getters.getArticle;
-
-        axios.post('/pagebuilder/' + store.getters.getPagebuilderElement, article).then(response => {
-            console.log(response.data);
-        })
+    deleteRow(store: any, row: Row) {
+        axios.delete(routePrefix + 'delete-row', {params: {id: row.id}})
+            .then((response) => {
+                store.state.article.rows.splice(row.sorting, 1);
+            }).catch((error) => {
+            console.log(error)
+        });
     }
+
 }

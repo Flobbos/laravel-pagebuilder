@@ -58957,10 +58957,7 @@ var TranslationService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RowService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_Row__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ColumnService__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(14);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(14);
 
 
 
@@ -58996,14 +58993,10 @@ var RowService = /** @class */ (function () {
     };
     RowService.delete = function (row) {
         if (row.id && row.id !== 0) {
-            console.log('delete me from db');
+            __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch('deleteRow', row);
         }
         else {
-            var rowIndex = Object(__WEBPACK_IMPORTED_MODULE_2_lodash__["findIndex"])(__WEBPACK_IMPORTED_MODULE_3__store__["a" /* default */].state.article.rows, function (r) {
-                return r.uuid == row.uuid;
-            });
-            console.log(rowIndex);
-            __WEBPACK_IMPORTED_MODULE_3__store__["a" /* default */].state.article.rows.splice(rowIndex, 1);
+            __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].state.article.rows.splice(row.sorting, 1);
         }
     };
     return RowService;
@@ -84116,41 +84109,31 @@ var ColumnService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 
+var routePrefix = '/pagebuilder/';
+var token = document.querySelector('meta[name="csrf-token"]');
+var headers = {
+    headers: { "Content-Type": "multipart/json" },
+    'X-CSRF-TOKEN': token.getAttribute('content')
+};
 /* harmony default export */ __webpack_exports__["a"] = ({
     createElement: function (store) {
-        //@ts-ignore
-        var headers = {
-            headers: { "Content-Type": "multipart/json" },
-            //@ts-ignore
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        };
         var article = store.getters.getArticle;
-        //@ts-ignore
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/pagebuilder/articles', article, headers).then(function (response) {
-            console.log(response.data);
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(routePrefix + 'articles', article, headers).then(function (response) {
         });
     },
     updateElement: function (store) {
-        //@ts-ignore
-        var headers = {
-            headers: { "Content-Type": "multipart/json" },
-            //@ts-ignore
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        };
         var article = store.getters.getArticle;
-        var url = '/pagebuilder/articles/' + article.id;
-        //@ts-ignore
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.put(url, article, headers).then(function (response) {
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.put(routePrefix + 'articles/' + article.id, article, headers).then(function (response) {
             //window.location.href = response.data.return_url;
-            console.log(response);
         }).catch(function (error) {
-            console.log(error);
         });
     },
-    modelTest: function (store) {
-        var article = store.getters.getArticle;
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/pagebuilder/' + store.getters.getPagebuilderElement, article).then(function (response) {
-            console.log(response.data);
+    deleteRow: function (store, row) {
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.delete(routePrefix + 'delete-row', { params: { id: row.id } })
+            .then(function (response) {
+            store.state.article.rows.splice(row.sorting, 1);
+        }).catch(function (error) {
+            console.log(error);
         });
     }
 });
@@ -89709,7 +89692,6 @@ var SettingsView = /** @class */ (function (_super) {
         configurable: true
     });
     SettingsView.prototype.mounted = function () {
-        console.log(this.$refs);
         if (this.article && this.article.photo && this.article.photo.length !== 0) {
             var file = { size: 123, name: this.article.photo, type: '/image.*/' };
             var url = '/storage/images/' + file.name;

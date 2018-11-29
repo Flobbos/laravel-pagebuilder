@@ -1,18 +1,16 @@
 import {Row} from "../models/Row";
 import {ColumnService} from "./ColumnService";
-import {Column} from "../models/Column";
 
 import {findIndex} from 'lodash';
 
 import store from '../store';
-import Vue from 'vue';
 
 export abstract class RowService {
 
     public static createNew(columnLayout: string[]): Row {
         const row = new Row();
 
-        columnLayout.forEach((c: string) =>{
+        columnLayout.forEach((c: string) => {
             row.columns.push(
                 ColumnService.createNew(c)
             )
@@ -43,16 +41,11 @@ export abstract class RowService {
         }
     }
 
-    public static delete(row: Row){
-        if (row.id && row.id !== 0){
-            console.log('delete me from db');
-        } else{
-           let rowIndex = findIndex(store.state.article.rows, (r:Row)=>{
-               return r.uuid == row.uuid;
-           });
-
-           console.log(rowIndex);
-            store.state.article.rows.splice(rowIndex, 1);
+    public static delete(row: Row) {
+        if (row.id && row.id !== 0) {
+            store.dispatch('deleteRow', row);
+        } else {
+            store.state.article.rows.splice(row.sorting, 1);
         }
     }
 }
