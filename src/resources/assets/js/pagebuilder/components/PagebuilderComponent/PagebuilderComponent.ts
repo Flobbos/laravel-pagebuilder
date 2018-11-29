@@ -65,9 +65,9 @@ export default class PagebuilderComponent extends Vue {
     currentView: string = 'Content';
     theme: string = this.defaultTheme;
 
-    elements: any = {
-        body: document.querySelector('body') as HTMLElement,
-        contentWrapper: document.querySelector('.content-view') as HTMLElement,
+    elements: HtmlElement = {
+        body: document.querySelector('body'),
+        contentWrapper: document.querySelector('.content-view'),
         columns: document.getElementsByClassName('pagebuilder-column')
     };
 
@@ -89,8 +89,7 @@ export default class PagebuilderComponent extends Vue {
     }
 
     setTheme(){
-        let body = document.querySelector('body') as HTMLElement;
-        body.classList.add(this.theme);
+        this.elements.body.classList.add(this.theme);
     }
 
     changeTheme(){
