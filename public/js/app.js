@@ -16821,6 +16821,7 @@ var Article = /** @class */ (function (_super) {
         _this.published_on = __WEBPACK_IMPORTED_MODULE_1_moment___default()().format('YYYY-MM-DDTHH:mm:ss');
         _this.is_published = false;
         _this.rows = [];
+        _this.customField = '';
         return _this;
     }
     return Article;
@@ -89755,27 +89756,81 @@ var render = function() {
       [
         _vm._t("header"),
         _vm._v(" "),
-        _c("div", { staticClass: "panel-body" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 col-md-6" }, [
+        _c(
+          "div",
+          { staticClass: "panel-body" },
+          [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-12 col-md-6" }, [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", { attrs: { for: "photo" } }, [
+                      _vm._v("Header-Foto")
+                    ]),
+                    _vm._v(" "),
+                    _c("vue-dropzone", {
+                      ref: "singleDropzone",
+                      attrs: {
+                        id: "dropzone",
+                        options: _vm.dropzoneOptions,
+                        destroyDropzone: false
+                      },
+                      on: {
+                        "vdropzone-success": _vm.onSuccess,
+                        "vdropzone-removed-file": _vm.onFileRemove
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "form-group" },
+                { staticClass: "col-sm-12 col-md-6" },
                 [
-                  _c("label", { attrs: { for: "photo" } }, [
-                    _vm._v("Header-Foto")
+                  _c("label", { attrs: { for: "name" } }, [
+                    _vm._v("Interne Benennung")
                   ]),
                   _vm._v(" "),
-                  _c("vue-dropzone", {
-                    ref: "singleDropzone",
-                    attrs: {
-                      id: "dropzone",
-                      options: _vm.dropzoneOptions,
-                      destroyDropzone: false
-                    },
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.article.name,
+                        expression: "article.name"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", name: "name", id: "name" },
+                    domProps: { value: _vm.article.name },
                     on: {
-                      "vdropzone-success": _vm.onSuccess,
-                      "vdropzone-removed-file": _vm.onFileRemove
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.article, "name", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "name" } }, [
+                    _vm._v("Veröffentlicht am")
+                  ]),
+                  _vm._v(" "),
+                  _c("date-picker", {
+                    attrs: { config: _vm.config },
+                    model: {
+                      value: _vm.article.published_on,
+                      callback: function($$v) {
+                        _vm.$set(_vm.article, "published_on", $$v)
+                      },
+                      expression: "article.published_on"
                     }
                   })
                 ],
@@ -89783,199 +89838,154 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-sm-12 col-md-6" },
-              [
-                _c("label", { attrs: { for: "name" } }, [
-                  _vm._v("Interne Benennung")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.article.name,
-                      expression: "article.name"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", name: "name", id: "name" },
-                  domProps: { value: _vm.article.name },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.article, "name", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "name" } }, [
-                  _vm._v("Veröffentlicht am")
-                ]),
-                _vm._v(" "),
-                _c("date-picker", {
-                  attrs: { config: _vm.config },
-                  model: {
-                    value: _vm.article.published_on,
-                    callback: function($$v) {
-                      _vm.$set(_vm.article, "published_on", $$v)
-                    },
-                    expression: "article.published_on"
-                  }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
-              _c("div", { staticClass: "form-group" }, [
-                _c(
-                  "div",
-                  { staticClass: "tab-content" },
-                  _vm._l(_vm.$store.getters.getLanguages, function(l, index) {
-                    return _c(
-                      "div",
-                      {
-                        class: [
-                          l.locale === _vm.$store.getters.getCurrentLang.locale
-                            ? "tab-pane active"
-                            : "tab-pane"
-                        ],
-                        attrs: { role: "tabpanel", id: l.locale }
-                      },
-                      [
-                        _c("input", {
-                          attrs: { type: "hidden" },
-                          domProps: { value: l.id }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-12" }, [
-                            _c("div", { staticClass: "form-group" }, [
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "control-label",
-                                  attrs: { for: "title" + l.id }
-                                },
-                                [
-                                  _vm._v(
-                                    "Titel\n                                                (" +
-                                      _vm._s(l.locale) +
-                                      ")"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value:
-                                      _vm.article.translations[l.id].content
-                                        .title,
-                                    expression:
-                                      "article.translations[l.id].content.title"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  id: "title" + l.id,
-                                  type: "text",
-                                  name: "title" + l.id
-                                },
-                                domProps: {
-                                  value:
-                                    _vm.article.translations[l.id].content.title
-                                },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.article.translations[l.id].content,
-                                      "title",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              })
-                            ])
-                          ]),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-12" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "div",
+                    { staticClass: "tab-content" },
+                    _vm._l(_vm.$store.getters.getLanguages, function(l, index) {
+                      return _c(
+                        "div",
+                        {
+                          class: [
+                            l.locale ===
+                            _vm.$store.getters.getCurrentLang.locale
+                              ? "tab-pane active"
+                              : "tab-pane"
+                          ],
+                          attrs: { role: "tabpanel", id: l.locale }
+                        },
+                        [
+                          _c("input", {
+                            attrs: { type: "hidden" },
+                            domProps: { value: l.id }
+                          }),
                           _vm._v(" "),
-                          _c("div", { staticClass: "col-md-12" }, [
-                            _c("div", { staticClass: "form-group" }, [
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "control-label",
-                                  attrs: { for: "teaser" + l.id }
-                                },
-                                [
-                                  _vm._v(
-                                    "Teaser-Text\n                                                (" +
-                                      _vm._s(l.locale) +
-                                      ")"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("textarea", {
-                                directives: [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-md-12" }, [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
                                   {
-                                    name: "model",
-                                    rawName: "v-model",
+                                    staticClass: "control-label",
+                                    attrs: { for: "title" + l.id }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Titel\n                                                (" +
+                                        _vm._s(l.locale) +
+                                        ")"
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value:
+                                        _vm.article.translations[l.id].content
+                                          .title,
+                                      expression:
+                                        "article.translations[l.id].content.title"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    id: "title" + l.id,
+                                    type: "text",
+                                    name: "title" + l.id
+                                  },
+                                  domProps: {
                                     value:
                                       _vm.article.translations[l.id].content
-                                        .teaser,
-                                    expression:
-                                      "article.translations[l.id].content.teaser"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  name: "teaser" + l.id,
-                                  id: "teaser" + l.id
-                                },
-                                domProps: {
-                                  value:
-                                    _vm.article.translations[l.id].content
-                                      .teaser
-                                },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
+                                        .title
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.article.translations[l.id].content,
+                                        "title",
+                                        $event.target.value
+                                      )
                                     }
-                                    _vm.$set(
-                                      _vm.article.translations[l.id].content,
-                                      "teaser",
-                                      $event.target.value
-                                    )
                                   }
-                                }
-                              })
+                                })
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-md-12" }, [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "control-label",
+                                    attrs: { for: "teaser" + l.id }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Teaser-Text\n                                                (" +
+                                        _vm._s(l.locale) +
+                                        ")"
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("textarea", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value:
+                                        _vm.article.translations[l.id].content
+                                          .teaser,
+                                      expression:
+                                        "article.translations[l.id].content.teaser"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    name: "teaser" + l.id,
+                                    id: "teaser" + l.id
+                                  },
+                                  domProps: {
+                                    value:
+                                      _vm.article.translations[l.id].content
+                                        .teaser
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.article.translations[l.id].content,
+                                        "teaser",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ])
                             ])
                           ])
-                        ])
-                      ]
-                    )
-                  })
-                )
+                        ]
+                      )
+                    })
+                  )
+                ])
               ])
-            ])
-          ])
-        ])
+            ]),
+            _vm._v(" "),
+            _vm._t("default")
+          ],
+          2
+        )
       ],
       2
     )
@@ -90135,7 +90145,45 @@ var render = function() {
               ? _c("content-view", { attrs: { article: _vm.article } })
               : _vm._e(),
             _vm._v(" "),
-            _vm.currentView === "Settings" ? _c("settings-view") : _vm._e()
+            _vm.currentView === "Settings"
+              ? _c("settings-view", [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "control-label" }, [
+                          _vm._v("Custom Field")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.article.customField,
+                              expression: "article.customField"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.article.customField },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.article,
+                                "customField",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                ])
+              : _vm._e()
           ],
           1
         )

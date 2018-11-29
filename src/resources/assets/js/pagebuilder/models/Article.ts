@@ -12,5 +12,6 @@ export class Article extends BaseModel{
     published_on: Date = moment().format('YYYY-MM-DDTHH:mm:ss');
     is_published: boolean = false;
     rows: Row[] = [];
+    customField: string = '';
 
 }

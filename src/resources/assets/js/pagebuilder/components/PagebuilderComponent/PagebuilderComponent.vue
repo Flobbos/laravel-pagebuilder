@@ -3,19 +3,19 @@
 
         <div class="pb-side-nav-wrapper">
             <!--<div class="panel pb-side-nav">-->
-                <!--<div class="panel-body">-->
-                    <!--<ul>-->
-                        <!--<li>-->
-                            <!--<p @click="setDesktop">Desktop</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p @click="setTablet">Tablet</p>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<p @click="setMobile">Mobile</p>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
+            <!--<div class="panel-body">-->
+            <!--<ul>-->
+            <!--<li>-->
+            <!--<p @click="setDesktop">Desktop</p>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<p @click="setTablet">Tablet</p>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<p @click="setMobile">Mobile</p>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--</div>-->
             <!--</div>-->
 
             <div class="panel pb-side-nav">
@@ -81,7 +81,18 @@
             <div class="row">
                 <div class="col-sm-12">
                     <content-view :article="article" v-if="currentView === 'Content'"></content-view>
-                    <settings-view v-if="currentView === 'Settings'"></settings-view>
+                    <settings-view v-if="currentView === 'Settings'">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                <label  class="control-label">Custom Field</label>
+                                    <input  class="form-control" type="text" v-model="article.customField">
+                                </div>
+                            </div>
+                        </div>
+
+                    </settings-view>
                 </div>
             </div>
             <br>

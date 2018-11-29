@@ -18,6 +18,7 @@
                         <date-picker :config="config" v-model="article.published_on"></date-picker>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -49,6 +50,7 @@
                         </div>
                     </div>
                 </div>
+                <slot></slot>
             </div>
         </div>
     </div>
