@@ -6,7 +6,7 @@
         <div class="col-sm-12">
             <div class="panel panel-default">
 
-                <form action="{{ route('element-types.update',$element_type->id) }}" role="form" method="POST"  enctype="multipart/form-data">
+                <form action="{{ route('pagebuilder::element-types.update',$element_type->id) }}" role="form" method="POST"  enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{method_field('PUT')}}
 
@@ -41,7 +41,7 @@
                         <div class="row">
 
                             <div class="col-sm-6">
-                                <a href="{{ route('element-types.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>
+                                <a href="{{ route('pagebuilder::element-types.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>
                             </div>
 
                             <div class="col-sm-6 text-right">
