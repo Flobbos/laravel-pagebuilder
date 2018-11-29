@@ -227,6 +227,7 @@ button {
       color: #fff;
       border-radius: 3px;
       text-align: left;
+      min-width: 100px;
 
       .text {
         display: inline-block;
@@ -239,6 +240,10 @@ button {
       span {
         cursor: pointer;
         margin-left: 1rem;
+
+        i{
+          cursor: pointer;
+        }
       }
 
       &:after {
