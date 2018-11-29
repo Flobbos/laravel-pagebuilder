@@ -11,7 +11,7 @@
                             <h3 class="panel-title">Projekte</h3>
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('articles.create') }}" class="btn btn-default btn-small pull-right">
+                            <a href="{{ route('pagebuilder::articles.create') }}" class="btn btn-default btn-small pull-right">
                                 <i class="glyphicon glyphicon-plus"></i> @lang('pagebuilder::crud.create_button')
                             </a>
                         </div>
@@ -30,17 +30,17 @@
                         <th></th>
                         </thead>
                         <tbody>
-                            @foreach($articles as $project)
+                            @foreach($articles as $article)
                             <tr>
                                 <td>{{$article->id}}</td>
                                 <td>{{$article->name}}</td>
                                 <td>
                                     <div class="btn-group pull-right" role="group">
-                                        <a class="btn btn-sm btn-primary" href="{{ route('articles.edit',$article->id) }}">
+                                        <a class="btn btn-sm btn-primary" href="{{ route('pagebuilder::articles.edit',$article->id) }}">
                                             <i class="glyphicon glyphicon-pencil"></i> @lang('pagebuilder::crud.edit')
                                         </a>
                                         <form class="btn-group"
-                                            action="{{ route('articles.destroy',$article->id) }}"
+                                            action="{{ route('pagebuilder::articles.destroy',$article->id) }}"
                                             method="POST" v-on:submit.prevent="confirmDelete">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}

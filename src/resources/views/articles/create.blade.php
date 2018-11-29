@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <form action="{{ route('pagebuilder::articles.store') }}" role="form" method="POST"  enctype="multipart/form-data">
     {{ csrf_field() }}
-        <pagebuilder ref="pagebuilder" :element-types="{{$element_types}}" storage-path="photos" :languages="{{$languages}}">
+        <pagebuilder-component class="pagebuilder-component" ref="pagebuilder" :element-types="{{$element_types}}" storage-path="photos" :languages="{{$languages}}">
             <div class="panel-heading panel-default" slot="header">
-                <h3 class="panel-title">Articles</h3>
+                <h3 class="panel-title">Artikel</h3>
                 @lang('pagebuilder::crud.create_headline')
 
                 @include('pagebuilder::notifications')
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-        </pagebuilder>
+        </pagebuilder-component>
     </form>
 </div>
 @stop
