@@ -33,9 +33,9 @@ class ViewCommand extends GeneratorCommand{
      */
     protected function getStub(){
         return [
-            'index.blade.php'=>__DIR__.'/../../resources/stubs/views/index.stub',
-            'create.blade.php'=>__DIR__.'/../../resources/stubs/views/create.stub',
-            'edit.blade.php'=>__DIR__.'/../../resources/stubs/views/edit.stub'
+            'index.blade.php'=>__DIR__.'/../../resources/stubs/views/articles/index.stub',
+            'create.blade.php'=>__DIR__.'/../../resources/stubs/views/articles/create.stub',
+            'edit.blade.php'=>__DIR__.'/../../resources/stubs/views/articles/edit.stub'
             ];
     }
     

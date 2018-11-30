@@ -1,0 +1,17 @@
+<?php
+
+namespace DummyNamespace;
+
+use Flobbos\Pagebuilder\Models\Article;
+
+class DummyClass extends Article{
+    
+    protected $table = 'DummyTable';
+    
+    protected $fillable = [
+        'name',
+        'photo',
+        'published_on',
+    ];
+    
+}

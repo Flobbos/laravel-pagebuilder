@@ -37,6 +37,7 @@ class PagebuilderServiceProvider extends ServiceProvider{
         $this->commands([
             Commands\ControllerCommand::class,
             Commands\ViewCommand::class,
+            Commands\ModelCommand::class,
         ]);
         //Merge config
         $this->mergeConfigFrom(
