@@ -3,7 +3,18 @@
 
 ![Laravel Pagebuilder](img/laravel-pagebuilder.png)
 
-## Installtion
+### Docs
+
+* [Installation](#installation)
+* [Configuration](#configuration)
+* [Generators](#generators)
+* [Translations](#translations)
+* [Usage](#usage)
+* [Functions](#functions)
+* [Exceptions](#exceptions)
+* [Laravel compatibility](#laravel-compatibility)
+
+## Installation (Javascript)
 
 
 ##### Install the required dependencies
