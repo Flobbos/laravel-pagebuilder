@@ -5,7 +5,7 @@
 
 ### Docs
 
-* [Installation](#installation)
+* [Installation](#Installation (Javascript))
 * [Configuration](#configuration)
 * [Generators](#generators)
 * [Translations](#translations)
