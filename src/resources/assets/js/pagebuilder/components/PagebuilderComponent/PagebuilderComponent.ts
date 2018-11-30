@@ -3,15 +3,9 @@ import Vue from "vue";
 //@ts-ignore
 import {Component, Prop, Watch} from "vue-property-decorator";
 
-import {forEach, indexOf} from 'lodash';
+import {forEach} from 'lodash';
 
 import {Getter, Mutation} from 'vuex-class';
-
-import {forOwn} from 'lodash';
-
-
-
-import {mapKeys} from 'lodash';
 
 //@ts-ignore
 import ImageElementIcon from '../../svgs/ElementIcons/ImageElementIcon.vue'
@@ -27,11 +21,8 @@ import Sticky from 'vue-sticky-directive';
 
 Vue.use(Sticky);
 
-import moment from 'moment';
-
 // Import date picker css
 import {Article} from "../../models/Article";
-import {Row} from "../../models/Row";
 import {ArticleService} from "../../services/ArticleService";
 
 import ContentView from '../../views/ContentView/ContentView';
@@ -58,6 +49,8 @@ export default class PagebuilderComponent extends Vue {
     languages: Array<any>;
     @Prop()
     storagePath: string;
+    @Prop({default: 'dark-theme'})
+    defaultTheme: string
 
     @Mutation('setElementTypes') setElementTypes: any;
     @Mutation('setLanguages') setLanguages: any;
@@ -68,10 +61,15 @@ export default class PagebuilderComponent extends Vue {
     @Getter('getCurrentLang') getCurrentLanguage: any;
     @Getter('getArticle') getArticle: Article;
 
-
     article: Article = new Article();
     currentView: string = 'Content';
-    theme: string = 'dark-theme';
+    theme: string = this.defaultTheme;
+
+    elements: HtmlElement = {
+        body: document.querySelector('body'),
+        contentWrapper: document.querySelector('.content-view'),
+        columns: document.getElementsByClassName('pagebuilder-column')
+    };
 
     mounted() {
 
@@ -82,27 +80,26 @@ export default class PagebuilderComponent extends Vue {
 
         if (this.oldElement) {
             this.article = ArticleService.createFromExisting(this.oldElement);
+            // @ts-ignore
             this.$store.commit('setArticle', this.article);
         } else {
             this.article = ArticleService.createNew();
         }
+
     }
 
     setTheme(){
-        let body = document.querySelector('body') as HTMLElement;
-        body.classList.add('dark-theme');
+        this.elements.body.classList.add(this.theme);
     }
 
     changeTheme(){
         if(this.theme === 'dark-theme'){
-            let body = document.querySelector('body') as HTMLElement;
-            body.classList.remove('dark-theme');
-            body.classList.add('light-theme');
+            this.elements.body.classList.remove('dark-theme');
+            this.elements.body.classList.add('light-theme');
             this.theme = 'light-theme';
         }else{
-            let body = document.querySelector('body') as HTMLElement;
-            body.classList.remove('light-theme');
-            body.classList.add('dark-theme');
+            this.elements.body.classList.remove('light-theme');
+            this.elements.body.classList.add('dark-theme');
             this.theme = 'dark-theme';
         }
     }
@@ -110,22 +107,17 @@ export default class PagebuilderComponent extends Vue {
     //@Todo: Rest column size for desktop and tablet
 
     setDesktop() {
-        let contentWrapper = document.querySelector('.content-view') as HTMLElement;
-        contentWrapper.style.maxWidth = '1200px';
+        this.elements.contentWrapper.style.maxWidth = '1200px';
     }
 
     setTablet() {
-        let contentWrapper = document.querySelector('.content-view') as HTMLElement;
-        contentWrapper.style.maxWidth = '768px';
-
+        this.elements.contentWrapper.style.maxWidth = '768px';
     }
 
     setMobile() {
-        let contentWrapper = document.querySelector('.content-view') as HTMLElement;
-        contentWrapper.style.maxWidth = '375px';
-        let columns = document.getElementsByClassName('pagebuilder-column');
+        this.elements.contentWrapper.style.maxWidth = '375px';
 
-        forEach(columns, (c: HTMLElement) => {
+        forEach(this.elements.columns, (c: HTMLElement) => {
 
             forEach(c.classList, (size: string) => {
                 if (size.includes('col-')) {

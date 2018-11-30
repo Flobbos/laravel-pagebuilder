@@ -23,9 +23,7 @@
             </span>
             <div class="pb-tooltip" v-show="isSettingsOpen">
                 <span class="text" @click="deleteRow()">
-                    Reihe
-                    <br>
-                    löschen
+                    <i class="glyphicon glyphicon-trash"></i>
                 </span>
             </div>
         </div>
