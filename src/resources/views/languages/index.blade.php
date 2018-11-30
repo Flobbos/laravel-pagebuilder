@@ -11,7 +11,7 @@
                             Sprachen
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('languages.create') }}" class="btn btn-default btn-sm pull-right">
+                            <a href="{{ route('pagebuilder::languages.create') }}" class="btn btn-default btn-sm pull-right">
                                 <i class="glyphicon glyphicon-plus"></i> @lang('pagebuilder::crud.create_button')
                             </a>
                         </div>

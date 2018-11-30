@@ -6,7 +6,7 @@
         <div class="col-sm-12">
             <div class="panel panel-default">
 
-                <form action="{{ route('languages.store') }}" role="form" method="POST"  enctype="multipart/form-data">
+                <form action="{{ route('pagebuilder::languages.store') }}" role="form" method="POST"  enctype="multipart/form-data">
                     {{ csrf_field() }}
 
                     <div class="panel-heading panel-default">
@@ -48,7 +48,7 @@
                         <div class="row">
 
                             <div class="col-sm-6">
-                                <a href="{{ route('languages.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>
+                                <a href="{{ route('pagebuilder::languages.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>
                             </div>
 
                             <div class="col-sm-6 text-right">

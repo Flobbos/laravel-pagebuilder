@@ -5,4 +5,4 @@ coverage/
 /nbproject
 .idea
 /node_modules/
-/require.d.ts
+/.vscode

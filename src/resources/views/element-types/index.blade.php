@@ -11,7 +11,7 @@
                             <h3 class="panel-title">Elemente</h3>
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('element-types.create') }}" class="btn btn-default btn-small pull-right">
+                            <a href="{{ route('pagebuilder::element-types.create') }}" class="btn btn-default btn-small pull-right">
                                 <i class="glyphicon glyphicon-plus"></i> @lang('pagebuilder::crud.create_button')
                             </a>
                         </div>
@@ -36,11 +36,11 @@
                                 <td>{{$element_type->name}}</td>
                                 <td>
                                     <div class="btn-group pull-right" role="group">
-                                        <a class="btn btn-sm btn-primary" href="{{ route('element-types.edit',$element_type->id) }}">
+                                        <a class="btn btn-sm btn-primary" href="{{ route('pagebuilder::element-types.edit',$element_type->id) }}">
                                             <i class="glyphicon glyphicon-pencil"></i> @lang('pagebuilder::crud.edit')
                                         </a>
                                         <form class="btn-group"
-                                            action="{{ route('element-types.destroy',$element_type->id) }}"
+                                            action="{{ route('pagebuilder::element-types.destroy',$element_type->id) }}"
                                             method="POST" v-on:submit.prevent="confirmDelete">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
