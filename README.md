@@ -7,8 +7,8 @@
 
 * [Installation](#installation)
 * [Configuration](#configuration)
-* [Migrations] (#migrations)
-* [Seeds] (#seeds)
+* [Migrations](#migrations)
+* [Seeds](#seeds)
 * [Generators](#generators)
 * [Usage](#usage)
 * [Laravel compatibility](#laravel-compatibility)
