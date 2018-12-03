@@ -1,0 +1,101 @@
+<?php
+
+namespace Flobbos\Pagebuilder\Commands;
+
+use Illuminate\Support\Str;
+use InvalidArgumentException;
+use Illuminate\Console\GeneratorCommand;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
+
+class ControllerCommand extends GeneratorCommand{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'pagebuilder:controller {name} {--route=pagebuilder.articles} {--views=vendor.pagebuilder.articles}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Generate the content controller';
+    
+    protected $type = 'Controller';
+    
+    /**
+     * Get the default namespace for the class.
+     *
+     * @param  string  $rootNamespace
+     * @return string
+     */
+    protected function getDefaultNamespace($rootNamespace){
+        return $rootNamespace.'\Http\Controllers';
+    }
+    
+    protected function replaceViewPath($name){
+        return $this->option('views');
+    }
+    
+    protected function replaceDummyRoute($name){
+        return $this->option('route');
+    }
+    
+    /**
+     * Build the class with the given name.
+     *
+     * Remove the base controller import if we are already in base namespace.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    protected function buildClass($name){
+        $controllerNamespace = $this->getNamespace($name);
+
+        $replace["use {$controllerNamespace}\Controller;\n"] = '';
+        $replace = array_merge($replace, [
+            'DummyViewPath' => $this->replaceViewPath($name),
+            'DummyRoute' => $this->replaceDummyRoute($name)
+        ]);
+        //dd($replace);
+        return str_replace(
+            array_keys($replace), array_values($replace), parent::buildClass($name)
+        );
+    }
+    
+    /**
+     * Get the stub file for the generator.
+     *
+     * @return string
+     */
+    protected function getStub(){
+        return __DIR__.'/../../resources/stubs/controllers/article_controller.stub';
+    }
+    
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle(){
+        $this->comment('Building template controller');
+        
+        $name = $this->qualifyClass($this->getNameInput());
+        $path = $this->getPath($name);
+        if ($this->alreadyExists($this->getNameInput())) {
+            $this->error($this->type.' already exists!');
+            return false;
+        }
+        
+        // Next, we will generate the path to the location where this class' file should get
+        // written. Then, we will build the class and make the proper replacements on the
+        // stub files so that it gets the correctly formatted namespace and class name.
+        $this->makeDirectory($path);
+        $this->files->put($path, $this->buildClass($name));
+
+        $this->info($this->type.' created successfully.');
+        
+    }
+}
