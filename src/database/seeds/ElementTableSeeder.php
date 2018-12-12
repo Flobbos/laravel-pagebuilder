@@ -16,21 +16,21 @@ class ElementTableSeeder extends Seeder{
         DB::table('element_types')->insert([
             'name' => 'Headline + Text',
             'component' => 'v-headline-text',
-            'icon' => 'text-icon',
+            'icon' => 'headline-text-element-icon',
             'sorting' => 1
         ]);
         //Text component
         DB::table('element_types')->insert([
             'name' => 'Text',
             'component' => 'v-text',
-            'icon' => 'text-icon',
+            'icon' => 'text-element-icon',
             'sorting' => 2
         ]);
         //Photo + Description
         DB::table('element_types')->insert([
             'name' => 'Photo + Description',
             'component' => 'v-photo-description',
-            'icon' => 'text-icon',
+            'icon' => 'image-element-icon',
             'sorting' => 3
         ]);
     }
