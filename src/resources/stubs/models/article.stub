@@ -1,16 +1,12 @@
 <?php
 
-namespace Flobbos\Pagebuilder\Models;
+namespace DummyNamespace;
 
-use Illuminate\Database\Eloquent\Model;
-use Flobbos\TranslatableDB;
+use Flobbos\Pagebuilder\Models\Article;
 
-class Article extends Model{
+class DummyClass extends Article{
     
-    use TranslatableDB\TranslatableDB;
-    
-    public $translatedAttributes = ['content'];
-    public $fallbackAttributes = ['content'];
+    protected $table = 'DummyTable';
     
     protected $fillable = [
         'name',
