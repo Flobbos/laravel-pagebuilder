@@ -17,7 +17,6 @@ class UploadController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        //dd($request->all());
         try{
             if($request->hasFile('photo')){
                 return response()->json([

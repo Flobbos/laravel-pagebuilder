@@ -12,8 +12,15 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "illuminate/support": ">=5.1.0",
+        "illuminate/support": ">=5.5.0",
         "flobbos/laravel-translatable-db": "^1.4"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Flobbos\\Pagebuilder\\PagebuilderServiceProvider"
+            ]
+        }
     },
     "autoload": {
         "psr-4": {
