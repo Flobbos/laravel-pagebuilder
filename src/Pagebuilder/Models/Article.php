@@ -3,20 +3,8 @@
 namespace Flobbos\Pagebuilder\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Flobbos\TranslatableDB;
 
-class Article extends Model{
-    
-    use TranslatableDB\TranslatableDB;
-    
-    public $translatedAttributes = ['content'];
-    public $fallbackAttributes = ['content'];
-    
-    protected $fillable = [
-        'name',
-        'photo',
-        'published_on',
-    ];
+class Article Extends Model{
     
     public function rows(){
         return $this->morphMany(Row::class,'rowable');

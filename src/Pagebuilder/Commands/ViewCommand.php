@@ -54,8 +54,7 @@ class ViewCommand extends GeneratorCommand{
     }
     
     protected function getDirectoryName($name){
-        //dd($name);
-        return  str_plural(strtolower(kebab_case($name)));
+        return  str_plural(strtolower(kebab_case(str_replace('.', '/', $name))));
     }
     
     /**
@@ -113,7 +112,7 @@ class ViewCommand extends GeneratorCommand{
      * @return mixed
      */
     public function handle(){
-        $this->comment('Building new template views.');
+        $this->comment('Building new resource views.');
         
         $path = $this->getPath(strtolower(kebab_case($this->getPathInput())));
         if ($this->alreadyExists($this->getPathInput())) {
