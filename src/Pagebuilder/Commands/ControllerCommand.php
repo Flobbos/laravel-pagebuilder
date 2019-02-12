@@ -35,12 +35,16 @@ class ControllerCommand extends GeneratorCommand{
         return $rootNamespace.'\Http\Controllers';
     }
     
-    protected function replaceViewPath($name){
+    protected function replaceViewPath(){
         return $this->option('views');
     }
     
-    protected function replaceDummyRoute($name){
+    protected function replaceDummyRoute(){
         return $this->option('route');
+    }
+    
+    protected function replaceDummySetClass(){
+        return str_singular(strtolower(str_replace('Controller', '', $this->getNameInput())));
     }
     
     /**
@@ -56,8 +60,9 @@ class ControllerCommand extends GeneratorCommand{
 
         $replace["use {$controllerNamespace}\Controller;\n"] = '';
         $replace = array_merge($replace, [
-            'DummyViewPath' => $this->replaceViewPath($name),
-            'DummyRoute' => $this->replaceDummyRoute($name)
+            'DummyViewPath' => $this->replaceViewPath(),
+            'DummyRoute' => $this->replaceDummyRoute(),
+            'DummySetClass' => $this->replaceDummySetClass()
         ]);
         //dd($replace);
         return str_replace(
@@ -80,7 +85,7 @@ class ControllerCommand extends GeneratorCommand{
      * @return mixed
      */
     public function handle(){
-        $this->comment('Building template controller');
+        $this->comment('Building pagebuilder resource controller');
         
         $name = $this->qualifyClass($this->getNameInput());
         $path = $this->getPath($name);

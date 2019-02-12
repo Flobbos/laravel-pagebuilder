@@ -16,7 +16,7 @@ class DummyClass extends Controller{
     public function __construct(PagebuilderContract $builder) {
         $this->articles = $builder;
         //Init pagebuilder model class
-        $this->articles->setClass('article');
+        $this->articles->setClass('DummySetClass');
     }
 
     /**
