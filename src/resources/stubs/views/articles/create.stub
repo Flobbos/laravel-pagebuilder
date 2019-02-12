@@ -6,8 +6,8 @@
     {{ csrf_field() }}
         <pagebuilder-component class="pagebuilder-component" ref="pagebuilder" :element-types="{{$element_types}}" storage-path="photos" :languages="{{$languages}}">
             
-            <div class="panel-heading panel-default" slot="header">
-                <h3 class="panel-title">@lang('pagebuilder::crud.create_headline')</h3>
+            <div class="card-title" slot="header">
+                <h3>@lang('pagebuilder::crud.create_headline')</h3>
                 @include('pagebuilder::notifications')
             </div>
 

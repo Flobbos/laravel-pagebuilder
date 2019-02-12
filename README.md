@@ -204,9 +204,9 @@ const app = new Vue({
 
  Laravel  | Crudable
 :---------|:----------
- 5.6      | >0.0.5
- 5.5      | >0.0.5
- 5.4      | >0.0.5
+ 5.7      | >1.0.0
+ 5.6      | >1.0.0
+ 5.5      | >0.1.7
 
 **Notice**: We're currently working on a new branch for Laravel 5.7 because that
 version came with Bootstrap 4 and our views are based on Bootstrap 3. You can 
