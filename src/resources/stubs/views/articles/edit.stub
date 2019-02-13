@@ -6,11 +6,11 @@
     {{ csrf_field() }}
     {{method_field('PUT')}}
         <pagebuilder-component class="pagebuilder-component" ref="pagebuilder" :element-types="{{$element_types}}" :old-element="{{ $article->toJson() }}" storage-path="photos"  :languages="{{$languages}}">
-            <div class="panel-heading panel-default" slot="header">
+            <div class="card-header" slot="header">
                 <h3 class="panel-title">@lang('pagebuilder::crud.edit_headline')</h3>
                 @include('pagebuilder::notifications')
             </div>
-            <div class="panel-footer" slot="footer">
+            <div class="card-footer" slot="footer">
                 <div class="row">
                     <div class="col-sm-6">
                         <a href="{{ route('DummyRoute.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>

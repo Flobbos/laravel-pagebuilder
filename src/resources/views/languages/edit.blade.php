@@ -4,17 +4,17 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="panel panel-default">
+            <div class="card">
 
                 <form action="{{ route('pagebuilder::languages.update',$language->id) }}" role="form" method="POST"  enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{method_field('PUT')}}
 
-                    <div class="panel-heading panel-default">
-                        @lang('pagebuilder::crud.edit_headline')
+                    <div class="card-header">
+                        <h3>@lang('pagebuilder::crud.edit_headline')</h3>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="card-body">
                         @include('pagebuilder::notifications')
 
                         <div class="form-group">
@@ -44,7 +44,7 @@
                         
                     </div>
 
-                    <div class="panel-footer">
+                    <div class="card-footer">
 
                         <div class="row">
 

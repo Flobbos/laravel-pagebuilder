@@ -4,21 +4,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h3 class="panel-title">Projekte</h3>
+                            <h3Projekte</h3>
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('DummyRoute.create') }}" class="btn btn-default btn-small pull-right">
+                            <a href="{{ route('DummyRoute.create') }}" class="btn btn-primary btn-small float-right">
                                 <i class="glyphicon glyphicon-plus"></i> @lang('pagebuilder::crud.create_button')
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     @include('pagebuilder::notifications')
                     @if($articles->isEmpty())
                     @lang('pagebuilder::crud.no_entries')
