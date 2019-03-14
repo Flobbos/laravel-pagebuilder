@@ -23,14 +23,22 @@ class Pagebuilder implements PagebuilderContract{
     
     public function get(){
         return $this->model->with([
-            'rows.columns.translations',
+            'rows'=>function($q){
+                $q->orderBy('sorting')->with(['columns'=>function($q){
+                    $q->with('translations','element_type');
+                }]);
+            },
             'translations'
         ])->get();
     }
     
     public function find($id){
         return $this->model->with([
-            'rows.columns.translations',
+            'rows'=>function($q){
+                $q->orderBy('sorting')->with(['columns'=>function($q){
+                    $q->with('translations','element_type');
+                }]);
+            },
             'translations'
         ])->find($id);
     }
