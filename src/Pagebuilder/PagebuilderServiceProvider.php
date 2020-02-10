@@ -11,13 +11,6 @@ class PagebuilderServiceProvider extends ServiceProvider{
         $this->publishes([
             __DIR__.'/../config/pagebuilder.php' => config_path('pagebuilder.php'),
         ],'config');
-        //Publish assets
-        $this->publishes([
-            __DIR__.'/../resources/assets/js/admin_components/' => resource_path('js/admin_components'),
-            __DIR__.'/../resources/assets/js/pagebuilder/' => resource_path('js/pagebuilder'),
-            __DIR__.'/../resources/assets/js/pagebuilder.js' => resource_path('js/pagebuilder.js'),
-            __DIR__.'/../img/pagebuilder' => resource_path('img/pagebuilder')
-        ],'assets');
         //load routes
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         //migrations
@@ -38,6 +31,7 @@ class PagebuilderServiceProvider extends ServiceProvider{
             Commands\ControllerCommand::class,
             Commands\ViewCommand::class,
             Commands\ModelCommand::class,
+            Commands\InstallCommand::class,
         ]);
         //Merge config
         $this->mergeConfigFrom(

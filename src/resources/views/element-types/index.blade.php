@@ -21,7 +21,7 @@
                 <div class="card-body">
                     @include('pagebuilder::notifications')
                     @if($element_types->isEmpty())
-                    @lang('crud.no_entries')
+                    @lang('pagebuilder::crud.no_entries')
                     @else
                     <table class="table table-striped">
                         <thead>

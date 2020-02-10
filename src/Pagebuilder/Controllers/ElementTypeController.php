@@ -44,7 +44,7 @@ class ElementTypeController extends Controller{
         
         try{
             $this->element_types->create($request->all());
-            return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('crud.record_created'));
+            return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('pagebuilder::crud.record_created'));
         } catch (Exception $ex) {
             return redirect()->back()->withErrors($ex->getMessage())->withInput();
         }
@@ -72,7 +72,7 @@ class ElementTypeController extends Controller{
         
         try{
             $this->element_types->update($id, $request->all());
-            return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('crud.record_updated'));
+            return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('pagebuilder::crud.record_updated'));
         } catch (Exception $ex) {
             return redirect()->back()->withInput()->withErrors($ex->getMessage());
         }
@@ -87,7 +87,7 @@ class ElementTypeController extends Controller{
     public function destroy($id){
         try{
             $this->element_types->delete($id);
-            return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('crud.record_deleted'));
+            return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
         } catch (Exception $ex) {
             return redirect()->route('pagebuilder::element-types.index')->withErrors($ex->getMessage());
         }
