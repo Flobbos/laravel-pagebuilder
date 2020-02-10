@@ -4,21 +4,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <div class="row">
                         <div class="col-sm-6">
-                            Sprachen
+                            <h3>Sprachen</h3>
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('pagebuilder::languages.create') }}" class="btn btn-default btn-sm pull-right">
+                            <a href="{{ route('pagebuilder::languages.create') }}" class="btn btn-primary btn-sm float-right">
                                 <i class="glyphicon glyphicon-plus"></i> @lang('pagebuilder::crud.create_button')
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     @include('pagebuilder::notifications')
                     @if($languages->isEmpty())
                     @lang('crud.no_entries')
@@ -37,7 +37,7 @@
                                 <td>{{ $lang->name }}</td>
                                 <td>{{ $lang->locale }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-primary pull-right" href="{{ route('languages.edit',$lang->id) }}">
+                                    <a class="btn btn-sm btn-primary float-right" href="{{ route('pagebuilder::languages.edit',$lang->id) }}">
                                         @lang('pagebuilder::crud.edit')
                                     </a>
                                 </td>
