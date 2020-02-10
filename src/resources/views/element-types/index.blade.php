@@ -4,24 +4,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h3 class="panel-title">Elemente</h3>
+                            <h3>Elemente</h3>
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('pagebuilder::element-types.create') }}" class="btn btn-default btn-small pull-right">
+                            <a href="{{ route('pagebuilder::element-types.create') }}" class="btn btn-primary btn-small float-right">
                                 <i class="glyphicon glyphicon-plus"></i> @lang('pagebuilder::crud.create_button')
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     @include('pagebuilder::notifications')
                     @if($element_types->isEmpty())
-                    @lang('crud.no_entries')
+                    @lang('pagebuilder::crud.no_entries')
                     @else
                     <table class="table table-striped">
                         <thead>
@@ -35,7 +35,7 @@
                                 <td>{{$element_type->sorting}}</td>
                                 <td>{{$element_type->name}}</td>
                                 <td>
-                                    <div class="btn-group pull-right" role="group">
+                                    <div class="btn-group float-right" role="group">
                                         <a class="btn btn-sm btn-primary" href="{{ route('pagebuilder::element-types.edit',$element_type->id) }}">
                                             <i class="glyphicon glyphicon-pencil"></i> @lang('pagebuilder::crud.edit')
                                         </a>

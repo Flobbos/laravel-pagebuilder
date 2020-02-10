@@ -44,7 +44,7 @@ class LanguageController extends Controller{
         
         try{
             $this->language->create($request->all());
-            return redirect()->route('pagebuilder::languages.index')->withMessage(trans('crud.record_created'));
+            return redirect()->route('pagebuilder::languages.index')->withMessage(trans('pagebuilder::crud.record_created'));
         } catch (Exception $ex) {
             return redirect()->back()->withErrors($ex->getMessage())->withInput();
         }
@@ -82,7 +82,7 @@ class LanguageController extends Controller{
         
         try{
             $this->language->update($id, $request->all());
-            return redirect()->route('pagebuilder::languages.index')->withMessage(trans('crud.record_updated'));
+            return redirect()->route('pagebuilder::languages.index')->withMessage(trans('pagebuilder::crud.record_updated'));
         } catch (Exception $ex) {
             return redirect()->back()->withInput()->withErrors($ex->getMessage());
         }
@@ -97,7 +97,7 @@ class LanguageController extends Controller{
     public function destroy($id){
         try{
             $this->language->delete($id);
-            return redirect()->route('pagebuilder::languages.index')->withMessage(trans('crud.record_deleted'));
+            return redirect()->route('pagebuilder::languages.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
         } catch (Exception $ex) {
             return redirect()->route('pagebuilder::languages.index')->withErrors($ex->getMessage());
         }
