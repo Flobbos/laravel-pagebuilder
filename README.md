@@ -92,7 +92,7 @@ All the needed documentation can be found here:
 
  Laravel  | Crudable
 :---------|:----------
- 6.0      | >1.0.0
+ 6.0      | >1.0.3
  5.8      | >1.0.0
  5.7      | >1.0.0
 
