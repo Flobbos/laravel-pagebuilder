@@ -7,7 +7,6 @@ use InvalidArgumentException;
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Support\Str;
 
 class ControllerCommand extends GeneratorCommand{
     /**
