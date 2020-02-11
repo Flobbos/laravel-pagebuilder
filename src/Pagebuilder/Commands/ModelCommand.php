@@ -36,12 +36,12 @@ class ModelCommand extends GeneratorCommand{
     }
     
     protected function replaceDummyTable($name){
-        $class = Str::replace($this->getNamespace($name).'\\', '', $name);
-        return Str::plural(strtolower(snake_case($class)));
+        $class = str_replace($this->getNamespace($name).'\\', '', $name);
+        return Str::plural(strtolower(Str::snake($class)));
     }
     
     protected function replaceDummyClass($name){
-        return Str::replace($this->getNamespace($name).'\\', '', $name);
+        return str_replace($this->getNamespace($name).'\\', '', $name);
     }
     
     /**
@@ -59,7 +59,7 @@ class ModelCommand extends GeneratorCommand{
             'DummyTable' => $this->replaceDummyTable($name)
         ];
         //dd($replace);
-        return Str::replace(
+        return str_replace(
             array_keys($replace), array_values($replace), parent::buildClass($name)
         );
     }

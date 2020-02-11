@@ -54,7 +54,7 @@ class ViewCommand extends GeneratorCommand{
     }
     
     protected function getDirectoryName($name){
-        return  Str::plural(strtolower(kebab_case(Str::replace('.', '/', $name))));
+        return  Str::plural(strtolower(Str::kebab(str_replace('.', '/', $name))));
     }
     
     /**
@@ -69,7 +69,7 @@ class ViewCommand extends GeneratorCommand{
     }
     
     protected function replaceViewPath($name){
-        return Str::replace('/', '.', $this->argument('path'));
+        return str_replace('/', '.', $this->argument('path'));
     }
     
     /**
@@ -86,7 +86,7 @@ class ViewCommand extends GeneratorCommand{
             'DummyViewPath' => $this->replaceViewPath($name),
             'DummyRoute' => $this->replaceDummyRoute($name)
         ];
-        return Str::replace(
+        return str_replace(
             array_keys($replace), array_values($replace), $this->generateClass($name)
         );
     }
@@ -114,7 +114,7 @@ class ViewCommand extends GeneratorCommand{
     public function handle(){
         $this->comment('Building new resource views.');
         
-        $path = $this->getPath(strtolower(kebab_case($this->getPathInput())));
+        $path = $this->getPath(strtolower(Str::kebab($this->getPathInput())));
         if ($this->alreadyExists($this->getPathInput())) {
             $this->error($this->type.' already exists!');
             return false;

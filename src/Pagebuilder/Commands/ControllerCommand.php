@@ -44,7 +44,7 @@ class ControllerCommand extends GeneratorCommand{
     }
     
     protected function replaceDummySetClass(){
-        return Str::singular(strtolower(Str::replace('Controller', '', $this->getNameInput())));
+        return Str::singular(strtolower(str_replace('Controller', '', $this->getNameInput())));
     }
     
     /**
@@ -65,7 +65,7 @@ class ControllerCommand extends GeneratorCommand{
             'DummySetClass' => $this->replaceDummySetClass()
         ]);
         //dd($replace);
-        return Str::replace(
+        return str_replace(
             array_keys($replace), array_values($replace), parent::buildClass($name)
         );
     }
