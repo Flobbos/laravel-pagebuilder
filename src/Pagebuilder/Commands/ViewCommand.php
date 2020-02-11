@@ -54,7 +54,7 @@ class ViewCommand extends GeneratorCommand{
     }
     
     protected function getDirectoryName($name){
-        return  str_plural(strtolower(kebab_case(str_replace('.', '/', $name))));
+        return  Str::plural(strtolower(kebab_case(Str::replace('.', '/', $name))));
     }
     
     /**
@@ -69,7 +69,7 @@ class ViewCommand extends GeneratorCommand{
     }
     
     protected function replaceViewPath($name){
-        return str_replace('/', '.', $this->argument('path'));
+        return Str::replace('/', '.', $this->argument('path'));
     }
     
     /**
@@ -86,7 +86,7 @@ class ViewCommand extends GeneratorCommand{
             'DummyViewPath' => $this->replaceViewPath($name),
             'DummyRoute' => $this->replaceDummyRoute($name)
         ];
-        return str_replace(
+        return Str::replace(
             array_keys($replace), array_values($replace), $this->generateClass($name)
         );
     }

@@ -7,6 +7,7 @@ use InvalidArgumentException;
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use Illuminate\Support\Str;
 
 class ControllerCommand extends GeneratorCommand{
     /**
@@ -44,7 +45,7 @@ class ControllerCommand extends GeneratorCommand{
     }
     
     protected function replaceDummySetClass(){
-        return str_singular(strtolower(str_replace('Controller', '', $this->getNameInput())));
+        return Str::singular(strtolower(Str::replace('Controller', '', $this->getNameInput())));
     }
     
     /**
@@ -65,7 +66,7 @@ class ControllerCommand extends GeneratorCommand{
             'DummySetClass' => $this->replaceDummySetClass()
         ]);
         //dd($replace);
-        return str_replace(
+        return Str::replace(
             array_keys($replace), array_values($replace), parent::buildClass($name)
         );
     }

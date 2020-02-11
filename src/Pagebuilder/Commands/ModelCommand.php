@@ -7,6 +7,7 @@ use InvalidArgumentException;
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use Illuminate\Support\Str;
 
 class ModelCommand extends GeneratorCommand{
     /**
@@ -36,12 +37,12 @@ class ModelCommand extends GeneratorCommand{
     }
     
     protected function replaceDummyTable($name){
-        $class = str_replace($this->getNamespace($name).'\\', '', $name);
-        return str_plural(strtolower(snake_case($class)));
+        $class = Str::replace($this->getNamespace($name).'\\', '', $name);
+        return Str::plural(strtolower(snake_case($class)));
     }
     
     protected function replaceDummyClass($name){
-        return str_replace($this->getNamespace($name).'\\', '', $name);
+        return Str::replace($this->getNamespace($name).'\\', '', $name);
     }
     
     /**
@@ -59,7 +60,7 @@ class ModelCommand extends GeneratorCommand{
             'DummyTable' => $this->replaceDummyTable($name)
         ];
         //dd($replace);
-        return str_replace(
+        return Str::replace(
             array_keys($replace), array_values($replace), parent::buildClass($name)
         );
     }
