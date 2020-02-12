@@ -1,6 +1,7 @@
 <?php
 
 namespace Flobbos\Pagebuilder\Uploads;
+use Illuminate\Support\Str;
 
 trait Uploadable {
     
@@ -24,10 +25,10 @@ trait Uploadable {
         //Get filename
         $basename = basename($request->file($fieldname)->getClientOriginalName(),'.'.$request->file($fieldname)->getClientOriginalExtension());
         if($randomize){
-            $filename = uniqid().'_'.str_slug($basename).'.'.$request->file($fieldname)->getClientOriginalExtension();
+            $filename = uniqid().'_'.Str::slug($basename).'.'.$request->file($fieldname)->getClientOriginalExtension();
         }
         else{
-            $filename = str_slug($basename).'.'.$request->file($fieldname)->getClientOriginalExtension();
+            $filename = Str::slug($basename).'.'.$request->file($fieldname)->getClientOriginalExtension();
         }
         //Move file to location
         $request->file($fieldname)->storeAs($folder,$filename,$storage_disk);

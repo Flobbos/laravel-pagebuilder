@@ -37,7 +37,7 @@ class ModelCommand extends GeneratorCommand{
     
     protected function replaceDummyTable($name){
         $class = str_replace($this->getNamespace($name).'\\', '', $name);
-        return str_plural(strtolower(snake_case($class)));
+        return Str::plural(strtolower(Str::snake($class)));
     }
     
     protected function replaceDummyClass($name){
