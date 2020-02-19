@@ -11,12 +11,12 @@ use Exception;
 
 class DummyClass extends Controller{
     
-    protected $articles;
+    protected $builder;
 
     public function __construct(PagebuilderContract $builder) {
-        $this->articles = $builder;
+        $this->builder = $builder;
         //Init pagebuilder model class
-        $this->articles->setClass('DummySetClass');
+        $this->builder->setClass('DummySetClass');
     }
 
     /**
@@ -25,7 +25,7 @@ class DummyClass extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        return view('DummyViewPath.index')->with(['articles'=>$this->articles->get()]);
+        return view('DummyViewPath.index')->with(['DummyVariables'=>$this->builder->get()]);
     }
 
     /**
@@ -48,10 +48,10 @@ class DummyClass extends Controller{
      */
     public function store(Request $request){
         try{
-            $article = $this->articles->create($request);
+            $DummyVariable = $this->builder->create($request);
             return response()->json([
                 'success'=>true,
-                'return_url' => route('DummyRoute.edit',$article->id)
+                'return_url' => route('DummyRoute.edit',$DummyVariable->id)
             ],200);
         } catch (Exception $ex) {
             return response()->json(['success'=>false,'message'=>$ex->getMessage().'--'.$ex->getLine().'--'.$ex->getFile()],422);
@@ -67,7 +67,7 @@ class DummyClass extends Controller{
      */
     public function edit($id, LanguageContract $lang, ElementContract $element_types){
         return view('DummyViewPath.edit')->with([
-            'article'=>$this->articles->find($id),
+            'DummyVariable'=>$this->builder->find($id),
             'languages'=>$lang->get(),
             'element_types' => $element_types->get()
         ]);
@@ -82,7 +82,7 @@ class DummyClass extends Controller{
      */
     public function update(Request $request, $id){
         try{
-            $this->articles->update($id, $request);
+            $this->builder->update($id, $request);
             return response()->json([
                 'success'=>true,
                 'return_url'=>route('DummyRoute.edit',$id)
@@ -100,7 +100,7 @@ class DummyClass extends Controller{
      */
     public function destroy($id){
         try{
-            $this->articles->delete($id);
+            $this->builder->delete($id);
             return redirect()->route('DummyRoute.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
         } catch (Exception $ex) {
             return redirect()->route('DummyRoute.index')->withErrors($ex->getMessage());

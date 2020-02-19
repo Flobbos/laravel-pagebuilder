@@ -8,7 +8,8 @@ class Translation extends Model{
     
     protected $fillable = [
         'language_id',
-        'content'
+        'content',
+        'slug',
     ];
 
     protected $casts = [

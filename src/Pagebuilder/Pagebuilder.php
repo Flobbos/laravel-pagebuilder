@@ -14,7 +14,6 @@ class Pagebuilder implements PagebuilderContract{
     use Translations\Translatable;
     
     protected $rows,$columns,$model;
-    protected $translation_name = 'translations';
     
     public function __construct(Row $rows, Column $columns) {
         $this->rows = $rows;

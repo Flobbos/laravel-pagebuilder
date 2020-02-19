@@ -14,14 +14,14 @@ class ControllerCommand extends GeneratorCommand{
      *
      * @var string
      */
-    protected $signature = 'pagebuilder:controller {name} {--route=pagebuilder.articles} {--views=vendor.pagebuilder.articles}';
+    protected $signature = 'pagebuilder:controller {name} {--route=pagebuilder.pages} {--views=vendor.pagebuilder.pages}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Generate the content controller';
+    protected $description = 'Generate a controller for pages.';
     
     protected $type = 'Controller';
     
@@ -47,6 +47,10 @@ class ControllerCommand extends GeneratorCommand{
         return Str::singular(strtolower(str_replace('Controller', '', $this->getNameInput())));
     }
     
+    protected function replaceDummyVariable(){
+        return Str::singular(strtolower(str_replace('Controller', '', $this->getNameInput())));
+    }
+    
     /**
      * Build the class with the given name.
      *
@@ -62,7 +66,8 @@ class ControllerCommand extends GeneratorCommand{
         $replace = array_merge($replace, [
             'DummyViewPath' => $this->replaceViewPath(),
             'DummyRoute' => $this->replaceDummyRoute(),
-            'DummySetClass' => $this->replaceDummySetClass()
+            'DummySetClass' => $this->replaceDummySetClass(),
+            'DummyVariable' => $this->replaceDummyVariable(),
         ]);
         //dd($replace);
         return str_replace(
@@ -76,7 +81,7 @@ class ControllerCommand extends GeneratorCommand{
      * @return string
      */
     protected function getStub(){
-        return __DIR__.'/../../resources/stubs/controllers/article_controller.stub';
+        return __DIR__.'/../../resources/stubs/controllers/page_controller.stub';
     }
     
     /**

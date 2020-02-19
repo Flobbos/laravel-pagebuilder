@@ -4,7 +4,9 @@ namespace Flobbos\Pagebuilder\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article Extends Model{
+class Post Extends Model{
+    
+    protected $slug_name = 'slug';
     
     public function rows(){
         return $this->morphMany(Row::class,'rowable');
@@ -21,6 +23,14 @@ class Article Extends Model{
             $this->translations()->delete();
             $this->rows()->delete();
         }
+    }
+    
+    public function getSlugField(){
+        return $this->slug_field ?? null;
+    }
+    
+    public function getSlugName(){
+        return $this->slug_name;
     }
     
 }
