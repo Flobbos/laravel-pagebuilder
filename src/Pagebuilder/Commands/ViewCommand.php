@@ -14,7 +14,7 @@ class ViewCommand extends GeneratorCommand{
      *
      * @var string
      */
-    protected $signature = 'pagebuilder:views {path} {--route=pagebuilder.articles}';
+    protected $signature = 'pagebuilder:views {path} {--route=pagebuilder.pages}';
 
     /**
      * The console command description.
