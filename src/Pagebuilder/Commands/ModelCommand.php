@@ -70,7 +70,7 @@ class ModelCommand extends GeneratorCommand{
      * @return string
      */
     protected function getStub(){
-        return __DIR__.'/../../resources/stubs/models/article.stub';
+        return __DIR__.'/../../resources/stubs/models/page.stub';
     }
     
     /**

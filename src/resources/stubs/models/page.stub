@@ -2,9 +2,9 @@
 
 namespace DummyNamespace;
 
-use Flobbos\Pagebuilder\Models\Article;
+use Flobbos\Pagebuilder\Models\BasePage;
 
-class DummyClass extends Article{
+class DummyClass extends BasePage{
     
     protected $table = 'DummyTable';
     

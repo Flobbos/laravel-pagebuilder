@@ -4,7 +4,7 @@ namespace Flobbos\Pagebuilder\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post Extends Model{
+class BasePage Extends Model{
     
     protected $slug_name = 'slug';
     
