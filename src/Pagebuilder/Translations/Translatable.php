@@ -6,6 +6,7 @@ use Flobbos\Pagebuilder\Exceptions\MissingTranslationsException;
 use Flobbos\Pagebuilder\Exceptions\MissingRequiredFieldsException;
 use Flobbos\Pagebuilder\Exceptions\MissingTranslationNameException;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 
 trait Translatable{
     
@@ -141,8 +142,9 @@ trait Translatable{
             return $trans;
         }
         //Check if current translation contains a sluggable field
-        if(array_key_exists($this->model->getSlugField(), $trans)){
-            $trans[$this->model->getSlugName()] = $this->generateSlug($trans[$this->getSlugField()]);
+        if(array_key_exists($this->model->getSlugField(), Arr::get($trans,'content',[]))){
+            
+            $trans[$this->model->getSlugName()] = $this->generateSlug(Arr::get($trans,'content.'.$this->model->getSlugField()));
         }
         return $trans;
     }
