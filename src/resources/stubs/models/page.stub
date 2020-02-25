@@ -8,6 +8,12 @@ class DummyClass extends BasePage{
     
     protected $table = 'DummyTable';
     
+    /**
+     * Uncomment this to use translated slugs and enable slug creation
+     * based on a field of your choice.
+     */
+    //protected $slug_field = 'title'; 
+    
     protected $fillable = [
         'name',
         'photo',

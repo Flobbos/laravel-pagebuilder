@@ -96,15 +96,6 @@ trait Translatable{
         foreach($translations as $trans){
             if(isset($trans['id']) && !is_null($trans['id'])){
                 $translation = $model->translations()->where('id',$trans['id'])->first();
-                //Check if parent model is available
-                if(isset($this->model)){
-                    //Add keys that exist with deleted values
-                    foreach($this->model->translatedAttributes as $key){
-                        if(!array_key_exists($key, $trans)){
-                            $trans[$key] = null;
-                        }
-                    }
-                }
                 //Update translation and URL slug
                 $translation->update($this->checkForSlug($trans));
             }
@@ -112,7 +103,6 @@ trait Translatable{
                 $remaining[] = $trans;
             }
         }
-        
         //Create new translations
         $new_translations = $this->processTranslations($remaining,true);
         //dd($new_translations);
@@ -132,10 +122,20 @@ trait Translatable{
         return $trans_models;
     }
     
+    /**
+     * Generate slug from given string
+     * @param string $name
+     * @return string
+     */
     private function generateSlug(string $name): string{
         return Str::slug($name);
     }
     
+    /**
+     * Check if slug field is set and generate a slug from it
+     * @param array $trans
+     * @return array
+     */
     private function checkForSlug(array $trans): array{
         //Don't use slugs
         if(!$this->model->getSlugField()){

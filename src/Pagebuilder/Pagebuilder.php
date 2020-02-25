@@ -8,6 +8,7 @@ use Flobbos\Pagebuilder\Models\Column;
 use Flobbos\Pagebuilder\Models\Translation;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Support\Arr;
 
 class Pagebuilder implements PagebuilderContract{
     
@@ -64,12 +65,14 @@ class Pagebuilder implements PagebuilderContract{
             $current_row = $article->rows()->create($row);
             //Create columns
             foreach($row['columns'] as $column_key=>$column){
-                //Check for file upload
-                $current_column = $current_row->columns()->create($this->processColumn($column));
-                //Handle actual content
-                foreach($column['translations'] as $trans_key=>$trans){
-                    if($content = $this->processContent($trans_key,$trans)){
-                        $current_column->translations()->create($content);
+                //Check if column is set
+                if($column = $this->processColumn($column)){
+                    $current_column = $current_row->columns()->create($column);
+                    //Handle actual content
+                    foreach($column['translations'] as $trans_key=>$trans){
+                        if($content = $this->processContent($trans_key,$trans)){
+                            $current_column->translations()->create($content);
+                        }
                     }
                 }
             }
@@ -119,10 +122,12 @@ class Pagebuilder implements PagebuilderContract{
                         }
                     }
                     else{
-                        $current_column = $current_row->columns()->create($column);
-                        foreach($column['translations'] as $trans_key=>$trans){
-                            if($content = $this->processContent($trans_key,$trans)){
-                                $current_column->translations()->create($content);
+                        if($column = $this->processColumn($column)){
+                            $current_column = $current_row->columns()->create($column);
+                            foreach($column['translations'] as $trans_key=>$trans){
+                                if($content = $this->processContent($trans_key,$trans)){
+                                    $current_column->translations()->create($content);
+                                }
                             }
                         }
                     }
@@ -133,10 +138,12 @@ class Pagebuilder implements PagebuilderContract{
                 $current_row = $article->rows()->create($row);
                 //Look for columns
                 foreach($row['columns'] as $column){
-                    $current_column = $current_row->columns()->create($column);
-                    foreach($column['translations'] as $trans_key=>$trans){
-                        if($content = $this->processContent($trans_key,$trans)){
-                            $current_column->translations()->create($content);
+                    if($column = $this->processColumn($column)){
+                        $current_column = $current_row->columns()->create($column);
+                        foreach($column['translations'] as $trans_key=>$trans){
+                            if($content = $this->processContent($trans_key,$trans)){
+                                $current_column->translations()->create($content);
+                            }
                         }
                     }
                 }
@@ -158,7 +165,10 @@ class Pagebuilder implements PagebuilderContract{
     }
     
     private function processColumn($column){
-        return $column;
+        if((Arr::get($column,'element_type_id')) != 0){
+            return $column;
+        }
+        return null;
     }
     
     //OVERRIDES

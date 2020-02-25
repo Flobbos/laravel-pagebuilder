@@ -21,6 +21,7 @@ class CreateColumnsTable extends Migration
             $table->foreign('element_type_id')->references('id')->on('element_types')->onDelete('cascade');
             $table->string('column_size')->nullable();
             $table->string('custom_class')->nullable();
+            $table->string('alignment')->nullable();
             $table->tinyInteger('sorting')->default(0);
             $table->boolean('active')->default(true);
             $table->timestamps();
