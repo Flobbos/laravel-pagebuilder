@@ -19,6 +19,7 @@ class CreateTranslationsTable extends Migration
             $table->integer('language_id')->unsigned()->index();
             $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');
             $table->text('content');
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

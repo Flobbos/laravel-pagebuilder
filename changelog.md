@@ -1,5 +1,16 @@
 ## Version History
 
+### v. 1.0.5
+
+- added new field "alignment" to rows migration
+- added translated slugs
+- fixed old reliance on translatedAttributes
+
+### v. 1.0.4
+
+- removed old helpers
+- fixed minimum requirements
+
 ### v. 1.0.3
 
 - removed all JS assets (different package now)

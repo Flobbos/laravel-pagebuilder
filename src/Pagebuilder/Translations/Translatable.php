@@ -5,8 +5,12 @@ namespace Flobbos\Pagebuilder\Translations;
 use Flobbos\Pagebuilder\Exceptions\MissingTranslationsException;
 use Flobbos\Pagebuilder\Exceptions\MissingRequiredFieldsException;
 use Flobbos\Pagebuilder\Exceptions\MissingTranslationNameException;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 
 trait Translatable{
+    
+    protected $translation_name = 'translations';
     
     /**
      * Process translation input data for saving them.
@@ -32,10 +36,7 @@ trait Translatable{
                 unset($trans[$trans_key]);
             }
             if(!isset($this->required_trans) && !empty($this->filterNull($trans,$language_key))){
-                $approved[] = $trans;
-            }
-            elseif(isset($this->required_trans) && $this->checkRequired($trans)){
-                $approved[] = $trans;
+                $approved[] = $this->checkForSlug($trans);
             }
         }
         return $approved;
@@ -55,27 +56,7 @@ trait Translatable{
         if(empty($translations))
             throw new MissingTranslationsException;
         
-        if(empty($this->translation_name))
-            throw new MissingTranslationNameException;
-        
         return $model->{$this->translation_name}()->saveMany($translations);
-    }
-    
-    /**
-     * If you set the required fields in your service class
-     * you can check if these fields were set. 
-     * @param array $arr
-     * @return bool
-     */
-    public function checkRequired(array $arr){
-        //Filter out null values
-        $filtered = $this->filterNull($arr);
-        
-        if(isset($this->required_trans))
-            throw new MissingRequiredFieldsException;
-        
-        //check if all required fields are present
-        return count(array_intersect_key(array_flip($this->required_trans), $filtered)) === count($this->required_trans);
     }
     
     /**
@@ -115,23 +96,13 @@ trait Translatable{
         foreach($translations as $trans){
             if(isset($trans['id']) && !is_null($trans['id'])){
                 $translation = $model->translations()->where('id',$trans['id'])->first();
-                //Check if parent model is available
-                if(isset($this->model)){
-                    //Add keys that exist with deleted values
-                    foreach($this->model->translatedAttributes as $key){
-                        if(!array_key_exists($key, $trans)){
-                            $trans[$key] = null;
-                        }
-                    }
-                }
-                //Update translation
-                $translation->update($trans);
+                //Update translation and URL slug
+                $translation->update($this->checkForSlug($trans));
             }
             else{
                 $remaining[] = $trans;
             }
         }
-        
         //Create new translations
         $new_translations = $this->processTranslations($remaining,true);
         //dd($new_translations);
@@ -146,13 +117,35 @@ trait Translatable{
     public function encodeContent($translation_data){
         $trans_models = [];
         foreach($translation_data as $trans_item){
-            $translated_element = [
-                'language_id' => $trans_item['language_id'],
-                'content' => $trans_item['content']
-            ];
-            $trans_models[] = new \Flobbos\Pagebuilder\Models\Translation($translated_element);
+            $trans_models[] = new \Flobbos\Pagebuilder\Models\Translation($trans_item);
         }
         return $trans_models;
+    }
+    
+    /**
+     * Generate slug from given string
+     * @param string $name
+     * @return string
+     */
+    private function generateSlug(string $name): string{
+        return Str::slug($name);
+    }
+    
+    /**
+     * Check if slug field is set and generate a slug from it
+     * @param array $trans
+     * @return array
+     */
+    private function checkForSlug(array $trans): array{
+        //Don't use slugs
+        if(!$this->model->getSlugField()){
+            return $trans;
+        }
+        //Check if current translation contains a sluggable field
+        if(array_key_exists($this->model->getSlugField(), Arr::get($trans,'content',[]))){
+            $trans[$this->model->getSlugName()] = $this->generateSlug(Arr::get($trans,'content.'.$this->model->getSlugField()));
+        }
+        return $trans;
     }
     
 }

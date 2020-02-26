@@ -14,7 +14,7 @@ class ViewCommand extends GeneratorCommand{
      *
      * @var string
      */
-    protected $signature = 'pagebuilder:views {path} {--route=pagebuilder.articles}';
+    protected $signature = 'pagebuilder:views {path} {--route=pagebuilder.pages}';
 
     /**
      * The console command description.
@@ -33,9 +33,9 @@ class ViewCommand extends GeneratorCommand{
      */
     protected function getStub(){
         return [
-            'index.blade.php'=>__DIR__.'/../../resources/stubs/views/articles/index.stub',
-            'create.blade.php'=>__DIR__.'/../../resources/stubs/views/articles/create.stub',
-            'edit.blade.php'=>__DIR__.'/../../resources/stubs/views/articles/edit.stub'
+            'index.blade.php'=>__DIR__.'/../../resources/stubs/views/pages/index.stub',
+            'create.blade.php'=>__DIR__.'/../../resources/stubs/views/pages/create.stub',
+            'edit.blade.php'=>__DIR__.'/../../resources/stubs/views/pages/edit.stub'
             ];
     }
     

@@ -10,7 +10,9 @@
 * [Migrations](#migrations)
 * [Seeds](#seeds)
 * [Generators](#generators)
-* [Usage](#usage)
+* [Slugs](#slugs)
+* [Fields](#fields)
+* [JS](#js components)
 * [Laravel compatibility](#laravel-compatibility)
 
 ## Installation
@@ -33,9 +35,11 @@ and a language entry
 
 The only thing in the config file is the classes you wish to use with Pagebuilder.
 
+You need to generate a model class first using the built in generator.
+
 ```php
 'builder_classes' => [
-        'article' => Flobbos\Pagebuilder\Models\Article::class,
+        'page' => App\Page::class,
     ]
 ```
 
@@ -43,7 +47,7 @@ Set additional classes that are supposed to run in a Pagebuilder controller. You
 generate multiple controllers for multiple resources using the Pagebuilder.
 
 ```php
-$this->articles->setClass('article');
+$this->articles->setClass('page');
 ```
 
 This setting in the generated controller will tell it which resource it needs to 
@@ -55,27 +59,46 @@ You can generate the controller and views for creating pagebuilder based resourc
 using the following generator commands:
 
 ```php
-php artisan pagebuilder:controller ArticleController --route=pagebuilder.articles --views=pagebuilder.articles
+php artisan pagebuilder:controller ArticleController --route=pagebuilder.pages --views=pagebuilder.pages
 ```
 
-This will generate a complete resource controller named ArticleController where the routes
+This will generate a complete resource controller named PageController where the routes
 and view calls are replaced with the values above. The views will always be prefixed with
 vendor.
 
 ```php
-php artisan pagebuilder:views vendor.pagebuilder.articles --route=pagebuilder.articles
+php artisan pagebuilder:views pagebuilder.pages --route=pagebuilder.pages
 ```
 
 Use the corresponding routes that you set with the controller and it will all work magically.
 
 ```php
-pagebuilder:model Article
+pagebuilder:model Page
 ```
 
-This will generate a Post model that extends the Article model that comes with
+This will generate a Page model that extends the BasePage model that comes with
 the package so all necessary relationships and translation options are included. 
-This step is only needed if your base model needs additional fields that don't 
-come with the Article model. 
+This step is necessary to be able to generate content because the BasePage model
+should not be used as a resource directly. 
+
+## Slugs
+
+The pagebuilder is capable of generating translated URL slugs for you. All you 
+need to do is uncomment the following line from your generated model:
+
+```php
+//protected $slug_field = 'title'; 
+```
+
+This will tell the pagebuilder which field in the translations is supposed to 
+generate the URL slug. The slug will automatically be regenerated when you change
+the named field. 
+
+## Fields
+
+There are some basic fields in the settings area for an resource but you are free
+to add as many additional fields as needed. These fields will be automatically
+saved in the database without further modifications to the DB structure. 
 
 ## JS Components
 

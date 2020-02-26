@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <pagebuilder-component class="pagebuilder-component" ref="pagebuilder" :element-types="{{$element_types}}" storage-path="photos" :languages="{{$languages}}">
+    <pagebuilder-component 
+        class="pagebuilder-component" 
+        ref="pagebuilder" 
+        :element-types="{{$element_types}}" 
+        storage-path="photos" 
+        :languages="{{$languages}}">
             
         <div class="card-header" slot="header">
             <h3>@lang('pagebuilder::crud.create_headline')</h3>
