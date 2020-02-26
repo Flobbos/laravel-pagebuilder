@@ -19,6 +19,7 @@ class CreateRowsTable extends Migration
             $table->string('custom_class')->nullable();
             $table->integer('sorting')->unsigned()->index();
             $table->boolean('expanded')->default(false);
+            $table->string('alignment')->nullable();
             $table->timestamps();
         });
     }

@@ -3,8 +3,17 @@
 namespace Flobbos\Pagebuilder\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Flobbos\Pagebuilder\Models\Translation;
 
 class BasePage Extends Model{
+    
+    use TranslatableDB\TranslatableDB;
+    
+    public $translatedAttributes = ['content','slug'];
+    public $fallbackAttributes = ['content','slug'];
+    
+    protected $translationModel = Translation::class;
+    protected $translationForeignKey = 'translatable';
     
     protected $slug_name = 'slug';
     
