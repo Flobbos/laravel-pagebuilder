@@ -4,6 +4,7 @@ namespace Flobbos\Pagebuilder\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Flobbos\Pagebuilder\Models\Translation;
+use Flobbos\TranslatableDB;
 
 class BasePage Extends Model{
     
