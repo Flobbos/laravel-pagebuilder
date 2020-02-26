@@ -143,7 +143,6 @@ trait Translatable{
         }
         //Check if current translation contains a sluggable field
         if(array_key_exists($this->model->getSlugField(), Arr::get($trans,'content',[]))){
-            
             $trans[$this->model->getSlugName()] = $this->generateSlug(Arr::get($trans,'content.'.$this->model->getSlugField()));
         }
         return $trans;

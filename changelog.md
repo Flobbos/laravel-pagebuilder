@@ -2,7 +2,7 @@
 
 ### v. 1.0.5
 
-- added new field "alignment" to columns
+- added new field "alignment" to rows migration
 - added translated slugs
 - fixed old reliance on translatedAttributes
 
