@@ -11,10 +11,10 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            Elements: {{ $elements->count() }}
+                            @lang('pagebuilder::crud.element_types'): {{ $elements->count() }}
                         </div>
                         <div class="col-sm-6">
-                            Languages: {{ $languages->count() }}
+                            @lang('pagebuilder::crud.languages'): {{ $languages->count() }}
                         </div>
                     </div>
                 </div>

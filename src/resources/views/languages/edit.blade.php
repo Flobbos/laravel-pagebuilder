@@ -11,7 +11,8 @@
                     {{method_field('PUT')}}
 
                     <div class="card-header">
-                        <h3>@lang('pagebuilder::crud.edit_headline')</h3>
+                        <h5 class="card-title">@lang('pagebuilder::crud.languages')</h5>
+                        @lang('pagebuilder::crud.edit_headline')
                     </div>
 
                     <div class="card-body">
@@ -21,7 +22,7 @@
                             <div class="row">
                                 
                                 <div class="col-md-8">
-                                    <label for="name" class="control-label">Name</label>
+                                    <label for="name" class="control-label">@lang('pagebuilder::crud.labels.name')</label>
                                     <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$language->name) }}">
                                 </div>
                                 
@@ -33,7 +34,7 @@
                             <div class="row">
                                 
                                 <div class="col-md-8">
-                                    <label for="locale" class="control-label">ISO</label>
+                                    <label for="locale" class="control-label">@lang('pagebuilder::crud.labels.iso')</label>
                                     <input id="locale" type="text" class="form-control" name="locale" value="{{ old('locale',$language->locale) }}">
                                 </div>
                                 

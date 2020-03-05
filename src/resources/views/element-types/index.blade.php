@@ -6,12 +6,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="row">
+                    <div class="row d-flex align-items-center">
                         <div class="col-sm-6">
-                            <h3>Elemente</h3>
+                            <h5 class="card-title mb-0">@lang('pagebuilder::crud.element_types')</h5>
                         </div>
-                        <div class="col-sm-6">
-                            <a href="{{ route('pagebuilder::element-types.create') }}" class="btn btn-primary btn-small float-right">
+                        <div class="col-sm-6 text-right">
+                            <a href="{{ route('pagebuilder::element-types.create') }}" class="btn btn-primary btn-sm">
                                 <i class="glyphicon glyphicon-plus"></i> @lang('pagebuilder::crud.create_button')
                             </a>
                         </div>
@@ -26,7 +26,7 @@
                     <table class="table table-striped">
                         <thead>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>@lang('pagebuilder::crud.labels.name')</th>
                         <th></th>
                         </thead>
                         <tbody>

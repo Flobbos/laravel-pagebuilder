@@ -21,5 +21,17 @@ return [
     'record_updated' => 'Der Eintrag wurde erfolgreich aktualisiert.',
     'record_deleted' => 'Der Eintrag wurde erfolgreich gelöscht.',
     //File error
-    'invalid_file_upload' => 'Es gab ein Problem beim Upload der Datei.'
+    'invalid_file_upload' => 'Es gab ein Problem beim Upload der Datei.',
+
+    'element_types' => 'Elemente',
+    'languages' => 'Sprachen',
+
+    // Labels
+    'labels' => [
+        'name' => 'Name',
+        'iso' => 'ISO',
+        'sorting' => 'Sortierung',
+        'icon' => 'Icon',
+        'component' => 'Komponente'
+    ]
 ];

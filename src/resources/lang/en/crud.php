@@ -21,5 +21,18 @@ return [
     'record_updated' => 'The entry has been successfully updated.',
     'record_deleted' => 'The entry was removed successfully',
     //File error
-    'invalid_file_upload' => 'A problem was encountered during the file upload'
+    'invalid_file_upload' => 'A problem was encountered during the file upload',
+
+    'element_types' => 'Elements',
+    'languages' => 'Languages',
+
+    // Labels
+    'labels' => [
+        'name' => 'Name',
+        'iso' => 'ISO',
+        'sorting' => 'Sorting',
+        'icon' => 'Icon',
+        'component' => 'Component'
+    ]
+
 ];

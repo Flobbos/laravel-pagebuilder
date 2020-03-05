@@ -21,5 +21,19 @@ return [
     'record_updated' => 'تم تعديل المحتوى بنجاح',
     'record_deleted' => 'تم حذف المحتوى بنجاح',
     //File error
-    'invalid_file_upload' => 'حدثت مشكلة أثناء تحميل الملف'
+    'invalid_file_upload' => 'حدثت مشكلة أثناء تحميل الملف',
+
+
+    // TODO
+    'element_types' => 'Elements',
+    'languages' => 'Languages',
+
+    // Labels
+    'labels' => [
+        'name' => 'Name',
+        'iso' => 'ISO',
+        'sorting' => 'Sorting',
+        'icon' => 'Icon',
+        'component' => 'Component'
+    ]
 ];

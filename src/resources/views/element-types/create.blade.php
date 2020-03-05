@@ -10,7 +10,7 @@
                     {{ csrf_field() }}
 
                     <div class="card-header">
-                        <h3>Elemente</h3>
+                        <h5 class="card-title">@lang('pagebuilder::crud.element_types')</h5>
                         @lang('pagebuilder::crud.create_headline')
                     </div>
 
@@ -18,19 +18,19 @@
                         
                         @include('pagebuilder::notifications')
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">@lang('pagebuilder::crud.labels.name')</label>
                             <input class="form-control" type="text" name="name" value="{{old('name')}}" />
                         </div>
                         <div class="form-group">
-                            <label for="name">Component</label>
+                            <label for="name">@lang('pagebuilder::crud.labels.component')</label>
                             <input class="form-control" type="text" name="component" value="{{old('component')}}" />
                         </div>
                         <div class="form-group">
-                            <label for="name">Icon</label>
+                            <label for="name">@lang('pagebuilder::crud.labels.icon')</label>
                             <input class="form-control" type="text" name="icon" value="{{old('icon')}}" />
                         </div>
                         <div class="form-group">
-                            <label for="name">Sortierung</label>
+                            <label for="name">@lang('pagebuilder::crud.labels.sorting')</label>
                             <input class="form-control" type="text" name="sorting" value="{{old('sorting')}}" />
                         </div>
                             

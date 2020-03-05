@@ -10,10 +10,9 @@
         :languages="{{$languages}}">
             
     <div class="card-header" slot="header">
-        <h3>@lang('pagebuilder::crud.create_headline')</h3>
+        <h5 class="card-title mb-0">@lang('pagebuilder::crud.edit_headline')</h5>
         @include('pagebuilder::notifications')
     </div>
-
 
 </pagebuilder-component>
 @stop
