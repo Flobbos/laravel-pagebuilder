@@ -6,3 +6,6 @@ coverage/
 .idea
 /node_modules/
 /.vscode
+.push.settings.jsonc
+.history
+.vscode
