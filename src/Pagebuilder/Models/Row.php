@@ -12,6 +12,7 @@ class Row extends Model{
         'sorting',
         'rowable_type',
         'rowable_id',
+        'alignment',
     ];
     
     public function columns(){

@@ -7,11 +7,13 @@ use App\Http\Controllers\Controller;
 use Flobbos\Pagebuilder\Contracts\ElementContract;
 use Exception;
 
-class ElementTypeController extends Controller{
-    
+class ElementTypeController extends Controller
+{
+
     protected $element_types;
 
-    public function __construct(ElementContract $element_types) {
+    public function __construct(ElementContract $element_types)
+    {
         $this->element_types = $element_types;
     }
 
@@ -20,8 +22,9 @@ class ElementTypeController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        return view('pagebuilder::element-types.index')->with(['element_types'=>$this->element_types->get()]);
+    public function index()
+    {
+        return view('pagebuilder::element-types.index')->with(['element_types' => $this->element_types->get()]);
     }
 
     /**
@@ -29,7 +32,8 @@ class ElementTypeController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
+    public function create()
+    {
         return view('pagebuilder::element-types.create');
     }
 
@@ -39,10 +43,11 @@ class ElementTypeController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->validate($request, []);
-        
-        try{
+
+        try {
             $this->element_types->create($request->all());
             return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('pagebuilder::crud.record_created'));
         } catch (Exception $ex) {
@@ -56,8 +61,9 @@ class ElementTypeController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id){
-        return view('pagebuilder::element-types.edit')->with(['element_type'=>$this->element_types->find($id)]);
+    public function edit($id)
+    {
+        return view('pagebuilder::element-types.edit')->with(['element_type' => $this->element_types->find($id)]);
     }
 
     /**
@@ -67,10 +73,11 @@ class ElementTypeController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $this->validate($request, []);
-        
-        try{
+
+        try {
             $this->element_types->update($id, $request->all());
             return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('pagebuilder::crud.record_updated'));
         } catch (Exception $ex) {
@@ -84,8 +91,9 @@ class ElementTypeController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id){
-        try{
+    public function destroy($id)
+    {
+        try {
             $this->element_types->delete($id);
             return redirect()->route('pagebuilder::element-types.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
         } catch (Exception $ex) {
@@ -93,4 +101,3 @@ class ElementTypeController extends Controller{
         }
     }
 }
-

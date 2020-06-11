@@ -4,28 +4,30 @@ namespace Flobbos\Pagebuilder;
 
 use Illuminate\Support\ServiceProvider;
 
-class PagebuilderServiceProvider extends ServiceProvider{
-    
-    public function boot(){
+class PagebuilderServiceProvider extends ServiceProvider
+{
+
+    public function boot()
+    {
         //Publish config
         $this->publishes([
-            __DIR__.'/../config/pagebuilder.php' => config_path('pagebuilder.php'),
-        ],'config');
+            __DIR__ . '/../config/pagebuilder.php' => config_path('pagebuilder.php'),
+        ], 'config');
         //load routes
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         //migrations
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         //views
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'pagebuilder');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'pagebuilder');
         //language
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'pagebuilder');
-
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'pagebuilder');
     }
 
     /**
      * Register the service provider.
      */
-    public function register(){
+    public function register()
+    {
         //register commands
         $this->commands([
             Commands\ControllerCommand::class,
@@ -35,7 +37,8 @@ class PagebuilderServiceProvider extends ServiceProvider{
         ]);
         //Merge config
         $this->mergeConfigFrom(
-            __DIR__.'/../config/pagebuilder.php', 'pagebuilder'
+            __DIR__ . '/../config/pagebuilder.php',
+            'pagebuilder'
         );
         //Run fixed bindings
         $this->app->bind(Contracts\ElementContract::class, Elements::class);

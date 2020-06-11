@@ -7,11 +7,13 @@ use App\Http\Controllers\Controller;
 use Flobbos\Pagebuilder\Contracts\LanguageContract;
 use Exception;
 
-class LanguageController extends Controller{
-    
+class LanguageController extends Controller
+{
+
     protected $language;
 
-    public function __construct(LanguageContract $language) {
+    public function __construct(LanguageContract $language)
+    {
         $this->language = $language;
     }
 
@@ -20,8 +22,9 @@ class LanguageController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        return view('pagebuilder::languages.index')->with(['languages'=>$this->language->get()]);
+    public function index()
+    {
+        return view('pagebuilder::languages.index')->with(['languages' => $this->language->get()]);
     }
 
     /**
@@ -29,7 +32,8 @@ class LanguageController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
+    public function create()
+    {
         return view('pagebuilder::languages.create');
     }
 
@@ -39,10 +43,11 @@ class LanguageController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->validate($request, []);
-        
-        try{
+
+        try {
             $this->language->create($request->all());
             return redirect()->route('pagebuilder::languages.index')->withMessage(trans('pagebuilder::crud.record_created'));
         } catch (Exception $ex) {
@@ -56,8 +61,9 @@ class LanguageController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
-        return view('pagebuilder::languages.show')->with(['language'=>$this->language->find($id)]);
+    public function show($id)
+    {
+        return view('pagebuilder::languages.show')->with(['language' => $this->language->find($id)]);
     }
 
     /**
@@ -66,8 +72,9 @@ class LanguageController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id){
-        return view('pagebuilder::languages.edit')->with(['language'=>$this->language->find($id)]);
+    public function edit($id)
+    {
+        return view('pagebuilder::languages.edit')->with(['language' => $this->language->find($id)]);
     }
 
     /**
@@ -77,10 +84,11 @@ class LanguageController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $this->validate($request, []);
-        
-        try{
+
+        try {
             $this->language->update($id, $request->all());
             return redirect()->route('pagebuilder::languages.index')->withMessage(trans('pagebuilder::crud.record_updated'));
         } catch (Exception $ex) {
@@ -94,8 +102,9 @@ class LanguageController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id){
-        try{
+    public function destroy($id)
+    {
+        try {
             $this->language->delete($id);
             return redirect()->route('pagebuilder::languages.index')->withMessage(trans('pagebuilder::crud.record_deleted'));
         } catch (Exception $ex) {
@@ -103,4 +112,3 @@ class LanguageController extends Controller{
         }
     }
 }
-

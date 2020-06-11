@@ -9,7 +9,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Support\Facades\Artisan;
 
-class InstallCommand extends Command{
+class InstallCommand extends Command
+{
     /**
      * The name and signature of the console command.
      *
@@ -23,27 +24,28 @@ class InstallCommand extends Command{
      * @var string
      */
     protected $description = 'Runs migrations and installs boiler plate content.';
-    
+
     protected $type = 'Install';
-    
+
     /**
      * Execute the console command.
      *
      * @return mixed
      */
-    public function handle(){
+    public function handle()
+    {
         $this->comment('Running migrations.');
-        
+
         Artisan::call('migrate');
-        
+
         $this->comment('Running seeds.');
-        Artisan::call('db:seed',['--class'=>'Flobbos\\Pagebuilder\\Database\\Seeds\\ElementTableSeeder']);
-        Artisan::call('db:seed',['--class'=>'Flobbos\\Pagebuilder\\Database\\Seeds\\LanguageTableSeeder']);
-        
+        Artisan::call('db:seed', ['--class' => 'Flobbos\\Pagebuilder\\Database\\Seeds\\ElementTableSeeder']);
+        Artisan::call('db:seed', ['--class' => 'Flobbos\\Pagebuilder\\Database\\Seeds\\LanguageTableSeeder']);
+
         $this->comment('Publishing package files');
-        
-        Artisan::call('vendor:publish',['--provider'=>'Flobbos\\Pagebuilder\\PagebuilderServiceProvider']);
-        
+
+        Artisan::call('vendor:publish', ['--provider' => 'Flobbos\\Pagebuilder\\PagebuilderServiceProvider']);
+
         $this->info('Installation completed.');
     }
 }

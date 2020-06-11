@@ -5,10 +5,11 @@ namespace Flobbos\Pagebuilder\Models;
 use Illuminate\Database\Eloquent\Model;
 use Flobbos\TranslatableDB;
 
-class Column extends Model{
-    
+class Column extends Model
+{
+
     use TranslatableDB\TranslatableDB;
-    
+
     protected $fillable = [
         'project_row_id',
         'element_type_id',
@@ -17,16 +18,17 @@ class Column extends Model{
         'sorting',
         'active'
     ];
-    
+
     public $translatedAttributes = ['content'];
     public $fallbackAttributes = ['content'];
-    
-    public function row(){
+
+    public function row()
+    {
         return $this->belongsTo(Row::class);
     }
 
-    public function element_type(){
+    public function element_type()
+    {
         return $this->belongsTo(ElementType::class);
     }
-    
 }
