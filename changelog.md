@@ -1,9 +1,17 @@
 ## Version History
 
-### v. 1.0.6
+### v. 1.0.8
 
 -   transition to full PSR-2 compliance
 -   fixed missing alignment fillable
+
+### v. 1.0.7
+
+-   use statement for TranslatableDB was using the wrong path
+
+### v. 1.0.6
+
+-   removed old unnecessary code
 
 ### v. 1.0.5
 
