@@ -1,5 +1,9 @@
 ## Version History
 
+### v. 1.0.9
+
+-   added slugify for localized slugs
+
 ### v. 1.0.8
 
 -   transition to full PSR-2 compliance

@@ -1,7 +1,11 @@
 {
     "name": "flobbos/laravel-pagebuilder",
     "description": "Build content in your database with translations.",
-    "keywords": ["laravel", "pages", "database"],
+    "keywords": [
+        "laravel",
+        "pages",
+        "database"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -13,7 +17,8 @@
     "require": {
         "php": ">=7.1.0",
         "illuminate/support": "5.6.*|5.7.*|5.8.*|6.*",
-        "flobbos/laravel-translatable-db": "^1.4"
+        "flobbos/laravel-translatable-db": "^1.4",
+        "cocur/slugify": "^4.0"
     },
     "extra": {
         "laravel": {
@@ -24,10 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Flobbos\\Pagebuilder\\": ["src/", "src/database/seeds/"]
+            "Flobbos\\Pagebuilder\\": [
+                "src/",
+                "src/database/seeds/"
+            ]
         },
         "classmap": []
     },
-
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
