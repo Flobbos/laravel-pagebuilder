@@ -20,6 +20,8 @@ class CreateRowsTable extends Migration
             $table->integer('sorting')->unsigned()->index();
             $table->boolean('expanded')->default(false);
             $table->string('alignment')->nullable();
+            $table->string('padding_top')->nullable();
+            $table->string('padding_bottom')->nullable();
             $table->timestamps();
         });
     }
