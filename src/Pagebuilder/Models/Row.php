@@ -13,6 +13,8 @@ class Row extends Model{
         'rowable_type',
         'rowable_id',
         'alignment',
+        'padding_top',
+        'padding_bottom'
     ];
     
     public function columns(){
