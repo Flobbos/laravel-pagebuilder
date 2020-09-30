@@ -1,5 +1,9 @@
 ## Version History
 
+### v. 1.0.10
+
+-   added support for Laravel 7/8
+
 ### v. 1.0.9
 
 -   added slugify for localized slugs
