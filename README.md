@@ -1,19 +1,18 @@
 # Laravel-Pagebuilder
 
-
 ![Laravel Pagebuilder](img/laravel-pagebuilder.png)
 
 ### Docs
 
-* [Installation](#installation)
-* [Configuration](#configuration)
-* [Migrations](#migrations)
-* [Seeds](#seeds)
-* [Generators](#generators)
-* [Slugs](#slugs)
-* [Fields](#fields)
-* [JS](#js components)
-* [Laravel compatibility](#laravel-compatibility)
+-   [Installation](#installation)
+-   [Configuration](#configuration)
+-   [Migrations](#migrations)
+-   [Seeds](#seeds)
+-   [Generators](#generators)
+-   [Slugs](#slugs)
+-   [Fields](#fields)
+-   [JS](#js-components)
+-   [Laravel compatibility](#laravel-compatibility)
 
 ## Installation
 
@@ -22,10 +21,13 @@
 ```bash
 composer require flobbos/laravel-pagebuilder
 ```
+
 #### Install pagebuilder
+
 Laravel 5.7+
+
 ```bash
-php artisan pagebuilder:install 
+php artisan pagebuilder:install
 ```
 
 This will run all migrations and trigger the seeder for the initial elements
@@ -50,7 +52,7 @@ generate multiple controllers for multiple resources using the Pagebuilder.
 $this->articles->setClass('page');
 ```
 
-This setting in the generated controller will tell it which resource it needs to 
+This setting in the generated controller will tell it which resource it needs to
 use for generating content.
 
 ## Generators
@@ -77,28 +79,28 @@ pagebuilder:model Page
 ```
 
 This will generate a Page model that extends the BasePage model that comes with
-the package so all necessary relationships and translation options are included. 
+the package so all necessary relationships and translation options are included.
 This step is necessary to be able to generate content because the BasePage model
-should not be used as a resource directly. 
+should not be used as a resource directly.
 
 ## Slugs
 
-The pagebuilder is capable of generating translated URL slugs for you. All you 
+The pagebuilder is capable of generating translated URL slugs for you. All you
 need to do is uncomment the following line from your generated model:
 
 ```php
-//protected $slug_field = 'title'; 
+//protected $slug_field = 'title';
 ```
 
-This will tell the pagebuilder which field in the translations is supposed to 
+This will tell the pagebuilder which field in the translations is supposed to
 generate the URL slug. The slug will automatically be regenerated when you change
-the named field. 
+the named field.
 
 ## Fields
 
 There are some basic fields in the settings area for an resource but you are free
 to add as many additional fields as needed. These fields will be automatically
-saved in the database without further modifications to the DB structure. 
+saved in the database without further modifications to the DB structure.
 
 ## JS Components
 
@@ -108,15 +110,15 @@ To use the pagebuilder you need to install its VueJS counterpart by running:
 npm install @chrisbielak/vue-pagebuilder
 ```
 
-All the needed documentation can be found here: 
+All the needed documentation can be found here:
 [Vue Pagebuilder](https://www.npmjs.com/package/@chrisbielak/vue-pagebuilder "Google's Homepage")
 
 ## Laravel compatibility
 
- Laravel  | Crudable
-:---------|:----------
- 6.0      | >1.0.3
- 5.8      | >1.0.0
- 5.7      | >1.0.0
-
-
+| Laravel | Crudable |
+| :------ | :------- |
+| 8.x     | >1.0.10  |
+| 7.x     | >1.0.10  |
+| 6.x     | >1.0.3   |
+| 5.8     | >1.0.0   |
+| 5.7     | >1.0.0   |
