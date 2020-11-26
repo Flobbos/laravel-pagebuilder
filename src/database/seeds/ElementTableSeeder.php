@@ -1,17 +1,19 @@
 <?php
 
-namespace Flobbos\Pagebuilder\Database\Seeds;
+namespace Flobbos\Pagebuilder;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ElementTableSeeder extends Seeder{
+class ElementTableSeeder extends Seeder
+{
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
         //Headline + Text
         DB::table('element_types')->insert([
             'name' => 'Headline + Text',
