@@ -1,6 +1,6 @@
 <?php
 
-namespace Flobbos\Pagebuilder\database\seeds;
+namespace Flobbos\Pagebuilder\Database\Seeds;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
