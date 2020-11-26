@@ -1,5 +1,9 @@
 ## Version History
 
+### v. 1.0.11
+
+-   fixed PSR-4 issues
+
 ### v. 1.0.10
 
 -   added support for Laravel 7/8
