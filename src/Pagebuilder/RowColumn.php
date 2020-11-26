@@ -5,7 +5,6 @@ namespace Flobbos\Pagebuilder;
 use Flobbos\Pagebuilder\Contracts\RowColumnContract;
 use Flobbos\Pagebuilder\Models\Row;
 use Flobbos\Pagebuilder\Models\Column;
-use Exception;
 
 class RowColumn implements RowColumnContract
 {
