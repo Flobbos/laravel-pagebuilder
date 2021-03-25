@@ -16,19 +16,19 @@
                 @include('pagebuilder::notifications')
                 <div class="mb-4">
                     <label class="inline-block mb-2" for="name">Name</label>
-                    <input class="form-control" type="text" name="name" value="{{old('name')}}" />
+                    <input class="form-control" type="text" name="name" value="{{old('name', $element_type->name)}}" />
                 </div>
                 <div class="mb-4">
                     <label class="inline-block mb-2" for="name">Component</label>
-                    <input class="form-control" type="text" name="component" value="{{old('component')}}" />
+                    <input class="form-control" type="text" name="component" value="{{old('component', $element_type->component)}}" />
                 </div>
                 <div class="mb-4">
                     <label class="inline-block mb-2" for="name">Icon</label>
-                    <input class="form-control" type="text" name="icon" value="{{old('icon')}}" />
+                    <input class="form-control" type="text" name="icon" value="{{old('icon', $element_type->icon)}}" />
                 </div>
                 <div class="mb-4">
                     <label class="inline-block mb-2" for="name">Sortierung</label>
-                    <input class="form-control" type="text" name="sorting" value="{{old('sorting')}}" />
+                    <input class="form-control" type="text" name="sorting" value="{{old('sorting', $element_type->sorting)}}" />
                 </div>
             </div>
             <div class="bg-gray-100 rounded-b p-5">

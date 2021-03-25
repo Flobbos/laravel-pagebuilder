@@ -9,7 +9,7 @@
             <div class="flex-auto p-5">
                 <div class="grid grid-cols-2">
                     <div>
-                        <h3>Elemente</h3>
+                        <h3 class="mb-3 text-xl">Elemente</h3>
                     </div>
                     <div>
                         <a href="{{ route('pagebuilder::element-types.create') }}" class="bg-blue-500 hover:bg-blue-400 text-white hover:text-blue-100 text-normal px-3 py2 rounded">

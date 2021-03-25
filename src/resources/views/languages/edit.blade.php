@@ -1,70 +1,47 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-
-                <form action="{{ route('pagebuilder::languages.update',$language->id) }}" role="form" method="POST"  enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    {{method_field('PUT')}}
-
-                    <div class="card-header">
-                        <h3>@lang('pagebuilder::crud.edit_headline')</h3>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Edit Language') }}
+        </h2>
+    </x-slot>
+    <div class="container xl mx-auto mt-5 py-5">
+        <form action="{{ route('pagebuilder::languages.update',$language->id) }}" role="form" method="POST"  enctype="multipart/form-data">
+        {{ csrf_field() }}
+        {{method_field('PUT')}}
+        <div class="flex flex-col relative bg-white rounded border border-gray-300">
+            <div class="flex-auto p-5">
+                <h3 class="mb-3 text-xl">Languages</h3>
+            </div>
+            <div class="flex-auto p-5">
+                @include('pagebuilder::notifications')
+                <div class="mb-4 grid grid-cols-2">
+                    <div>
+                        <label for="name" class="control-label">Name</label>
+                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name', $language->name) }}">
                     </div>
-
-                    <div class="card-body">
-                        @include('pagebuilder::notifications')
-
-                        <div class="form-group">
-                            <div class="row">
-                                
-                                <div class="col-md-8">
-                                    <label for="name" class="control-label">Name</label>
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$language->name) }}">
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="row">
-                                
-                                <div class="col-md-8">
-                                    <label for="locale" class="control-label">ISO</label>
-                                    <input id="locale" type="text" class="form-control" name="locale" value="{{ old('locale',$language->locale) }}">
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                        
+                    <div>
+                        <label for="locale" class="control-label">ISO</label>
+                        <input id="locale" type="text" class="form-control" name="locale" value="{{ old('locale', $language->locale) }}">
                     </div>
+                </div>
 
-                    <div class="card-footer">
+                <div class="bg-gray-100 rounded-b p-5">
 
-                        <div class="row">
+                    <div class="grid grid-cols-2">
 
-                            <div class="col-sm-6">
-                                <a href="{{ route('pagebuilder::languages.index') }}" class="btn btn-danger">{{ trans('pagebuilder::crud.cancel') }}</a>
-                            </div>
+                        <div>
+                            <a href="{{ route('pagebuilder::languages.index') }}" class="bg-red-500 hover:bg-red-400 text-white hover:text-red-100 text-normal px-3 py2 rounded">{{ trans('pagebuilder::crud.cancel') }}</a>
+                        </div>
 
-                            <div class="col-sm-6 text-right">
-                                <button type="submit" class="btn btn-success">{{ trans('pagebuilder::crud.save') }}</button>
-                            </div>
-
+                        <div class="text-right">
+                            <button type="submit" class="bg-green-500 hover:bg-green-400 text-white hover:text-green-100 text-normal px-3 py2 rounded">{{ trans('pagebuilder::crud.save') }}</button>
                         </div>
 
                     </div>
 
-                </form>
-
+                </div>
             </div>
         </div>
-
+        </form>
     </div>
-</div>
-@stop
+</x-app-layout>
