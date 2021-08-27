@@ -18,6 +18,7 @@ class CreatePagesTable extends Migration
             $table->string('name');
             $table->string('photo')->nullable();
             $table->timestamp('published_on')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
