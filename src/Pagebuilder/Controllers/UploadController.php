@@ -27,6 +27,13 @@ class UploadController extends Controller
                     'lang_id' => $request->get('lang_id')
                 ], 200);
             }
+            if ($request->hasFile('file')) {
+                return response()->json([
+                    'filename' => $this->handleUpload($request, 'file', 'files'),
+                    'column_id' => $request->get('column_id'),
+                    'lang_id' => $request->get('lang_id')
+                ], 200);
+            }
             throw new Exception('No file uploaded');
         } catch (Exception $ex) {
             return response()->json(['success' => false, 'message' => $ex->getMessage()], 422);

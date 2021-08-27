@@ -5,10 +5,11 @@ namespace Flobbos\Pagebuilder\Models;
 use Illuminate\Database\Eloquent\Model;
 use Flobbos\Pagebuilder\Models\Translation;
 use Flobbos\TranslatableDB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BasePage extends Model
 {
-
+    use SoftDeletes;
     use TranslatableDB\TranslatableDB;
 
     public $translatedAttributes = ['content', 'slug'];
@@ -30,9 +31,9 @@ class BasePage extends Model
     }
 
     //Overrides for polymorphic delete
-    public function delete()
+    public function forceDelete()
     {
-        $deleted = parent::delete();
+        $deleted = parent::forceDelete();
         if ($deleted) {
             $this->translations()->delete();
             $this->rows()->delete();
