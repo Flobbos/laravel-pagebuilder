@@ -3,8 +3,6 @@
 namespace Flobbos\Pagebuilder\Translations;
 
 use Flobbos\Pagebuilder\Exceptions\MissingTranslationsException;
-use Flobbos\Pagebuilder\Exceptions\MissingRequiredFieldsException;
-use Flobbos\Pagebuilder\Exceptions\MissingTranslationNameException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Cocur\Slugify\Slugify;

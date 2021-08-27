@@ -89,7 +89,6 @@ class Pagebuilder implements PagebuilderContract
 
     public function update($id, Request $request)
     {
-
         //Grab basic project
         $article = $this->model->with('rows.columns.translations')->find($id);
         //Grab request data
@@ -101,7 +100,6 @@ class Pagebuilder implements PagebuilderContract
         );
         //Update basic project
         $article->update($article_data);
-
         //Update rows and columns
         foreach ($request->get('rows') as $row_key => $row) {
             //Update existing row
@@ -119,7 +117,9 @@ class Pagebuilder implements PagebuilderContract
                         foreach ($column['translations'] as $trans_key => $trans) {
                             //Translation exists: Update
                             if (isset($trans['id']) && $current_trans = $current_column->translations->find($trans['id'])) {
-                                $current_trans->update($this->processContent($trans_key, $trans));
+                                if ($content = $this->processContent($trans_key, $trans)) {
+                                    $current_trans->update($content);
+                                }
                             }
                             //No translation yet: Create
                             else {
