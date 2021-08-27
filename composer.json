@@ -30,8 +30,7 @@
     "autoload": {
         "psr-4": {
             "Flobbos\\Pagebuilder\\": [
-                "src/Pagebuilder",
-                "src/database/seeds/"
+                "src/Pagebuilder"
             ]
         },
         "classmap": []
