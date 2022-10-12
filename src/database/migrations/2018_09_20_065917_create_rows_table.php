@@ -14,7 +14,7 @@ class CreateRowsTable extends Migration
     public function up()
     {
         Schema::create('rows', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id('id');
             $table->morphs('rowable');
             $table->string('custom_class')->nullable();
             $table->integer('sorting')->unsigned()->index();

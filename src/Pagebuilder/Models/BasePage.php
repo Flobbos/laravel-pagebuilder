@@ -22,7 +22,7 @@ class BasePage extends Model
 
     public function rows()
     {
-        return $this->morphMany(Row::class, 'rowable');
+        return $this->morphMany(Row::class, 'rowable')->orderBy('sorting');
     }
 
     public function translations()

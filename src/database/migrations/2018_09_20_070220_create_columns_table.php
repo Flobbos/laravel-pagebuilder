@@ -14,11 +14,9 @@ class CreateColumnsTable extends Migration
     public function up()
     {
         Schema::create('columns', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('row_id')->unsigned()->index();
-            $table->foreign('row_id')->references('id')->on('rows')->onDelete('cascade');
-            $table->integer('element_type_id')->unsigned()->index();
-            $table->foreign('element_type_id')->references('id')->on('element_types')->onDelete('cascade');
+            $table->id('id');
+            $table->foreignId('row_id')->onDelete('cascade');
+            $table->foreignId('element_type_id')->onDelete('cascade');
             $table->string('column_size')->nullable();
             $table->string('custom_class')->nullable();
             $table->tinyInteger('sorting')->default(0);
