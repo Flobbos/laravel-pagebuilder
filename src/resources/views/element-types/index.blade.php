@@ -18,7 +18,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="flex-auto p-5">
                 @include('pagebuilder::notifications')
                 @if($element_types->isEmpty())

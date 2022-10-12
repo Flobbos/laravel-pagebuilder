@@ -14,7 +14,8 @@ class Row extends Model{
         'rowable_id',
         'alignment',
         'padding_top',
-        'padding_bottom'
+        'padding_bottom',
+        'active'
     ];
     
     public function columns(){
