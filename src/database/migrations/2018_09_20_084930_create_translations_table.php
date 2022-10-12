@@ -14,11 +14,10 @@ class CreateTranslationsTable extends Migration
     public function up()
     {
         Schema::create('translations', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id('id');
             $table->morphs('translatable');
-            $table->integer('language_id')->unsigned()->index();
-            $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');
-            $table->text('content');
+            $table->foreignId('language_id')->onDelete('cascade');
+            $table->json('content');
             $table->string('slug')->nullable();
             $table->timestamps();
         });

@@ -14,12 +14,10 @@ class CreateColumnTranslationsTable extends Migration
     public function up()
     {
         Schema::create('column_translations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('language_id')->unsigned()->index();
-            $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');
-            $table->integer('column_id')->unsigned()->index();
-            $table->foreign('column_id')->references('id')->on('columns')->onDelete('cascade');
-            $table->text('content');
+            $table->id('id');
+            $table->foreignId('language_id')->onDelete('cascade');
+            $table->foreignId('column_id')->onDelete('cascade');
+            $table->json('content');
             $table->timestamps();
         });
     }

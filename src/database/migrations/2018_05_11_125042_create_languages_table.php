@@ -13,12 +13,14 @@ class CreateLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('languages', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('locale');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('languages')) {
+            Schema::create('languages', function (Blueprint $table) {
+                $table->id('id');
+                $table->string('name');
+                $table->string('locale');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

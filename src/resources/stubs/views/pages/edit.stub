@@ -1,18 +1,14 @@
-@extends('layouts.app')
-
-@section('content')
-<pagebuilder-component 
-        class="pagebuilder-component" 
-        ref="pagebuilder" 
-        :old-element="<!-- insert resource variable here -->" 
-        :element-types="{{$element_types}}" 
-        storage-path="photos" 
-        :languages="{{$languages}}">
-            
-    <div class="card-header" slot="header">
-        <h5 class="card-title mb-0">@lang('pagebuilder::crud.edit_headline')</h5>
-        @include('pagebuilder::notifications')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Edit Page') }}
+        </h2>
+    </x-slot>
+    <div class="container xl mx-auto mt-5 py-5">
+        <div class="flex flex-col relative bg-white rounded border border-gray-300">
+            <div class="flex-auto p-5">
+                <h3>@lang('pagebuilder::crud.create_headline')</h3>
+            </div>
+        </div>
     </div>
-
-</pagebuilder-component>
-@stop
+</x-app-layout>

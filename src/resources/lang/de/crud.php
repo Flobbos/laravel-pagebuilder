@@ -20,6 +20,7 @@ return [
     'record_created' => 'Ein neuer Eintrag wurde erfolgreich erstellt.',
     'record_updated' => 'Der Eintrag wurde erfolgreich aktualisiert.',
     'record_deleted' => 'Der Eintrag wurde erfolgreich gelöscht.',
+    'record_restored' => 'Der Eintrag wurde erfolgreich wiederhergestellt.',
     //File error
     'invalid_file_upload' => 'Es gab ein Problem beim Upload der Datei.',
 
