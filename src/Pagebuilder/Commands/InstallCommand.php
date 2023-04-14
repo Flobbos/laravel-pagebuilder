@@ -39,8 +39,8 @@ class InstallCommand extends Command
         Artisan::call('migrate');
 
         $this->comment('Running seeds.');
-        Artisan::call('db:seed', ['--class' => 'Flobbos\\Pagebuilder\\Database\\Seeds\\ElementTableSeeder']);
-        Artisan::call('db:seed', ['--class' => 'Flobbos\\Pagebuilder\\Database\\Seeds\\LanguageTableSeeder']);
+        Artisan::call('db:seed', ['--class' => 'Flobbos\\Pagebuilder\\ElementTableSeeder']);
+        Artisan::call('db:seed', ['--class' => 'Flobbos\\Pagebuilder\\LanguageTableSeeder']);
 
         $this->comment('Publishing package files');
 
