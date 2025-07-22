@@ -117,6 +117,10 @@ All the needed documentation can be found here:
 
 | Laravel | Crudable |
 | :------ | :------- |
+| 12.x    | >2.0.\*  |
+| 11.x    | >2.0.\*  |
+| 10.x    | >2.0.\*  |
+| 9.x     | >2.0.\*  |
 | 8.x     | >1.0.10  |
 | 7.x     | >1.0.10  |
 | 6.x     | >1.0.3   |
