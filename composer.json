@@ -19,7 +19,7 @@
         "illuminate/support": "9.*|10.*|11.*|12.*",
         "flobbos/laravel-translatable-db": "^1.4",
         "cocur/slugify": "^4.0",
-        "livewire/livewire": "^2.4"
+        "livewire/livewire": "^2.4|^3.0"
     },
     "extra": {
         "laravel": {
